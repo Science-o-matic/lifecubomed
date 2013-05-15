@@ -12,10 +12,6 @@ Initial setup
 
         mkvirtualenv lifecubomed
 
-1. Be sure to work in the new virtualenv
-
-       workon lifecubomed
-
 1. Install required PyPI packages.
 
         pip install -r pip-requirements.txt
