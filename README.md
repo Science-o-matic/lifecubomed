@@ -4,9 +4,17 @@ lifecubomed
 Initial setup
 -------------
 
-1. Clone this repository
+1. Clone this repository.
 
         git clone git@github.com:ygneo/lifecubomed.git
+
+1. Create a virtualenv for the project.
+
+        mkvirtualenv lifecubomed
+
+1. Be sure to work in the new virtualenv
+
+       workon lifecubomed
 
 1. Install required PyPI packages.
 
