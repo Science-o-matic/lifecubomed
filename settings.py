@@ -149,6 +149,13 @@ INSTALLED_APPS = (
     'django_extensions',
 )
 
+LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -173,7 +180,7 @@ LOGGING = {
         'logfile': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': PROJECT_DIR + "/logfile.log",
+            'filename': LOGFILE,
             'maxBytes': 50000,
             'backupCount': 2,
             'formatter': 'verbose',
@@ -196,8 +203,3 @@ LOGGING = {
         },
     }
 }
-
-try:
-    from local_settings import *
-except ImportError:
-    pass
