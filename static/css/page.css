@@ -1,0 +1,81 @@
+#page_content {
+	background-color: transparent;
+	text-align: justify;
+}
+		
+#home {
+    border: none;
+    margin: 8px 0px;
+}
+
+#dynamic_menu ul li:hover {
+  background-position: left;
+}
+
+#dynamic_menu ul li {
+  text-align: left;
+  padding-left: 4ex;
+  margin-left: 2ex;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+  #dynamic_menu ul li.selected {
+    padding-left: 0;
+    background: none;
+  }
+
+  #dynamic_menu ul li ul {
+    padding-left: 2ex;
+    margin-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+    #dynamic_menu ul li.selected ul li.descendant {
+      border-bottom: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    #dynamic_menu ul li.ancestor {
+      background: none;
+      padding-left: 0;
+    }
+
+      #dynamic_menu ul li.ancestor a {
+        padding-left: 4ex;
+      }
+
+    #dynamic_menu ul li.ancestor ul {
+      padding-left: 2ex;
+    }
+
+        #dynamic_menu li.ancestor ul li {
+          border-bottom: none;
+          padding-left: 0;
+          margin-left: 0;
+        }
+  
+          #dynamic_menu li.ancestor ul li.sibling {
+            padding-left: 0;
+            display: block;
+          }
+
+    #dynamic_menu ul li.selected a {
+      background: url('../img/iop2.png') no-repeat;
+      background-position: left;
+      display: block;
+      padding-left: 4ex;
+    }
+
+    #dynamic_menu ul li.selected ul li.descendant a {
+      background: none;
+    }
+ #nav {
+  background: url('../img/iop2.png') no-repeat;
+  background-position: top right;
+  background-origin: content-box;
+  background-padding: 1ex;
+}
+

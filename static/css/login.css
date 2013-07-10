@@ -1,0 +1,95 @@
+body {
+  background: #eee;
+  font-size: 12px;
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  color: #333;
+  display: block;
+}
+
+  #container {
+    background: white;
+    border: 1px solid #ccc;
+    width: 28em;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    position: relative;
+    padding: 0;
+    display: block;
+  }
+
+  #header {
+    background: #417690;
+    color: #ffc;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+  }
+
+    #branding {
+      font-size: 12px;
+      font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    }
+    
+      #branding h1 {
+        padding: 0 10px;
+        font-size: 18px;
+        margin: 8px 0;
+        font-weight: normal;
+        color: #f4f379;
+        display: block;
+      }
+
+  #content {
+    margin: 10px 15px;
+    display: block;
+  }
+
+    #content-main {
+      width: 100%;
+      margin-top: 1em;
+      display: block;
+    }
+
+      #login-form {
+        margin-top: 1em;
+        margin: 0;
+        padding: 0;
+      }
+
+        #login-form p {
+          padding: 2px 0;
+        }
+
+        #login-form p label {
+          width: 9em;
+          padding-right: 0.5em;
+          line-height: 2em;
+          text-align: right;
+          font-size: 1em;
+          color: #333;
+          float: left;
+        }
+
+        #login-form p input {
+          width: 14em;
+          border: 1px solid #ccc;
+          margin: 2px 0;
+          padding: 2px 3px;
+          vertical-align: middle;
+          font-wight: normal;
+          font-size: 11px;
+        }
+
+        #login-form input {
+          padding: 3px 5px;
+          background: white url(../img/nav-bg.gif) bottom repeat-x;
+          color: black;
+          border: 1px solid #bbb;
+          border-color: #ddd #aaa #aaa #ddd;
+          margin: 2px 0 auto 10.3em;
+          font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+          font-weight: normal;
+          font-size: 11px;
+        }

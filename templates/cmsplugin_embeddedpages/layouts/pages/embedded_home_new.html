@@ -1,0 +1,7 @@
+{% load cms_tags sekizai_tags %}
+<div class="embedded-page row">
+  <h2>{{ EmbeddedPage.get_title }}</h2>
+  {% for placeholder in EmbeddedPage.placeholders.all %}{% spaceless %}
+    {% show_uncached_placeholder placeholder.slot  EmbeddedPage.id %}
+  {% endspaceless %}{% endfor %}
+</div>

@@ -1,0 +1,8 @@
+{% for EmbeddedPage in EmbeddedPages|slice:"3" %}
+   {% if not request.current_page == page %}
+      {% include plugin.instance.page_template %}
+   {% endif %}
+{% endfor %}
+<div id="more_news">
+  <a href="">More news</a>
+</div>

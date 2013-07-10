@@ -1,0 +1,154 @@
+body {
+  font-family: Verdana;
+  font-size: normal;
+  background-color: #000000;
+  background-repeat: repeat;
+   color: #CCCCCC;
+}
+
+#wrapper {
+  width: 1500px;
+  margin: 5px auto 0 auto;
+}
+
+#left { 
+   float: left;
+   width:250px; 
+   padding: 12px;
+   padding-top: .5ex;
+}
+
+#header_image {
+ padding-top: 20px;
+ padding-right: 5px;	
+}
+
+#center {
+     float:left;
+     width: 900px;
+     padding: 12px;
+     padding-top: .5ex;    
+}
+
+#right {
+     float: right;
+     width: 250px;
+     padding: 12px;
+     padding-top: .5ex;
+}
+
+
+#dynamic_menu ul {
+  list-style: none;
+  font-size: small;
+  padding-bottom: 2ex;
+}
+
+  #dynamic_menu ul li {
+    text-align: right;
+    padding-top: 1ex;
+    padding-bottom: 1ex;
+    padding-left: 1ex;
+    padding-right: 4ex;
+    margin-right: 2ex;
+    border-bottom: 1px solid #0f598e;
+  }
+
+    #dynamic_menu ul li:hover, #dynamic_menu ul li.selected {
+      background: url('../img/iop2.png') no-repeat;
+      background-position: right;
+    }
+
+  #dynamic_menu ul li a {
+    color: #DCF0F7;
+    text-decoration: none;
+    font-size: 110%;
+  }
+
+    #dynamic_menu ul li a:visited {
+      color: #2287B5;
+    }
+    #dynamic_menu ul#nav {
+      margin: 0;
+      padding-left: 5px;
+    }
+
+    #disclaimer{
+      font-size: 70%;
+      margin-top: 5px;
+}
+#language_chooser {
+   color: ;
+   font-size: 80%;
+   position: absolute;
+   background-color: ;
+   color: #0f598e;
+   padding: .5ex;
+   padding-right: 1ex;
+   padding-left: 1ex;
+   -moz-border-radius-bottomright: 4px;
+   border-bottom-right-radius: 4px;
+   opacity:0.9;
+   filter:alpha(opacity=90); /* For IE8 and earlier */
+}
+
+#language_chooser a {
+   color: #CCCCCC;
+}
+
+img {
+border:1px solid transparent;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+#disclaimer {
+  text-align: justify;
+  clear: both;
+}
+
+#sting_protocol {
+  padding-left: 9px;
+  border-radius: 4px;
+  margin-top: 1ex;
+  color: #CCCCCC;
+  alignment-adjust: central;
+}
+
+  #sting_protocol .plugin_picture img {
+   height: 78px;
+   width: 80px;
+   float: left;
+  }
+  
+  #sting_protocol p.plugin_file {
+    margin: 0;
+  }
+
+    #sting_protocol p.plugin_file a {
+      text-decoration: none;
+    }
+
+      #sting_protocol p.plugin_file a span.filetitle {
+        color: white;
+        font-weight: bold;
+      }
+
+    .filesize {
+      display: none;
+    }    
+    
+#avista .plugin_picture img {
+       height: 90px;
+       width: 250px;
+}
+
+#life .plugin_picture img {
+       height: 243px;
+       width: 233px;
+     } 
+     
+#noticias .plugin_picture img {
+       height: 281px;
+       width: 200px;
+     } 

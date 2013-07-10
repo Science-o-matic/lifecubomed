@@ -1,0 +1,25 @@
+{% load i18n sekizai_tags %}
+{% render_block "css" %}
+{% block content %}
+
+  {% addtoblock "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
+  {% endaddtoblock %}
+  <div id="container">
+    <div id="header">
+      <div id="branding">
+        <h1 id="site-name">Jellyrisk login</h1>
+      </div>
+    </div>
+    <div id="content" class="colM">
+      <div id="content-main">
+        <form method="post" action="." id="login-form">{% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="{% trans 'Log in' %}" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+      </div>
+    </div>
+  </div>
+      
+{% endblock %}
