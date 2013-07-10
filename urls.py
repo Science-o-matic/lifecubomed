@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
     url(r'^', include('cms.urls')),
+       (r'^tinymce/', include('tinymce.urls')),
+           
+    
 )
 
 if settings.DEBUG:

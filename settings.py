@@ -9,10 +9,31 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Admin', '<admin-email>')
+    ('Martín Fuentes', 'fuentesmartin@gmail.com'),
+    ('Javi Fuentes', 'fuentesmartin@gmail.com'),
+    ('Javi Fuentes', 'jfuentess@gmail.com'),
+
 )
 
 MANAGERS = ADMINS
+
+LANGUAGES = (
+    ('es', gettext('Spanish')),
+    ('en', gettext('English')),
+    ('it', gettext('Italian')),
+    ('fr', gettext('French')),
+)
+
+DEFAULT_LANGUAGE = 0
+
+CMS_LANGUAGES = (
+    ('es', gettext('Spanish')),
+    ('en', gettext('English')),
+    ('it', gettext('Italian')),
+    ('fr', gettext('French')),
+)
+
+CMS_FRONTEND_LANGUAGES =('es','en','fr','it')
 
 DATABASES = {
     'default': {
@@ -28,11 +49,11 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = ''
+TIME_ZONE = 'Europe/Madrid'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = ''
+LANGUAGE_CODE = 'en-EN'
 
 SITE_ID = 1
 
@@ -46,9 +67,9 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/var/www/lifecubomed/media/'
 
-STATIC_ROOT = 'static/'
+STATIC_ROOT = '/var/www/lifecubomed/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -56,6 +77,11 @@ STATIC_ROOT = 'static/'
 MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/"),
+)
+
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '0r6%7gip5tmez*vygfv+u14h@4lbt^8e2^26o#5_f_#b7%cm)u'
@@ -96,14 +122,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 CMS_TEMPLATES = (
     ('sample.html', 'Sample Template'),
+    ('home.html', 'Home Template'),
+    ('page.html', 'Page Template'),
+    ('map_page.html', 'Map Page Template'),
+    ('new.html', 'Single News Template'),
+    ('contact.html', 'Contact Template'),
 )
 
 # i18n and l10n
-CMS_HIDE_UNTRANSLATED = True
-LANGUAGES = (
-    ('en', gettext('English')),
-)
-DEFAULT_LANGUAGE = 0
+CMS_HIDE_UNTRANSLATED = False
 
 CMS_PLACEHOLDER_CONF = {
     'new-image': {
@@ -119,6 +146,9 @@ CMS_PLACEHOLDER_CONF = {
         'name':gettext("New #2 Text"),
     },
 }
+
+
+IMAGESTORE_SHOW_USER = False
 
 ROOT_URLCONF = 'urls'
 
@@ -142,14 +172,17 @@ INSTALLED_APPS = (
     'cms.plugins.googlemap',
     'sekizai',
     'django_extensions',
+    'cmsplugin_embeddedpages',
+    'filer',
+    'cmsplugin_contact',
+    'imagestore',
+    'sorl.thumbnail',
+    'tagging',
+    'imagestore.imagestore_cms',
+    'tinymce',
+    'cmsplugin_flickr_slideshow',
+    'cmsplugin_gallery',        
 )
-
-LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
-
-try:
-    from local_settings import *
-except ImportError:
-    pass
 
 LOGGING = {
     'version': 1,
@@ -175,7 +208,7 @@ LOGGING = {
         'logfile': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': LOGFILE,
+            'filename': PROJECT_DIR + "/logfile.log",
             'maxBytes': 50000,
             'backupCount': 2,
             'formatter': 'verbose',
@@ -198,3 +231,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
