@@ -17,8 +17,6 @@ gunicorn
 setuptools
 recaptcha-client
 cmsplugin-fbalbum
-django-tinymce 
-
-
-
-
+cmsplugin-gallery
+cmsplugin-flickr-slideshow
+django-tinymce
