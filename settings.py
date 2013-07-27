@@ -5,7 +5,7 @@ gettext = lambda s: s
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -18,19 +18,19 @@ ADMINS = (
 MANAGERS = ADMINS
 
 LANGUAGES = (
-    ('es', gettext('Spanish')),
+    ('es', gettext(U'Español')),
     ('en', gettext('English')),
-    ('it', gettext('Italian')),
-    ('fr', gettext('French')),
+    ('it', gettext('Italiano')),
+    ('fr', gettext(U'Français')),
 )
 
 DEFAULT_LANGUAGE = 0
 
 CMS_LANGUAGES = (
-    ('es', gettext('Spanish')),
+    ('es', gettext(U'Español')),
     ('en', gettext('English')),
-    ('it', gettext('Italian')),
-    ('fr', gettext('French')),
+    ('it', gettext('Italiano')),
+    ('fr', gettext(U'Français')),
 )
 
 CMS_FRONTEND_LANGUAGES =('es','en','fr','it')
@@ -53,7 +53,7 @@ TIME_ZONE = 'Europe/Madrid'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-EN'
+LANGUAGE_CODE = 'en'
 
 SITE_ID = 1
 
@@ -74,9 +74,9 @@ STATIC_ROOT = '/var/www/lifecubomed/static/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/'
+MEDIA_URL = '/var/www/lifecubomed/media/'
 
-STATIC_URL = '/static/'
+STATIC_URL = '/var/www/lifecubomed/static/'
 
 STATICFILES_DIRS = (
     os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/"),
@@ -121,7 +121,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 CMS_TEMPLATES = (
-    ('sample.html', 'Sample Template'),
     ('home.html', 'Home Template'),
     ('page.html', 'Page Template'),
     ('map_page.html', 'Map Page Template'),
@@ -130,7 +129,7 @@ CMS_TEMPLATES = (
 )
 
 # i18n and l10n
-CMS_HIDE_UNTRANSLATED = False
+CMS_HIDE_UNTRANSLATED = True
 
 CMS_PLACEHOLDER_CONF = {
     'new-image': {
