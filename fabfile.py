@@ -6,7 +6,9 @@ from fabric.contrib.project import rsync_project
 from fab_settings import PROJECT_NAME, PROJECT_HOST, PROJECT_USER, PROJECT_DB_NAME, SUDOER_USER
 
 
-env.project_name = '<project_name>'
+env.forward_agent = True
+env.project_name = PROJECT_NAME
+env.project_user = PROJECT_USER
 env.roledefs = {
     PROJECT_USER: ['%s@%s' % (PROJECT_USER, PROJECT_HOST)],
     'sudoer': ['%s@%s' % (SUDOER_USER, PROJECT_HOST)]
@@ -27,14 +29,14 @@ def git_status():
 @roles('%s' % PROJECT_USER)
 def pushpull():
     local("git push origin master")
-    with settings(user='jellyrisk'):
+    with settings(user=PROJECT_USER):
         with cd(env['project_path']):
             run('git pull')
 
 
 @roles('sudoer')
 def reloadapp():
-    sudo('supervisorctl restart jellyrisk', shell=False)
+    sudo('supervisorctl restart %s' % env.project_name, shell=False)
     sudo('service nginx reload', shell=False)
 
 
@@ -72,7 +74,7 @@ def _run_manage(command):
     run("%s ./manage.py %s" % (env['python_path'], command))
 
 def _dump_mysql_data(file_path):
-    return 'mysqldump --defaults-file="/home/jellyrisk/.mysqldump_cnf" --single-transaction %s > %s' % (PROJECT_DB_NAME, file_path)
+    return 'mysqldump --defaults-file=".mysqldump_cnf" --single-transaction %s > %s' % (PROJECT_DB_NAME, file_path)
 
 @roles('%s' % PROJECT_USER)
 def syncmedia():
