@@ -79,3 +79,16 @@
   background-padding: 1ex;
 }
 
+#sting {
+  padding-left: 9px;
+  border-radius: 4px;
+  margin-top: 1ex;
+  color: #CCCCCC;
+  alignment-adjust: central;
+}
+
+  #sting .plugin_picture img {
+   height: 32px;
+   width: 26px;
+   float: left;
+  }
