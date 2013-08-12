@@ -74,9 +74,9 @@ STATIC_ROOT = '/var/www/lifecubomed/static/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/var/www/lifecubomed/media/'
+MEDIA_URL = '/media/'
 
-STATIC_URL = '/var/www/lifecubomed/static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/"),
