@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block base_content %}
+    {% addtoblock "css" %}
+      <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
+      <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
+      <link rel="stylesheet" href="{{ STATIC_URL }}css/gallery.css">
+    {% endaddtoblock %}
+ <div id"wrapper">    
+ 	<div id="header_image" align="center">
+      {% placeholder "header_image" %}
+    </div>
+    <div id="left">
+     <div id="dynamic_menu">
+       <ul id="nav">
+         {% show_menu 0 100 0 100%}
+       </ul>
+     </div>
+   </div>
+   <div id="center">
+      {% block page_content %}
+      <div id="page_content">
+        {% placeholder base_content %}
+      </div>
+      <div id="sting_protocol" align="center">
+         	 {% placeholder "img_protocol" %}
+             {% placeholder "sting_protocol" %}
+      </div>
+      {% endblock %}
+   </div>
+    <div id="right">
+     <div id="avista" align="center">
+        </br>
+        </br>
+        {% placeholder "avista" %}	
+     </div>
+      <div id="life" align="center">
+        	 </br>
+             </br>         
+         {% placeholder "contact" %}
+     </div> 
+    </div>	
+ </div>
+{% endblock %}

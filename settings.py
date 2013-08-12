@@ -126,6 +126,8 @@ CMS_TEMPLATES = (
     ('map_page.html', 'Map Page Template'),
     ('new.html', 'Single News Template'),
     ('contact.html', 'Contact Template'),
+    ('page2c.html', 'Page Template 2 colum'),
+
 )
 
 # i18n and l10n
