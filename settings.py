@@ -26,14 +26,32 @@ LANGUAGES = (
 
 DEFAULT_LANGUAGE = 0
 
-CMS_LANGUAGES = (
-    ('es', gettext(U'Español')),
-    ('en', gettext('English')),
-    ('it', gettext('Italiano')),
-    ('fr', gettext(U'Français')),
-)
-
-CMS_FRONTEND_LANGUAGES =('es','en','fr','it')
+CMS_LANGUAGES = {
+    1: [
+        {
+            'code': 'es',
+            'name': gettext(u'Español'),
+            'fallbacks': ['en'],
+        },
+        {
+            'code': 'en',
+            'name': gettext(u'English'),
+        },
+        {
+            'code': 'it',
+            'name': gettext(u'Italiano'),
+        },
+        {
+            'code': 'fr',
+            'name': gettext(U'Français'),
+        },
+        ],
+    "default": {
+        'public': True,
+        'hide_untranslated': False,
+        'redirect_on_fallback': False
+        }
+}
 
 DATABASES = {
     'default': {
@@ -130,9 +148,6 @@ CMS_TEMPLATES = (
 
 )
 
-# i18n and l10n
-CMS_HIDE_UNTRANSLATED = True
-
 CMS_PLACEHOLDER_CONF = {
     'new-image': {
         'plugins': ['PicturePlugin'],
@@ -182,7 +197,7 @@ INSTALLED_APPS = (
     'imagestore.imagestore_cms',
     'tinymce',
     'cmsplugin_flickr_slideshow',
-    'cmsplugin_gallery',        
+    'cmsplugin_gallery',
 )
 
 LOGGING = {

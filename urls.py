@@ -1,17 +1,20 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.contrib import admin
 from django.views.generic import RedirectView
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = i18n_patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
     url(r'^', include('cms.urls')),
+)
+
+
+urlpatterns += patterns('',
+    url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
        (r'^tinymce/', include('tinymce.urls')),
-           
-    
 )
 
 if settings.DEBUG:
