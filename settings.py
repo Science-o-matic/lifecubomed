@@ -145,7 +145,7 @@ CMS_TEMPLATES = (
     ('new.html', 'Single News Template'),
     ('contact.html', 'Contact Template'),
     ('page2c.html', 'Page Template 2 colum'),
-
+    ('page2.html', 'Page Template special'),
 )
 
 CMS_PLACEHOLDER_CONF = {
