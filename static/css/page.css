@@ -92,9 +92,7 @@
    width: 32px;
    float: left;
   }
-  #st .plugin_picture img {
-   float: center;
-  }
+
   
 #partner .plugin_picture img {
        height: 71px;
@@ -102,6 +100,8 @@
        float: center;
      }
 
-
+#page_content .plugin_picture img  {
+	float: center;
+}
 
 
