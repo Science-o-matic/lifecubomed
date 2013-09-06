@@ -104,4 +104,8 @@
 	float: center;
 }
 
-
+#social .plugin_picture img {
+   height: 30px;
+   width: 30px;
+   float: center;
+  }
