@@ -198,7 +198,6 @@ INSTALLED_APPS = (
     'tinymce',
     'cmsplugin_flickr_slideshow',
     'cmsplugin_gallery',
-    'cmsplugin_youtube',
 )  
 
 LOGGING = {
