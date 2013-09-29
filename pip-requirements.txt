@@ -6,7 +6,7 @@ MySQL-python==1.2.4
 ipython==0.13.2
 Fabric==1.6.0
 django-cms==2.4.2
-PIL==1.1.7
+pillow
 cmsplugin-embedded-pages==0.0.4
 django-filer==0.9.5
 cmsplugin-contact==1.0.0
