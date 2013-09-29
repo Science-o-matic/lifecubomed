@@ -19,6 +19,8 @@ Initial setup
 1. If PIL is being installed wrong, no JPEG or PNG support can be avaliable. As a workaround, uninstall it, if pillow has been correctly installed:
 
         pip uninstall PIL
+        pip uninstall pillow
+        pip install pillow
 
 1. Edit settings.py
    - Set the languages you want to have avaliable, and the default one, in LANGUAGES and DEFAULT_LANGUAGE settings.
