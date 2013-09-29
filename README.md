@@ -16,6 +16,10 @@ Initial setup
 
         pip install -r pip-requirements.txt
 
+1. If PIL is being installed wrong, no JPEG or PNG support can be avaliable. As a workaround, uninstall it, if pillow has been correctly installed:
+
+        pip uninstall PIL
+
 1. Edit settings.py
    - Set the languages you want to have avaliable, and the default one, in LANGUAGES and DEFAULT_LANGUAGE settings.
    - By default, sqlite3 db backend is used. You can change DATABASES setting to fit your needs.
@@ -45,4 +49,3 @@ Initial setup
 1. Now you should be able to run the development server.
 
         ./manage.py runserver
-
