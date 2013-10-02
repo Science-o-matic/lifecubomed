@@ -10,9 +10,8 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Martín Fuentes', 'fuentesmartin@gmail.com'),
-    ('Javi Fuentes', 'fuentesmartin@gmail.com'),
+    ('Antonio Barcia', 'antonio.barcia@gmail.com')
     ('Javi Fuentes', 'jfuentess@gmail.com'),
-
 )
 
 MANAGERS = ADMINS
@@ -198,7 +197,7 @@ INSTALLED_APPS = (
     'tinymce',
     'cmsplugin_flickr_slideshow',
     'cmsplugin_gallery',
-)  
+)
 
 LOGGING = {
     'version': 1,
