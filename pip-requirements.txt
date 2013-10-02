@@ -19,3 +19,4 @@ cmsplugin-gallery==0.5.3
 cmsplugin-flickr-slideshow==0.1
 django-tinymce==1.5.1
 pillow
+cmsplugin-youtube
