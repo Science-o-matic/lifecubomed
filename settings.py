@@ -197,7 +197,7 @@ INSTALLED_APPS = (
     'tinymce',
     'cmsplugin_flickr_slideshow',
     'cmsplugin_gallery',
-    'cmsplugin_youtube'
+    'cmsplugin_youtube',
 )
 
 LOGGING = {
@@ -252,3 +252,7 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+
+CMS_SIMPLEYOUTUBE_AUTOPLAY = False
+
