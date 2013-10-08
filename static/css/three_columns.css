@@ -1,0 +1,26 @@
+#left_column {
+  float: left;
+  width: 33%;
+}
+
+#middle_column {
+  width: 33%;
+  float: right;
+}
+
+#right_column {
+  margin: 0 auto;
+  width: 33%;
+  display: inline-block;
+}
+
+.plugin_file a {
+  text-align: center;
+  background: none;
+  margin: 0;
+}
+
+  .filesize {
+    display: none;
+  }
+
