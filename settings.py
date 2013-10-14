@@ -201,6 +201,13 @@ INSTALLED_APPS = (
     'cmsplugin_youtube',
 )
 
+LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -225,15 +232,21 @@ LOGGING = {
         'logfile': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': PROJECT_DIR + "/logfile.log",
+            'filename': LOGFILE,
             'maxBytes': 50000,
             'backupCount': 2,
             'formatter': 'verbose',
         },
         'mail_admins': {
             'level': 'ERROR',
+            'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler',
         }
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+            }
     },
     'loggers': {
         'django': {
@@ -249,11 +262,4 @@ LOGGING = {
     }
 }
 
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
-
 CMS_SIMPLEYOUTUBE_AUTOPLAY = False
-
