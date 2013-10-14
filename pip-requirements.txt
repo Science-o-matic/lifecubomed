@@ -9,7 +9,6 @@ django-cms==2.4.2
 cmsplugin-embedded-pages==0.0.4
 django-filer==0.9.5
 cmsplugin-contact==1.0.0
-imagestore==2.7.6
 django-haystack==2.0.1-dev
 Whoosh==2.5.1
 gunicorn==0.17.4
@@ -18,5 +17,6 @@ cmsplugin-fbalbum==0.5.6
 cmsplugin-gallery==0.5.3
 cmsplugin-flickr-slideshow==0.1
 django-tinymce==1.5.1
-pillow
 cmsplugin-youtube
+pillow
+git+https://github.com/hovel/imagestore.git
