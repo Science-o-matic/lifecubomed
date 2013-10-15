@@ -24,3 +24,17 @@
     display: none;
   }
 
+#left_column .plugin_picture img {
+       height: 310px;
+       width:  220px;
+     }
+ 
+#right_column .plugin_picture img {
+       height: 310px;
+       width:  220px;
+     }
+
+#middle_column .plugin_picture img {
+       height: 310px;
+       width:  220px;
+     }
