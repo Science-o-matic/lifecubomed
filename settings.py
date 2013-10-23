@@ -199,6 +199,7 @@ INSTALLED_APPS = (
     'cmsplugin_flickr_slideshow',
     'cmsplugin_gallery',
     'cmsplugin_youtube',
+    'cms.plugins.flash',
 )
 
 LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
