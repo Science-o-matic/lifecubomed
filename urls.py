@@ -13,8 +13,10 @@ urlpatterns = i18n_patterns('',
 
 
 urlpatterns += patterns('',
-    url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
-       (r'^tinymce/', include('tinymce.urls')),
+                        url(r'^favicon\.ico$',
+                            RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
+                        url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
+                        url(r'^tinymce/', include('tinymce.urls')),
 )
 
 if settings.DEBUG:
