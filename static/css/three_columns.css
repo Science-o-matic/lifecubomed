@@ -52,3 +52,18 @@
        height: 88px;
        width: 245px;
      }
+ #left_columna {
+  float: left;
+  width: 33%;
+}
+
+#middle_columna {
+  width: 33%;
+  float: right;
+}
+
+#right_columna {
+  margin: 0 auto;
+  width: 33%;
+  display: inline-block;
+}
