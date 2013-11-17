@@ -38,3 +38,17 @@
        height: 310px;
        width:  220px;
      }
+#left_columna .plugin_picture img {
+       height: 245px;
+       width:   88px;
+     }
+ 
+#right_columna .plugin_picture img {
+       height: 245px;
+       width:   88px;
+     }
+
+#middle_columna .plugin_picture img {
+       height: 245px;
+       width:   88px;
+     }
