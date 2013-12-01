@@ -147,7 +147,7 @@ CMS_TEMPLATES = (
     ('page2.html', 'Page Template special'),
     ('page3c.html','Page template 3 colum'),
     ('page3cb.html','Page template 3 colum esp'),
-
+    ('page3cnews.html','Page template 3 colum news'),
 )
 
 CMS_PLACEHOLDER_CONF = {
