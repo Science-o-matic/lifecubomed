@@ -3,7 +3,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.contrib import admin
 from django.views.generic import RedirectView
-from django.contrib.auth.views import login
+from django.contrib.auth.views import login, logout
 
 admin.autodiscover()
 
@@ -19,6 +19,8 @@ urlpatterns += patterns('',
                         url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
                         url(r'^tinymce/', include('tinymce.urls')),
                         url(r'^accounts/login/$', login),
+                        url(r'^accounts/logout/$', logout),
+
 )
 
 if settings.DEBUG:
