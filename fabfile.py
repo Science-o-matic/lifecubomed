@@ -27,12 +27,12 @@ def git_status():
 
 
 @roles('%s' % PROJECT_USER)
-def pushpull():
-    local("git push origin master")
+def _git_update(branch):
     with settings(user=PROJECT_USER):
         with cd(env['project_path']):
-            run('git pull')
-
+            run('git fetch --all')
+            run('git checkout %s' % branch)
+            run('git reset --hard origin/%s' % branch)
 
 @roles('sudoer')
 def reloadapp():
@@ -41,8 +41,8 @@ def reloadapp():
 
 
 @roles('%s' % PROJECT_USER)
-def release(run_migrate=True, static=True):
-    pushpull()
+def release(run_migrate=True, static=True, branch='master'):
+    _git_update(branch)
     run('%s install -r %spip-requirements.txt' %
         (env['pip_path'], env['project_path']))
     with cd(env['project_path']):
@@ -67,7 +67,7 @@ def pulldb():
     get(dump_file, '.')
     run('rm %s' % dump_file)
     if confirm("Load dumped remote data into local DB?"):
-        local('mysql --defaults-file=".mysqldump_cnf" %s < %s' % (env['project_name'], filename))
+        local('mysql --defaults-file=".mysqldump" %s < %s' % (env['project_name'], filename))
 
 
 def _run_manage(command):
