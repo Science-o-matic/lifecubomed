@@ -37,17 +37,21 @@
 
 {% cms_toolbar %}
 <div id="wrapper">
- <div id="language">	
-  {% language_chooser "language_chooser.html" %}
-  </div> 
+  <div id="language">
+    {% language_chooser "language_chooser.html" %}
+  </div>
+  <div id="user_actions">
+    <p>¡Ingresa tus avistamientos de Medusas!</p>
+    <a href="{% url 'django.contrib.auth.views.login' %}?next={{request.path}}">Inicia sesión</a>
+    <p>¿Aún no estás registrado?</p>
+    <a href="">Regístrate</a>
+  </div>
   {% block base_content %}{% endblock %}
   <div id="footer">
     <div id="right_logos">
-     
     </div>
     <div id="left_logos">
       <p>
-     
     </div>
   </div>
   <div id="disclaimer">
