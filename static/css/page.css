@@ -1,8 +1,8 @@
 #page_content {
-	background-color: transparent;
-	text-align: justify;
+    background-color: transparent;
+    text-align: justify;
 }
-		
+
 #home {
     border: none;
     margin: 8px 0px;
@@ -56,7 +56,7 @@
           padding-left: 0;
           margin-left: 0;
         }
-  
+
           #dynamic_menu li.ancestor ul li.sibling {
             padding-left: 0;
             display: block;
@@ -87,13 +87,13 @@
   alignment-adjust: central;
 }
 
-  #sting .plugin_picture img {
+#page2c_content .plugin_picture img {
    height: 26px;
    width: 32px;
    float: left;
-  }
+ }
 
-  
+
 #partner .plugin_picture img {
        height: 71px;
        width: 169px;
@@ -101,7 +101,7 @@
      }
 
 #page_content2 .plugin_picture img {
-	float: center;
+    float: center;
 }
 
 #social .plugin_picture img {
