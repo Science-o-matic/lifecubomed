@@ -18,7 +18,8 @@ urlpatterns += patterns('',
                             RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
                         url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
                         url(r'^tinymce/', include('tinymce.urls')),
-                        url(r'^users/', include('users.urls')),
+                        # Fallback for URLs not handled by CMS pages (i.e. logout)
+                        url(r'^accounts/', include('accounts.urls')),
 )
 
 if settings.DEBUG:
