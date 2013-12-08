@@ -18,9 +18,7 @@ urlpatterns += patterns('',
                             RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
                         url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
                         url(r'^tinymce/', include('tinymce.urls')),
-                        url(r'^accounts/login/$', login),
-                        url(r'^accounts/logout/$', logout),
-
+                        url(r'^users/', include('users.urls')),
 )
 
 if settings.DEBUG:
