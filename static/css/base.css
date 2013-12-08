@@ -6,28 +6,28 @@ body {
    color: #CCCCCC;
 }
 
-#wrapper {
+#page {
   width: 1500px;
   margin: 5px auto 0 auto;
 }
 
-#left { 
+#left {
    float: left;
-   width:250px; 
+   width:250px;
    padding: 12px;
    padding-top: .5ex;
 }
 
 #header_image {
  padding-top: 20px;
- padding-right: 5px;	
+ padding-right: 5px;
 }
 
 #center {
      float:left;
      width: 900px;
      padding: 12px;
-     padding-top: .5ex;    
+     padding-top: .5ex;
 }
 
 #right {
@@ -96,6 +96,10 @@ body {
    color: #CCCCCC;
 }
 
+#user_actions {
+    float: right;
+}
+
 img {
 border:1px solid transparent;
 -webkit-border-radius: 10px;
@@ -120,7 +124,7 @@ border-radius: 10px;
    width: 80px;
    float: left;
   }
-  
+
   #sting_protocol p.plugin_file {
     margin: 0;
   }
@@ -136,8 +140,8 @@ border-radius: 10px;
 
     .filesize {
       display: none;
-    }    
-    
+    }
+
 #avista .plugin_picture img {
        height: 90px;
        width: 250px;
@@ -146,9 +150,9 @@ border-radius: 10px;
 #life .plugin_picture img {
        height: 243px;
        width: 233px;
-     } 
-     
+     }
+
 #noticias .plugin_picture img {
        height: 281px;
        width: 200px;
-     } 
+     }

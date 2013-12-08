@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags i18n %}
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -36,25 +36,107 @@
   <![endif]-->
 
 {% cms_toolbar %}
-<div id="wrapper">
- <div id="language">	
-  {% language_chooser "language_chooser.html" %}
-  </div> 
-  {% block base_content %}{% endblock %}
-  <div id="footer">
-    <div id="right_logos">
-     
-    </div>
-    <div id="left_logos">
-      <p>
-     
-    </div>
+
+<div id="page">
+  <div id="language">
+    {% language_chooser "language_chooser.html" %}
   </div>
-  <div id="disclaimer">
-    {% placeholder "disclaimer" %}
+  <div id="user_actions">
+    {% if user.is_authenticated %}
+      <a href="">Reportar avistamiento</a> |
+      <a href="{% url 'django.contrib.auth.views.logout' %}?next={{request.path}}">
+        Logout
+      </a>
+    {% else %}
+      <p>¡Ingresa tus avistamientos de Medusas!</p>
+      <a href="{% page_url 'accounts_login' %}?next={{request.path}}">Inicia sesión</a>
+      <p>¿Aún no estás registrado?</p>
+      <a href="">Regístrate</a>
+    {% endif %}
   </div>
+
+ <div id="wrapper">
+   <div id="header_image" align="center">
+        {% placeholder "header_image" %}
+   </div>
+   <div id="left">
+     <div id="dynamic_menu">
+        <ul id="nav">
+          {% show_menu 0 100 0 100 %}
+        </ul>
+      </div>
+     <div id="life">
+         </br>
+         </br>
+         {% placeholder "life" inherit %}
+     </div>
+      </br>
+   </div>
+   <div id="center">
+     {% block base_content %}{% endblock %}
+   </div>
+   <div id="right">
+     <div id="search">
+       <form method="get" action="/search">
+         <input type="text" name="q" value""/>
+         {% ifequal LANGUAGE_CODE  'en' %}
+         <input type="submit" value="{% trans "Search" %}"/>
+         {% endifequal %}
+         {% ifequal LANGUAGE_CODE  'es' %}
+         <input type="submit" value="{% trans "Buscar" %}"/>
+         {% endifequal %}
+         {% ifequal LANGUAGE_CODE  'it' %}
+         <input type="submit" value="{% trans "Cerca" %}"/>
+         {% endifequal %}
+         {% ifequal LANGUAGE_CODE  'fr' %}
+         <input type="submit" value="{% trans "Rechercher" %}"/>
+         {% endifequal %}
+       </form>
+     </div>
+     </br>
+     <div id="avista" align="center">
+       {% placeholder "avista" %}
+     </div>
+     <div id="sting_protocol" align="center">
+       </br>
+       {% placeholder "img_protocol" %}
+       {% placeholder "sting_protocol" %}
+     </div>
+     <div id="life" align="center">
+       </br></br>
+       {% placeholder "contact" %}
+     </div>
+       </br></br>
+       <div id="facebook" align="center">
+         {% ifequal LANGUAGE_CODE  'en' %}
+         <span>{% trans "Follow us on" %}:</span>
+         {% endifequal %}
+         {% ifequal LANGUAGE_CODE  'es' %}
+         <span>{% trans "Síguenos en" %}:</span>
+         {% endifequal %}
+         {% ifequal LANGUAGE_CODE  'it' %}
+         <span>{% trans "Seguici su" %}:</span>
+             {% endifequal %}
+         {% ifequal LANGUAGE_CODE  'fr' %}
+         <span>{% trans "Suivez-nous sur" %}:</span>
+         {% endifequal %}
+         <a href="https://www.facebook.com/CubomedProject?ref=hl" target="new"><img src="{{ STATIC_URL }}img/facebook.png"/></a>
+         <a href="https://twitter.com/cubomed" target="new"><img src="{{ STATIC_URL }}img/twitter.png"/></a>
+       </div>
+   </div>
+ </div>
+ <div id="footer">
+   <div id="right_logos">
+   </div>
+   <div id="left_logos">
+     <p></p>
+   </div>
+ </div>
+ <div id="disclaimer">
+   {% placeholder "disclaimer" %}
+ </div>
 </div>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
 <script>
 var _gaq=[['_setAccount','UA-40779460-1'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

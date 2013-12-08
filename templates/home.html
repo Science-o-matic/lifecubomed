@@ -2,112 +2,92 @@
 {% load cms_tags menu_tags sekizai_tags i18n %}
 
 {% block base_content %}
-    {% addtoblock "css" %}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
-    {% endaddtoblock %}
- <div id"wrapper"> 
-         <div id="header_image" align="center">
-        {% placeholder "header_image" %}
-     </div>
-          <div id="left">
-      <div id="dynamic_menu">
-        <ul id="nav">
-          {% show_menu 0 100 0 100 %}
-        </ul>
-      </div>
-       <div id="life"> 
-         </br>
-         </br>
-         {% placeholder "life" %}
-       </div>  
-      </br>
-     </div>
-     <div id="center">         
-            <div id="project_description" align="center">
+
+{% addtoblock "css" %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/home.css">
+{% endaddtoblock %}
+
+<div id="project_description" align="center">
         </br>
         {% placeholder "project_description" %}
         </br>
         <div id="img" align="center">
-        {% placeholder "picture_gallery-carrusel" %}
+          {% placeholder "picture_gallery-carrusel" %}
         </div>
         {% placeholder "project_description-2" %}
-        </div>   
-        <div id="news_tools">
-          <div id="news">
-                  <div class="new_text">
-                {% placeholder "new-text-1" %}
-             <p></p>
-            </div>
-            <div class="new">
-              {% placeholder "new-image-1" %}
-              {% placeholder "new-image-1a" %}
-              {% placeholder "new-image-1b" %}  
-              {% placeholder "new-image-1c" %}
-            </div>
-            <div class="new_text">
-                {% placeholder "new-text-2" %}
-                <p></p>
-              </div>
-            <div class="new">
-              {% placeholder "new-image-2" %}
-              {% placeholder "new-image-2a" %}
-              {% placeholder "new-image-2b" %}
-              {% placeholder "new-image-2c" %}
-            </div>
-          </div>
-        </div>
-     </div>
-     <div id="right">
-            <div id="search">
-           <form method="get" action="/search">
-            <input type="text" name="q" value""/>
-          {% ifequal LANGUAGE_CODE  'en' %}
-            <input type="submit" value="{% trans "Search" %}"/>
-          {% endifequal %}
-          {% ifequal LANGUAGE_CODE  'es' %}
-            <input type="submit" value="{% trans "Buscar" %}"/>
-          {% endifequal %}
-          {% ifequal LANGUAGE_CODE  'it' %}
-            <input type="submit" value="{% trans "Cerca" %}"/>
-          {% endifequal %}
-          {% ifequal LANGUAGE_CODE  'fr' %}
-            <input type="submit" value="{% trans "Rechercher" %}"/>
-          {% endifequal %}
-          </form>
-        </div>
-        </br>
-               <div id="avista" align="center">
-         {% placeholder "avista" %}        
-         </div>
-         <div id="sting_protocol" align="center">
-             </br>
-                  {% placeholder "img_protocol" %}
-             {% placeholder "sting_protocol" %}
-        </div>
-        <div id="life" align="center">
-                 </br>
-             </br>         
-         {% placeholder "contact" %}
-        </div> 
-         </br>
-           </br>
-        <div id="facebook" align="center">
-           {% ifequal LANGUAGE_CODE  'en' %}
-          <span>{% trans "Follow us on" %}:</span>
-          {% endifequal %}
-          {% ifequal LANGUAGE_CODE  'es' %}
-          <span>{% trans "Síguenos en" %}:</span>
-          {% endifequal %}
-          {% ifequal LANGUAGE_CODE  'it' %}
-          <span>{% trans "Seguici su" %}:</span>
-          {% endifequal %}
-          {% ifequal LANGUAGE_CODE  'fr' %}
-          <span>{% trans "Suivez-nous sur" %}:</span>
-          {% endifequal %}
-          <a href="https://www.facebook.com/CubomedProject?ref=hl" target="new"><img src="{{ STATIC_URL }}img/facebook.png"/></a>
-          <a href="https://twitter.com/cubomed" target="new"><img src="{{ STATIC_URL }}img/twitter.png"/></a>
-         </div>
-     </div>
-</div>      
+</div>
+<div id="news_tools">
+  <div id="news">
+    <div class="new_text">
+      {% placeholder "new-text-1" %}
+      <p></p>
+    </div>
+    <div class="new">
+      {% placeholder "new-image-1" %}
+      {% placeholder "new-image-1a" %}
+      {% placeholder "new-image-1b" %}
+      {% placeholder "new-image-1c" %}
+    </div>
+    <div class="new_text">
+      {% placeholder "new-text-2" %}
+      <p></p>
+    </div>
+    <div class="new">
+      {% placeholder "new-image-2" %}
+      {% placeholder "new-image-2a" %}
+      {% placeholder "new-image-2b" %}
+      {% placeholder "new-image-2c" %}
+    </div>
+  </div>
+</div>
+</div>
+<div id="right">
+  <div id="search">
+    <form method="get" action="/search">
+      <input type="text" name="q" value""/>
+      {% ifequal LANGUAGE_CODE  'en' %}
+      <input type="submit" value="{% trans "Search" %}"/>
+      {% endifequal %}
+      {% ifequal LANGUAGE_CODE  'es' %}
+      <input type="submit" value="{% trans "Buscar" %}"/>
+      {% endifequal %}
+      {% ifequal LANGUAGE_CODE  'it' %}
+      <input type="submit" value="{% trans "Cerca" %}"/>
+      {% endifequal %}
+      {% ifequal LANGUAGE_CODE  'fr' %}
+      <input type="submit" value="{% trans "Rechercher" %}"/>
+      {% endifequal %}
+    </form>
+  </div>
+  </br>
+  <div id="avista" align="center">
+    {% placeholder "avista" %}
+  </div>
+  <div id="sting_protocol" align="center">
+  </br>
+  {% placeholder "img_protocol" %}
+  {% placeholder "sting_protocol" %}
+  </div>
+  <div id="life" align="center">
+  </br></br>
+  {% placeholder "contact" %}
+  </div>
+  </br></br>
+  <div id="facebook" align="center">
+    {% ifequal LANGUAGE_CODE  'en' %}
+    <span>{% trans "Follow us on" %}:</span>
+    {% endifequal %}
+    {% ifequal LANGUAGE_CODE  'es' %}
+    <span>{% trans "Síguenos en" %}:</span>
+    {% endifequal %}
+    {% ifequal LANGUAGE_CODE  'it' %}
+    <span>{% trans "Seguici su" %}:</span>
+    {% endifequal %}
+    {% ifequal LANGUAGE_CODE  'fr' %}
+    <span>{% trans "Suivez-nous sur" %}:</span>
+    {% endifequal %}
+    <a href="https://www.facebook.com/CubomedProject?ref=hl" target="new"><img src="{{ STATIC_URL }}img/facebook.png"/></a>
+    <a href="https://twitter.com/cubomed" target="new"><img src="{{ STATIC_URL }}img/twitter.png"/></a>
+  </div>
+</div>
 {% endblock %}
