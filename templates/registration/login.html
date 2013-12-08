@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "page.html" %}
 
 {% load i18n sekizai_tags %}
 
@@ -7,14 +7,11 @@
   <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
 {% endaddtoblock %}
 
-{% block base_content %}
-  {% block page_content %}
-  <div id="page_content">
-    <form method="post" action="." id="login-form">{% csrf_token %}
-      {{ form.as_p }}
+{% block page_content %}
+  <form method="post" action="{% url 'django.contrib.auth.views.login' %}" id="login-form">
+    {% csrf_token %}
+    {{ form.as_p }}
       <input type="submit" value="{% trans 'Log in' %}" />
       <input type="hidden" name="next" value="{{ next }}" />
     </form>
-  </div>
-  {% endblock %}
 {% endblock %}
