@@ -148,7 +148,7 @@ CMS_TEMPLATES = (
     ('page3c.html','Page template 3 colum'),
     ('page3cb.html','Page template 3 colum esp'),
     ('page3cnews.html','Page template 3 colum news'),
-    ('registration/login.html','Users > Login template'),
+    ('registration/login.html','Users login template'),
 )
 
 CMS_PLACEHOLDER_CONF = {
@@ -204,7 +204,8 @@ INSTALLED_APPS = (
     'cmsplugin_gallery',
     'cmsplugin_youtube',
     'cms.plugins.flash',
-    'users',
+    'accounts',
+    'accounts.login',
 )
 
 LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
