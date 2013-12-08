@@ -188,6 +188,7 @@ INSTALLED_APPS = (
     'cms.plugins.file',
     'cms.plugins.snippet',
     'cms.plugins.googlemap',
+    'cms.plugins.inherit',
     'sekizai',
     'django_extensions',
     'cmsplugin_embeddedpages',
@@ -202,6 +203,7 @@ INSTALLED_APPS = (
     'cmsplugin_gallery',
     'cmsplugin_youtube',
     'cms.plugins.flash',
+    'users',
 )
 
 LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
