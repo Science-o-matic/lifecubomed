@@ -206,7 +206,10 @@ INSTALLED_APPS = (
     'cms.plugins.flash',
     'accounts',
     'accounts.login',
+    'registration'
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7
 
 LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
 
