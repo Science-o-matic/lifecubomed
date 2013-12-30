@@ -20,3 +20,4 @@ django-tinymce==1.5.1
 pillow
 git+https://github.com/hovel/imagestore.git
 hg+https://abarcia@bitbucket.org/abarcia/cmsplugin-youtube
+django-registration
