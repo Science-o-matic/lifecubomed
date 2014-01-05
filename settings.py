@@ -206,6 +206,7 @@ INSTALLED_APPS = (
     'cms.plugins.flash',
     'accounts',
     'accounts.login',
+    'accounts.register'
 )
 
 LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
