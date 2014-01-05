@@ -8,11 +8,10 @@
 {% endaddtoblock %}
 
 {% block page_content %}
-  <form method="post" action="{% url 'django.contrib.auth.views.login' %}" id="login-form">
-    asdads
+  <form method="post" action="" id="register-form">
     {% csrf_token %}
     {{ form.as_p }}
-      <input type="submit" value="{% trans 'Log in' %}" />
+      <input type="submit" value="{% trans 'Register' %}" />
       <input type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}

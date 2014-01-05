@@ -149,7 +149,7 @@ CMS_TEMPLATES = (
     ('page3cb.html','Page template 3 colum esp'),
     ('page3cnews.html','Page template 3 colum news'),
     ('registration/login.html','Accounts login template'),
-    ('registration/register.html','Accounts registration template'),
+    ('registration/registration_form.html','Accounts registration template'),
 )
 
 CMS_PLACEHOLDER_CONF = {
