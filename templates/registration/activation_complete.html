@@ -1,0 +1,12 @@
+{% extends "page.html" %}
+
+{% load i18n sekizai_tags %}
+
+{% addtoblock "css" %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
+{% endaddtoblock %}
+
+{% block page_content %}
+  {% trans "Your account has been activated correctly." %}
+{% endblock %}

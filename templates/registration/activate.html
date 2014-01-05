@@ -1,0 +1,12 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+
+
+{% block page_content %}
+  <p>
+  {% blocktrans with activation_key=activation_key %}
+  The activation key "{{ activation_key }}" is invalid and cannot be used to activate this account.
+  {% endblocktrans %}
+  </p>
+{% endblock %}
