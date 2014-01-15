@@ -17,25 +17,8 @@
       margin: 0;
       padding-left: 5px;
     }
-    
-#search {
-      margin: 0 auto 1ex auto;
-      background-color: ;
-      color: white;
-      border-radius: 4px;
-      height: 4.6ex;
-}
 
-  #search input {
-    float: right;
-    border: none;
-    margin: .5ex;
-    margin-top: .8ex;
-  }
-  #search input[type=text] {
-       width: 10em;
-  }
-  
+
   #news {
     float: none;
   }
@@ -77,9 +60,7 @@
     margin: 2ex auto 0 auto;
     width: 248px;
   }
-     
-#Counter {
-	padding-left: 50px;
-}    
- 
 
+#Counter {
+    padding-left: 50px;
+}
