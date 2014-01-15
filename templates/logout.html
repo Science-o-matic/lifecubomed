@@ -1,7 +1,0 @@
-{% load cms_tags menu_tags sekizai_tags %}
-
-<div id="logout">
-  {% if user.is_authenticated %}
-    <a href="/accounts/logout/?next={% page_url request.current_page.parent %}">Logout</a>
-  {% endif %}
-</div>
