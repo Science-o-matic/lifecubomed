@@ -125,6 +125,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+    'accounts.middleware.RemoveNextMiddleware'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
