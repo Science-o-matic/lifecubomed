@@ -209,7 +209,8 @@ INSTALLED_APPS = (
     'accounts',
     'accounts.login',
     'accounts.register',
-    'registration'
+    'registration',
+    'sights'
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
