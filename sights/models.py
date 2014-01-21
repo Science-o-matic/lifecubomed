@@ -6,6 +6,11 @@ class Jellyfish(models.Model):
     name = models.CharField(max_length=2000)
     image = models.ImageField(upload_to="jellyfishes", max_length=1000)
 
+    class Meta:
+        verbose_name_plural = "jellyfishes"
+
+    def __unicode__(self):
+        return self.name
 
 class Sight(models.Model):
     reporter = models.ForeignKey(User)
