@@ -4,5 +4,6 @@ from sights.views import SightReportView
 
 
 urlpatterns = patterns('',
-                       url(r'^$', login_required(SightReportView.as_view())),
+                       url(r'^$', login_required(SightReportView.as_view()),
+                           name="sights.report_sight"),
 )
