@@ -8,4 +8,5 @@ class SightReportForm(forms.ModelForm):
         model = Sight
         fields = ['date', 'jellyfish', 'jellyfish_size', 'jellyfish_quantity',
                   'description', 'description_extra', 'address', 'lat', 'lng',
+                  'image_name', 'image'
                   ]

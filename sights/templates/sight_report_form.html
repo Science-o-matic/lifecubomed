@@ -7,7 +7,7 @@
 {% endaddtoblock %}
 
 {% block page_content %}
-  <form method="post" action="" id="report-sight-form">
+  <form method="post" action="" id="report-sight-form" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
       <input type="submit" value="{% trans 'Save' %}" />
