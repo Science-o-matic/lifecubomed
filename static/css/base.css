@@ -156,3 +156,21 @@ border-radius: 10px;
        height: 281px;
        width: 200px;
      }
+
+#search {
+      margin: 0 auto 1ex auto;
+      background-color: ;
+      color: white;
+      border-radius: 4px;
+      height: 4.6ex;
+}
+
+  #search input {
+    float: left;
+    border: none;
+    margin: .5ex;
+    margin-top: .8ex;
+  }
+  #search input[type=text] {
+       width: 10em;
+  }

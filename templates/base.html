@@ -41,10 +41,9 @@
   <div id="language">
     {% language_chooser "language_chooser.html" %}
   </div>
-{% comment %}
   <div id="user_actions">
     {% if user.is_authenticated %}
-      <a href="">Reportar avistamiento</a> |
+      <a href="{% url 'sights.report_sight' %}">Reportar avistamiento</a> |
       <a href="{% url 'django.contrib.auth.views.logout' %}?next={{request.path}}">
         Logout
       </a>
@@ -52,13 +51,12 @@
       <p>¡Ingresa tus avistamientos de Medusas!</p>
       <a href="{% page_url 'accounts_login' %}?next={{request.path}}">Inicia sesión</a>
       <p>¿Aún no estás registrado?</p>
-      <a href="">Regístrate</a>
+      <a href="{% page_url 'accounts_register' %}">Regístrate</a>
     {% endif %}
   </div>
-{% endcomment %}
  <div id="wrapper">
    <div id="header_image" align="center">
-        {% placeholder "header_image" %}
+        {% placeholder "header_image" iherit %}
    </div>
    <div id="left">
      <div id="dynamic_menu">
@@ -96,16 +94,16 @@
      </div>
      </br>
      <div id="avista" align="center">
-       {% placeholder "avista" %}
+       {% placeholder "avista" inherit %}
      </div>
      <div id="sting_protocol" align="center">
        </br>
-       {% placeholder "img_protocol" %}
-       {% placeholder "sting_protocol" %}
+       {% placeholder "img_protocol" inherit %}
+       {% placeholder "sting_protocol" inherit %}
      </div>
      <div id="life" align="center">
        </br></br>
-       {% placeholder "contact" %}
+       {% placeholder "contact" inherit %}
      </div>
        </br></br>
        <div id="facebook" align="center">

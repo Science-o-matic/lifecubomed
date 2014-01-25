@@ -125,6 +125,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+    'accounts.middleware.RemoveNextMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -148,7 +149,9 @@ CMS_TEMPLATES = (
     ('page3c.html','Page template 3 colum'),
     ('page3cb.html','Page template 3 colum esp'),
     ('page3cnews.html','Page template 3 colum news'),
-    ('registration/login.html','Users login template'),
+    ('registration/login.html','Accounts login template'),
+    ('registration/registration_form.html','Accounts registration template'),
+    ('sight_report_form.html','Sight report template'),
 )
 
 CMS_PLACEHOLDER_CONF = {
@@ -165,9 +168,6 @@ CMS_PLACEHOLDER_CONF = {
         'name':gettext("New #2 Text"),
     },
 }
-
-
-IMAGESTORE_SHOW_USER = False
 
 ROOT_URLCONF = 'urls'
 
@@ -206,7 +206,18 @@ INSTALLED_APPS = (
     'cms.plugins.flash',
     'accounts',
     'accounts.login',
+    'accounts.register',
+    'registration',
+    'sights',
+    'sights.report'
 )
+
+# Imagestore settings
+IMAGESTORE_SHOW_USER = False
+
+# Registration/auth settings
+ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_REDIRECT_URL = '/'
 
 LOGFILE = os.path.join(PROJECT_DIR, "logfile.log")
 
@@ -214,6 +225,9 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGGING = {
     'version': 1,

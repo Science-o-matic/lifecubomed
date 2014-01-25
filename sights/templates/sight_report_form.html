@@ -3,15 +3,14 @@
 {% load i18n sekizai_tags %}
 
 {% addtoblock "css" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
 {% endaddtoblock %}
 
 {% block page_content %}
-  <form method="post" action="" id="login-form">
+  <form method="post" action="" id="report-sight-form" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-      <input type="submit" value="{% trans 'Log in' %}" />
+      <input type="submit" value="{% trans 'Save' %}" />
       <input type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}
