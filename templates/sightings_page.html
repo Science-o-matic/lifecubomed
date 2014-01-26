@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+
+{% load i18n cms_tags sekizai_tags %}
+
+{% block page_content %}
+  {% addtoblock "css" %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/map_page.css">
+  {% endaddtoblock %}
+
+  {% placeholder map %}
+  {% placeholder base_content %}
+
+  <div id="sightings-list">
+    <p id="count">XXX {% trans "sightings" %}</p>
+    <table>
+      <theader>
+        <th>{% trans "Photo" %}</th>
+        <th>{% trans "Date" %}</th>
+        <th>{% trans "Specimen" %}</th>
+        <th>{% trans "Reporter" %}</th>
+      </theader>
+    </table>
+  </div>
+
+{% endblock %}

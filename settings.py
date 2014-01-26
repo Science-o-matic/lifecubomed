@@ -141,7 +141,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 CMS_TEMPLATES = (
     ('home.html', 'Home Template'),
     ('page.html', 'Page Template'),
-    ('map_page.html', 'Map Page Template'),
+    ('sightings_page.html', 'Sightings Page Template'),
     ('new.html', 'Single News Template'),
     ('contact.html', 'Contact Template'),
     ('page2c.html', 'Page Template 2 colum'),
