@@ -24,9 +24,11 @@
     <div class="field inline">
       <input type="radio" id="known_specimen_type" checked="true" value="known" name="specimen_type"/>
       <label for="known_specimen_type">{% trans "Choose jellyfish specimen" %}</label>
+      <span class="help">{% trans "Click on jellyfish to input size and quantity" %}</span>
     </div>
     {% for jellyfish in jellyfishes %}
-    <div class="jellyfish_image" data-id="{{ jellyfish.id }}">
+    <div class="jellyfish_image {% if forloop.first %} selected {% endif %}"
+         data-id="{{ jellyfish.id }}">
       {% thumbnail jellyfish.image "180x160" crop="center" as im %}
       <img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}">
       <div class="jellyfish_name">{{ jellyfish.name }}</div>
@@ -48,7 +50,6 @@
         {{ form.description_extra }}
       </div>
     </div>
-
     <div class="field">
       {{ form.description.errors }}
       {{ form.description.label_tag }}

@@ -36,7 +36,7 @@ $(document).ready(function () {
   $("#other_jellyfish input[type=radio]").click(function () {
     if ($(this).is(':checked')) {
       $("#jellyfish_info").hide();
-      $("." + $(this).attr("class")).removeClass("selected");
+      $(".jellyfish_image").removeClass("selected");
     }
   });
 
