@@ -1,8 +1,10 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 from sights.models import Sight, Jellyfish
 
 
 class SightReportForm(forms.ModelForm):
+    required_css_class = 'required'
 
     class Meta:
         model = Sight

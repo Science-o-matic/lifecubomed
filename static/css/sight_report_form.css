@@ -1,0 +1,37 @@
+#report-sight-form {}
+
+  #report-sight-form p.required label {
+     font-weight: bold;
+  }
+
+  #report-sight-form textarea {
+     display: block;
+  }
+
+  #report-sight-form .jellyfish_image {
+      width: 150px;
+      height: 150px;
+      float: left;
+      margin-left: 1em;
+      margin-bottom: 2ex;
+      border: 4px solid transparent;
+      padding: 8px;
+  }
+
+  #report-sight-form .jellyfish_image:hover {
+      border: 4px solid white;
+      border-radius: 4px 4px 4px 4px;
+  }
+
+  #report-sight-form .jellyfish_image .jellyfish_name {
+      position: relative;
+      top: -30px;
+      padding-top: 4px;
+      padding-left: .5ex;
+      padding-bottom: 4px;
+      width: 100%;
+      background-color: rgba(0,0,0,0.8);
+      -webkit-border-radius: 0 0 4px 4px;
+      border-radius: 0 0 4px 4px;
+      text-align: center;
+  }
