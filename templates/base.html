@@ -49,7 +49,7 @@
       </a>
     {% else %}
       <p>¡Ingresa tus avistamientos de Medusas!</p>
-      <a href="{% page_url 'accounts_login' %}?next={{request.path}}">Inicia sesión</a>
+      <a href="{% page_url 'accounts_login' %}?next={% page_url 'sightings_page' %}">Inicia sesión</a>
       <p>¿Aún no estás registrado?</p>
       <a href="{% page_url 'accounts_register' %}">Regístrate</a>
     {% endif %}
