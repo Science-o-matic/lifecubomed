@@ -16,13 +16,16 @@
     <div id="form_errors">
       {{ form.non_field_errors }}
     </div>
+
     <div class="field inline">
       {{ form.date.errors }}
       {{ form.date.label_tag }}
       {{ form.date }}
     </div>
+
     <div class="field inline">
-      <input type="radio" id="known_specimen_type" checked="true" value="known" name="specimen_type"/>
+      <input type="radio" id="known_specimen_type" checked="true" value="known"
+             name="specimen_type"/>
       <label for="known_specimen_type">{% trans "Choose jellyfish specimen" %}</label>
       <span class="help">{% trans "Click on jellyfish to input size and quantity" %}</span>
     </div>
@@ -56,6 +59,31 @@
       {{ form.description.errors }}
       {{ form.description.label_tag }}
       {{ form.description }}
+    </div>
+    <div class="field">
+      {{ form.address.errors }}
+      {{ form.address.label_tag }}
+      {{ form.address }}
+    </div>
+    <div class="field inline">
+      {{ form.lat.errors }}
+      {{ form.lat.label_tag }}
+      {{ form.lat }}
+    </div>
+    <div class="field inline">
+      {{ form.lng.errors }}
+      {{ form.lng.label_tag }}
+      {{ form.lng }}
+    </div>
+    <div class="field inline">
+      {{ form.image_name.errors }}
+      {{ form.image_name.label_tag }}
+      {{ form.image_name }}
+    </div>
+    <div class="field inline">
+      {{ form.image.errors }}
+      {{ form.image.label_tag }}
+      {{ form.image }}
     </div>
     <input type="submit" value="{% trans 'Save' %}" />
   </form>
