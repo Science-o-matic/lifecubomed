@@ -1,0 +1,35 @@
+{% load i18n sekizai_tags thumbnail %}
+
+{% block page_content %}
+  {% addtoblock "css" %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/sightings-list.css">
+  {% endaddtoblock %}
+
+  <div id="sightings-list">
+    <p id="count">{{ count }} {% trans "sightings" %}</p>
+    <table>
+      <theader>
+        <th>{% trans "Photo" %}</th>
+        <th>{% trans "Date" %}</th>
+        <th>{% trans "Specimen" %}</th>
+        <th>{% trans "Reporter" %}</th>
+      </theader>
+      <tbody>
+        {% for sighting in sightings %}
+        <tr>
+          <td>
+            {% if sighting.image %}
+              {% thumbnail sighting.image "50x50" crop="center" as im %}
+                <img src="{{ im.url|safe }}" width="{{ im.width }}" height="{{ im.height }}" title="{{ sighting.image_name }}"/>
+              {% endthumbnail %}
+            {% endif %}
+          </td>
+          <td>{{ sighting.date }}</td>
+          <td>{{ sighting.jellyfish }}</td>
+          <td>{{ sighting.reporter }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
