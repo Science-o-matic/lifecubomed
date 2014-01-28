@@ -19,6 +19,7 @@ $(document).ready(function () {
   $(".jellyfish_image").click(function () {
     if ($("input[name=specimen_type]:checked").val() == "other") {
       $("#known_specimen_type").prop("checked", true);
+      $("#other_jellyfish_description").hide();
     }
     $("." + $(this).attr("class")).removeClass("selected");
     $(this).addClass("selected");
@@ -33,10 +34,14 @@ $(document).ready(function () {
     info.center();
   });
 
-  $("#other_jellyfish input[type=radio]").click(function () {
-    if ($(this).is(':checked')) {
+  $("input[name=specimen_type]").click(function () {
+    if ($(this).val() == 'other') {
       $("#jellyfish_info").hide();
       $(".jellyfish_image").removeClass("selected");
+      $("#other_jellyfish_description").show();
+    } else {
+      $("#other_jellyfish_description").val('');
+      $("#other_jellyfish_description").hide();
     }
   });
 

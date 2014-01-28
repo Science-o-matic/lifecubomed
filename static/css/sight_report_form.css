@@ -38,7 +38,6 @@
      color: grey;
   }
 
-
   #report-sight-form .jellyfish_image {
       width: 180px;
       height: 160px;
@@ -82,4 +81,8 @@
 
   #report-sight-form #jellyfish_info:last-child label {
       margin-top: 1ex;
+  }
+
+  #report-sight-form #other_jellyfish_description {
+      display: none;
   }
