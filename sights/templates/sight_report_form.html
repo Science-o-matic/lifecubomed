@@ -6,29 +6,55 @@
   {% addtoblock "css" %}
     <link rel="stylesheet" href="{{ STATIC_URL }}css/sight_report_form.css">
   {% endaddtoblock %}
+  {% addtoblock "js" %}
+    <script src="{{ STATIC_URL }}js/sight_report_form.js"></script>
+  {% endaddtoblock %}
+
   <h2>{% trans "Report an observation" %}</h2>
   <form method="post" action="" id="report-sight-form" enctype="multipart/form-data">
     {% csrf_token %}
     <div id="form_errors">
       {{ form.non_field_errors }}
     </div>
-    <div class="field">
+    <div class="field inline">
       {{ form.date.errors }}
-      <label for="id_date">Date</label>
+      {{ form.date.label_tag }}
       {{ form.date }}
     </div>
-    <fieldset id="jellyfish">
-      <p>{% trans "Choose jellyfish specimen" %}</p>
-      {% for jellyfish in jellyfishes %}
-        <div class="jellyfish_image">
-          {% thumbnail jellyfish.image "150x150" crop="center" as im %}
-          <a href="#"><img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}"></a>
-          <div class="jellyfish_name">{{ jellyfish.name }}</div>
-          {% endthumbnail %}
-        </div>
-      {% endfor %}
-    </fieldset>
+    <div class="field inline">
+      <input type="radio" id="known_specimen_type" checked="true" value="known" name="specimen_type"/>
+      <label for="known_specimen_type">{% trans "Choose jellyfish specimen" %}</label>
+    </div>
+    {% for jellyfish in jellyfishes %}
+    <div class="jellyfish_image" data-id="{{ jellyfish.id }}">
+      {% thumbnail jellyfish.image "180x160" crop="center" as im %}
+      <img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}">
+      <div class="jellyfish_name">{{ jellyfish.name }}</div>
+      {% endthumbnail %}
+    </div>
+    {% endfor %}
+    {{ form.jellyfish.as_hidden }}
+    <div id="jellyfish_info">
+      <label for="id_jellyfish_quantity">{% trans "Quantity" %}</label>
+      {{ form.jellyfish_quantity }}
+      <label for="id_size">{% trans "Size" %}</label>
+      {{ form.jellyfish_size }}
+    </div>
+    <div id="other_jellyfish" class="field inline">
+      <input type="radio" id="other_specimen_type" value="other" name="specimen_type" />
+      <label for="other_specimen_type">{% trans "Otros gelatinosos" %}</label>
+      <div id="other_jellyfish_description">
+        {{ form.description_extra.errors }}
+        {{ form.description_extra }}
+      </div>
+    </div>
+
+    <div class="field">
+      {{ form.description.errors }}
+      {{ form.description.label_tag }}
+      {{ form.description }}
+    </div>
+    <div class="field">
     <input type="submit" value="{% trans 'Save' %}" />
-    <input type="hidden" name="next" value="{{ next }}" />
   </form>
 {% endblock %}

@@ -1,26 +1,52 @@
 #report-sight-form {}
 
-  #report-sight-form p.required label {
+  #report-sight-form label {
+      display: block;
+      margin-bottom: .5ex;
+      margin-top: .5ex;
+  }
+
+  #report-sight-form .field {
+      margin-bottom: 2ex;
+      margin-top: 2ex;
+  }
+
+  #report-sight-form .inline label {
+      display: inline;
+  }
+
+  #report-sight-form #other_jellyfish {
+      display: block;
+      clear: left;
+  }
+
+  #report-sight-form #other_jellyfish_description {
+      margin-top: 1ex;
+  }
+
+  #report-sight-form em {
      font-weight: bold;
   }
 
   #report-sight-form textarea {
      display: block;
+     width: 100%;
   }
 
   #report-sight-form .jellyfish_image {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 160px;
       float: left;
       margin-left: 1em;
       margin-bottom: 2ex;
       border: 4px solid transparent;
-      padding: 8px;
+      border-radius: 4px 4px 4px 4px;
+      padding: 4px;
+      cursor: pointer;
   }
 
-  #report-sight-form .jellyfish_image:hover {
+  #report-sight-form .jellyfish_image:hover,  #report-sight-form .jellyfish_image.selected {
       border: 4px solid white;
-      border-radius: 4px 4px 4px 4px;
   }
 
   #report-sight-form .jellyfish_image .jellyfish_name {
@@ -34,4 +60,21 @@
       -webkit-border-radius: 0 0 4px 4px;
       border-radius: 0 0 4px 4px;
       text-align: center;
+  }
+
+  #report-sight-form #jellyfish_info {
+      display: none;
+      position: absolute;
+      background-color: rgba(0,0,0,0.8);
+      -webkit-border-radius: 4px 4px 4px 4px;
+      border-radius: 4px 4px 4px 4px;
+      padding: .5ex;
+  }
+
+  #report-sight-form #jellyfish_info label {
+      display: block;
+  }
+
+  #report-sight-form #jellyfish_info:last-child label {
+      margin-top: 1ex;
   }
