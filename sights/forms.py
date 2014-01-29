@@ -12,3 +12,9 @@ class SightReportForm(forms.ModelForm):
                   'description', 'description_extra', 'address', 'lat', 'lng',
                   'image_name', 'image'
                   ]
+        widgets = {
+            'address': forms.TextInput(attrs={'size': 100}),
+            'lat': forms.TextInput(attrs={'size': 10}),
+            'lng': forms.TextInput(attrs={'size': 10}),
+            'image_name': forms.TextInput(attrs={'size': 50}),
+        }

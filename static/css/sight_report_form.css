@@ -1,4 +1,9 @@
-#report-sight-form {}
+#report-sight-form { margin-top: 3ex; }
+
+  #report-sight-form em {
+      font-style: normal;
+     font-weight: bold;
+  }
 
   #report-sight-form label {
       display: block;
@@ -7,8 +12,17 @@
   }
 
   #report-sight-form .field {
+      clear: both;
       margin-bottom: 2ex;
       margin-top: 2ex;
+  }
+
+  #report-sight-form .field.required label {
+      font-weight: bold;
+  }
+
+  #report-sight-form label.required {
+      font-weight: bold;
   }
 
   #report-sight-form .inline label {
@@ -24,16 +38,23 @@
       margin-top: 1ex;
   }
 
-  #report-sight-form em {
-     font-weight: bold;
-  }
-
   #report-sight-form textarea {
      display: block;
      width: 100%;
   }
 
+  #report-sight-form input[type=submit] {
+      clear: both;
+      display: block;
+      background-color: #2287B5;
+      color: white;
+      padding: 1ex;
+      border-radius: 4px 4px 4px 4px;
+      border-color: transparent;
+  }
+
   #report-sight-form span.help {
+     clear: both;
      display: block;
      color: grey;
      margin-top: .5ex;
@@ -86,4 +107,20 @@
 
   #report-sight-form #other_jellyfish_description {
       display: none;
+  }
+
+  #report-sight-form #location {
+      float: left;
+  }
+
+  #report-sight-form #open-gmap {
+      cursor: pointer;
+      margin-left: 1ex;
+      margin-top: -.5ex;
+      float: left;
+  }
+
+  #report-sight-form #open-gmap span.help {
+      display: inline;
+      font-size: small;
   }

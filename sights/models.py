@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
 
 class Jellyfish(models.Model):
@@ -18,12 +19,14 @@ class Sight(models.Model):
     updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     date = models.DateField()
     description = models.TextField(null=True, blank=True)
-    description_extra = models.TextField(null=True, blank=True)
-    image_name = models.CharField(max_length=3000, null=True, blank=True)
-    image = models.ImageField(upload_to="user_images", max_length=3000, null=True, blank=True)
+    description_extra = models.TextField(null=True, blank=True,
+                                         verbose_name="Other specimen description")
+    image_name = models.CharField(max_length=3000, null=True, blank=True, verbose_name="Image name")
+    image = models.ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
+                              verbose_name="Image file")
     address = models.CharField(max_length=5000, null=True, blank=True)
-    lat = models.DecimalField(max_digits=6, decimal_places=3)
-    lng = models.DecimalField(max_digits=6, decimal_places=3)
+    lat = models.DecimalField(max_digits=6, decimal_places=3, verbose_name=_("Latitude"))
+    lng = models.DecimalField(max_digits=6, decimal_places=3, verbose_name=_("Longitude"))
     jellyfish = models.ForeignKey(Jellyfish)
     SIZES = (
         (1, '0 - 5 cm'),

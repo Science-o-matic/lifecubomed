@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   jQuery.fn.center = function () {
-    var t = this.parent().position().top - 8;
+    var t = this.parent().position().top - 4;
     var l = this.parent().position().left;
     var parent_pl = parseInt(this.parent().css("padding-left"));
     var parent_pr = parseInt(this.parent().css("padding-right"));
