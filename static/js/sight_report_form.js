@@ -16,7 +16,7 @@ $(document).ready(function () {
     return this;
   }
 
-  $(".jellyfish_image").click(function () {
+  jQuery.fn.handleJellyFishImageClick = function () {
     if ($("input[name=specimen_type]:checked").val() == "other") {
       $("#known_specimen_type").prop("checked", true);
       $("#other_jellyfish_description").hide();
@@ -32,6 +32,12 @@ $(document).ready(function () {
     info.hide();
     info.show();
     info.center();
+  }
+
+  $(".jellyfish_image.selected").handleJellyFishImageClick();
+
+  $(".jellyfish_image").click(function () {
+    $(this).handleJellyFishImageClick();
   });
 
   $("input[name=specimen_type]").click(function () {
