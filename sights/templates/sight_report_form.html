@@ -13,6 +13,8 @@
     <script src="{{ STATIC_URL }}js/vendor/jquery.ui.datepicker-{{ LANGUAGE_CODE }}.js"></script>
     {% endif %}
     <script src="{{ STATIC_URL }}js/sight_report_form.js"></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAIbiUXtBn4M-m9xrPsN_ybBSRWQA5s1F6hQDIpQQzOwSau2sgKRSbLglv4W8_UYQO-nAi2m0_GrirBw"
+            type="text/javascript"></script>
   {% endaddtoblock %}
 
   <h2>{% trans "Report sighting" %}</h2>
@@ -57,7 +59,7 @@
       <input type="radio" id="other_specimen_type" value="other" name="specimen_type" />
       <label for="other_specimen_type">{% trans "Other specimen" %}</label>
       <span class="help">
-        {% trans "Choose this option if specimen if none of above. You should provide a description." %}
+        {% trans "Choose this option if specimen is none of above. You should provide a description." %}
       </span>
       <div id="other_jellyfish_description">
         {{ form.description_extra.errors }}
@@ -90,7 +92,7 @@
           {% trans "Input latitude and longitude in decimal degrees. For instance <em>41.35, -40.2</em>" %}
       </span>
     </div>
-    <div id="gmap">
+    <div id="gmap" style="width: 700px; height: 500px">
     </div>
 
     <div class="field {% if form.description.field.required %}required{% endif %}">
