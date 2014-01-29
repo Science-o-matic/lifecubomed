@@ -2,15 +2,22 @@ function Map() {
   this.gmap_id = 'gmap';
   this.map = null;
   this.geocoder = null;
+  this.default_lat = 38.84031375122825;
+  this.default_lng = 0.11510465294122696;
 
-  this.load = function() {
+  this.load = function(lat, lng) {
+    this.lat = lat;
+    this.lng = lng;
+
     if (GBrowserIsCompatible()) {
       this.map = new GMap2(document.getElementById(this.gmap_id));
-      this.map.setCenter(new GLatLng(38.84031375122825,0.11510465294122696),10);
+      this.map.addControl(new GSmallMapControl());
       this.map.setMapType(G_SATELLITE_MAP);
+      this.map.addControl(new GMapTypeControl());
       this.geocoder = new GClientGeocoder();
 
-      GEvent.addListener(
+      this._setMarker();
+/*      GEvent.addListener(
         this.map, "click",
         function(marker, point) {
           if (marker) {
@@ -22,8 +29,21 @@ function Map() {
             document.form_mapa.coordenadas.value = point.y+","+point.x;
           }
         }
-      );
+      );*/
     }
+  };
+
+  this._setMarker = function () {
+    this.map.clearOverlays();
+    point = new GLatLng(this.lat, this.lng);
+    this.map.addOverlay(new GMarker(point));
+    this.map.setCenter(new GLatLng(this.lat || this.default_lat, this.lng || this.default_lng),10);
+  };
+
+  this.refreshMarker = function(lat, lng) {
+    this.lat = lat;
+    this.lng = lng;
+    this._setMarker();
   };
 
   this.showAddress = function(address, zoom) {
@@ -82,6 +102,7 @@ jQuery.fn.handleJellyFishImageClick = function () {
 }
 
 $(document).ready(function () {
+  map = new Map();
 
   $('input[name=date]').datepicker();
   $(".jellyfish_image.selected").handleJellyFishImageClick();
@@ -101,21 +122,39 @@ $(document).ready(function () {
     }
   });
 
-  $("#open_gmap").click(function () {
-    $("#gmap").toggle();
-    $("#show_gmap").toggle();
-    $("#hide_gmap").toggle();
-    src = $("#open_gmap img").attr("src")
-    if (src != $("#open_gmap img").attr("data-hide-src")) {
-      $("#open_gmap img").attr("src", $("#open_gmap img").attr("data-hide-src"));
+  $("#location input").keyup(function () {
+    lat = $("input[name=lat]").val();
+    lng = $("input[name=lng]").val();
+    if ($.isNumeric(lat) && $.isNumeric(lng)) {
+      $("#open_gmap").show();
     } else {
-      $("#open_gmap img").attr("src", $("#open_gmap img").attr("data-show-src"));
+      $("#open_gmap").hide();
     }
     if ($("#gmap").is(":visible")) {
-      map = new Map();
-      map.load();
-    } else {
-      GUnload();
+      map.refreshMarker(lat, lng);
+    }
+  });
+
+  $("#open_gmap").click(function () {
+    lat = $("input[name=lat]").val();
+    lng = $("input[name=lng]").val();
+    if (lat && lng) {
+      $("#gmap").toggle();
+      $("#show_gmap").toggle();
+      $("#hide_gmap").toggle();
+
+      src = $("#open_gmap img").attr("src")
+      if (src != $("#open_gmap img").attr("data-hide-src")) {
+        $("#open_gmap img").attr("src", $("#open_gmap img").attr("data-hide-src"));
+      } else {
+        $("#open_gmap img").attr("src", $("#open_gmap img").attr("data-show-src"));
+      }
+
+      if ($("#gmap").is(":visible")) {
+        map.load(lat, lng);
+      } else {
+        GUnload();
+      }
     }
   });
 

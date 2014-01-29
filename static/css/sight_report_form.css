@@ -114,6 +114,7 @@
   }
 
   #report-sight-form #open_gmap {
+      display: none;
       cursor: pointer;
       margin-left: 1ex;
       margin-top: -.5ex;
