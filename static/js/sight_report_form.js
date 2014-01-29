@@ -34,7 +34,9 @@ $(document).ready(function () {
     info.center();
   }
 
+  $('input[name=date]').datepicker();
   $(".jellyfish_image.selected").handleJellyFishImageClick();
+
 
   $(".jellyfish_image").click(function () {
     $(this).handleJellyFishImageClick();
