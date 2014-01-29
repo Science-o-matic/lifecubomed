@@ -43,7 +43,7 @@
   </div>
   <div id="user_actions">
     {% if user.is_authenticated %}
-      <a href="{% url 'sights.report_sight' %}">Reportar avistamiento</a> |
+      <a href="{% page_url 'report_sight' %}">{% trans "Report sighting" %}</a> |
       <a href="{% url 'django.contrib.auth.views.logout' %}?next={{request.path}}">
         Logout
       </a>
