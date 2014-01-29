@@ -1,12 +1,13 @@
-from sights.forms import SightReportForm
 from django.views.generic.edit import FormView
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
 from sights.models import Jellyfish
+from sights.forms import SightReportForm
 
 
 class SightReportView(FormView):
     template_name = 'sight_report_form.html'
     form_class = SightReportForm
-    success_url = '/'
 
     def get_context_data(self, **kwargs):
         context = super(SightReportView, self).get_context_data(**kwargs)
@@ -17,4 +18,4 @@ class SightReportView(FormView):
         sight = form.save(commit=False)
         sight.reporter_id = self.request.user.id
         sight.save()
-        return super(SightReportView, self).form_valid(form)
+        return HttpResponseRedirect(form.data["next"])

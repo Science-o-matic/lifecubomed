@@ -1,6 +1,6 @@
 {% extends "page.html" %}
 
-{% load i18n sekizai_tags thumbnail %}
+{% load i18n sekizai_tags thumbnail cms_tags %}
 
 {% block page_content %}
   {% addtoblock "css" %}
@@ -87,6 +87,8 @@
       {{ form.image.label_tag }}
       {{ form.image }}
     </div>
+
+    <input type="hidden" name="next" value="{% page_url 'sightings_page' %}" />
     <input type="submit" value="{% trans 'Save' %}" />
   </form>
 {% endblock %}
