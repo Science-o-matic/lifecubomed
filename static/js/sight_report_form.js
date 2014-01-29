@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     this.css("position","absolute");
     this.css("top", ((this.parent().height() - this.outerHeight()) / 2) + t + "px");
-    this.css("left", ((parent_width - width) / 2) + l + parent_pl + pl + parent_pr + pr + "px");
+    this.css("left", ((parent_width - width) / 2) + l + parent_pl + pl + "px");
     return this;
   }
 
