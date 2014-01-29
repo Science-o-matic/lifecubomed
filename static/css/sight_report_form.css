@@ -36,6 +36,7 @@
   #report-sight-form span.help {
      display: block;
      color: grey;
+     margin-top: .5ex;
   }
 
   #report-sight-form .jellyfish_image {
