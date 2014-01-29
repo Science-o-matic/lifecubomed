@@ -78,13 +78,19 @@
         {{ form.lng.label_tag }}
         {{ form.lng }}
       </div>
-      <div id="open-gmap">
-        <img src="{{ STATIC_URL }}img/gmapsicon.png" alt="" title="{% trans "See location in Google Maps" %}">
-        <span class="help">{% trans "Ver en Google Maps" %}</span>
+      <div id="open_gmap">
+        <img src="{{ STATIC_URL }}img/gmapsicon.png"
+             data-show-src="{{ STATIC_URL }}img/gmapsicon.png"
+             data-hide-src="{{ STATIC_URL }}img/gmapsicon-hide.png"
+             alt="" title="{% trans "See location in Google Maps" %}">
+        <span id="show_gmap" class="help">{% trans "Ver en Google Maps" %}</span>
+        <span id="hide_gmap" class="help">{% trans "Ocultar Google Maps" %}</span>
       </div>
       <span class="help">
           {% trans "Input latitude and longitude in decimal degrees. For instance <em>41.35, -40.2</em>" %}
       </span>
+    </div>
+    <div id="gmap">
     </div>
 
     <div class="field {% if form.description.field.required %}required{% endif %}">

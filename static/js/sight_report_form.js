@@ -53,4 +53,16 @@ $(document).ready(function () {
     }
   });
 
+  $("#open_gmap").click(function () {
+    $("#gmap").toggle();
+    $("#show_gmap").toggle();
+    $("#hide_gmap").toggle();
+    src = $("#open_gmap img").attr("src")
+    if (src != $("#open_gmap img").attr("data-hide-src")) {
+      $("#open_gmap img").attr("src", $("#open_gmap img").attr("data-hide-src"));
+    } else {
+      $("#open_gmap img").attr("src", $("#open_gmap img").attr("data-show-src"));
+    }
+  });
+
 });
