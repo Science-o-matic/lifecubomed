@@ -1,16 +1,113 @@
 {% extends "page.html" %}
 
-{% load i18n sekizai_tags %}
-
-{% addtoblock "css" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
-{% endaddtoblock %}
+{% load i18n sekizai_tags thumbnail cms_tags %}
 
 {% block page_content %}
-  <form method="post" action="" id="report-sight-form" enctype="multipart/form-data">
+  {% addtoblock "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/sight_report_form.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/ui-darkness/jquery-ui-1.10.4.custom.min.css">
+  {% endaddtoblock %}
+
+  {% addtoblock "js" %}
+    <script src="{{ STATIC_URL }}js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+    {% if LANGUAGE_CODE != "en" %}
+    <script src="{{ STATIC_URL }}js/vendor/jquery.ui.datepicker-{{ LANGUAGE_CODE }}.js"></script>
+    {% endif %}
+    <script src="{{ STATIC_URL }}js/sight_report_form.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="{{ STATIC_URL }}js/vendor/jquery.geocomplete.min.js"></script>
+   {% endaddtoblock %}
+
+  <h2>{% trans "Report sighting" %}</h2>
+
+  <form method="post" action="" id="sight_report_form" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-      <input type="submit" value="{% trans 'Save' %}" />
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
+
+    <div id="form_errors">
+      {{ form.non_field_errors }}
+    </div>
+
+    <div class="field inline {% if form.date.field.required %}required{% endif %}">
+      {{ form.date.errors }}
+      {{ form.date.label_tag }}
+      {{ form.date }}
+      <span class="help">{% trans "Enter sighting date, or choose it from calendar." %}</span>
+    </div>
+
+    <div class="field inline">
+      <input type="radio" id="known_specimen_type" checked="true" value="known"
+             name="specimen_type"/>
+      <label for="known_specimen_type">{% trans "Choose jellyfish specimen" %}</label>
+      <span class="help">{% trans "Click on jellyfish to input size and quantity." %}</span>
+    </div>
+
+    <div id="jellyfishes">
+      {% for jellyfish in jellyfishes %}
+      <div class="jellyfish_image {% if forloop.first %} selected {% endif %}"
+           data-id="{{ jellyfish.id }}">
+        {% thumbnail jellyfish.image "180x160" crop="center" as im %}
+        <img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}">
+        <div class="jellyfish_name">{{ jellyfish.name }}</div>
+        {% endthumbnail %}
+      </div>
+      {% endfor %}
+      {{ form.jellyfish.as_hidden }}
+      <div id="jellyfish_info">
+        <label for="id_jellyfish_quantity" class="required">{% trans "Quantity" %}</label>
+        {{ form.jellyfish_quantity }}
+        <label for="id_size" class="required">{% trans "Size" %}</label>
+        {{ form.jellyfish_size }}
+      </div>
+    </div>
+
+    <div id="other_jellyfish" class="field inline">
+      <input type="radio" id="other_specimen_type" value="other" name="specimen_type" />
+      <label for="other_specimen_type">{% trans "Other specimen" %}</label>
+      <span class="help">
+        {% trans "Choose this option if specimen is none of above. You should provide a description." %}
+      </span>
+      <div id="other_jellyfish_description">
+        {{ form.description_extra.errors }}
+        {{ form.description_extra }}
+      </div>
+    </div>
+
+    <div class="field {% if form.address.field.required %}required{% endif %}">
+      {{ form.address.errors }}
+      {{ form.address.label_tag }}
+      {{ form.address }}
+      <span class="help">{% trans "Enter a location, and it will be shown in a map below. Latitude and longitude fileds will be filled." %}</span>
+    </div>
+    <div id="map"></div>
+    <div class="field inline required">
+      <div id="location">
+        {{ form.lat.label_tag }}
+        {{ form.lat }}
+        {{ form.lng.label_tag }}
+        {{ form.lng }}
+      </div>
+      <a id="reset" href="">{% trans "Reset Marker" %}</a>
+    </div>
+
+    <div class="field {% if form.description.field.required %}required{% endif %}">
+      {{ form.description.errors }}
+      {{ form.description.label_tag }}
+      {{ form.description }}
+      <span class="help">{% trans "Optionally, input description or comments about the sighting." %}</span>
+    </div>
+
+    <div class="field inline {% if form.image_name.field.required %}required{% endif %}">
+      {{ form.image_name.errors }}
+      {{ form.image_name.label_tag }}
+      {{ form.image_name }}
+    </div>
+    <div class="field inline {% if form.image.field.required %}required{% endif %}">
+      {{ form.image.errors }}
+      {{ form.image.label_tag }}
+      {{ form.image }}
+    </div>
+    <span class="help">{% trans "An image related with the sighting can be uploaded." %}</span>
+    <input type="hidden" name="next" value="{% page_url 'sightings_page' %}" />
+    <input id="submit" type="submit" value="{% trans 'Save report' %}" />
+  </form>
 {% endblock %}
