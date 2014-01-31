@@ -109,31 +109,7 @@
       display: none;
   }
 
-  #report-sight-form #location {
-      float: left;
-  }
-
-  #report-sight-form #open_gmap {
-      display: none;
-      cursor: pointer;
-      margin-left: 1ex;
-      margin-top: -.5ex;
-      float: left;
-  }
-
-  #report-sight-form #open_gmap span.help {
-      display: inline;
-      font-size: small;
-  }
-
-  #report-sight-form #open_gmap span#hide_gmap {
-      display: none;
-  }
-
-
-  #report-sight-form #gmap {
-      display: none;
-      height: 100px;
-      width: 100px;
-      background-color: red;
+  #report-sight-form #map {
+      height: 400px;
+      width: 100%;
   }

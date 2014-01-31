@@ -34,7 +34,11 @@ jQuery.fn.handleJellyFishImageClick = function () {
 
 $(document).ready(function () {
   $('input[name=date]').datepicker();
-  $(".jellyfish_image.selected").handleJellyFishImageClick();
+  $('input[name=address]').geocomplete({
+    map: "#map",
+  });
+  $('.jellyfish_image.selected').handleJellyFishImageClick();
+
 
   $(".jellyfish_image").click(function () {
     $(this).handleJellyFishImageClick();
