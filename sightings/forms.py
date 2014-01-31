@@ -1,13 +1,13 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from sights.models import Sight, Jellyfish
+from sightings.models import Sighting, Jellyfish
 
 
-class SightReportForm(forms.ModelForm):
+class SightingReportForm(forms.ModelForm):
     required_css_class = 'required'
 
     class Meta:
-        model = Sight
+        model = Sighting
         fields = ['date', 'jellyfish', 'jellyfish_size', 'jellyfish_quantity',
                   'description', 'description_extra', 'address', 'lat', 'lng',
                   'image_name', 'image'
