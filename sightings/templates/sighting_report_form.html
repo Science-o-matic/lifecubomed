@@ -46,7 +46,7 @@
 
     <div id="jellyfishes">
       {% for jellyfish in jellyfishes %}
-      <div class="jellyfish_image {% if forloop.first %} selected {% endif %}"
+      <div class="jellyfish_image"
            data-id="{{ jellyfish.id }}">
         {% thumbnail jellyfish.image "180x160" crop="center" as im %}
         <img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}">

@@ -72,6 +72,12 @@ function initialize() {
 
   if ($("input[name=specimen_type]:checked").val() == 0) {
     $('.jellyfish_image.selected').trigger("handleClick");
+    jellyfish_id = $("input[name=jellyfish]").val();
+    if (jellyfish_id == '') {
+      $('.jellyfish_image:first').trigger("handleClick");
+    } else {
+      $('.jellyfish_image[data-id=' + jellyfish_id  + ']').trigger("handleClick");
+    }
   }
 }
 
