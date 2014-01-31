@@ -109,6 +109,17 @@
       display: none;
   }
 
+  #sight_report_form #location {
+      float: left;
+  }
+
+  #sight_report_form a#reset {
+      display: none;
+      float: left;
+      margin-left: 1ex;
+      color: white;
+  }
+
   #sight_report_form #map {
       height: 400px;
       width: 100%;

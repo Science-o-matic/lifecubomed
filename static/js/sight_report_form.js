@@ -34,15 +34,30 @@ jQuery.fn.handleJellyFishImageClick = function () {
 
 $(document).ready(function () {
   $('input[name=date]').datepicker();
-  $('input[name=address]').geocomplete({
-    map: "#map",
-    details: "form#sight_report_form"
-  });
+  $('input[name=address]')
+    .geocomplete({
+      map: "#map",
+      details: "form#sight_report_form",
+      markerOptions: {
+        draggable: true
+      },
+    })
+    .bind("geocode:dragged", function(event, latLng){
+      $("input[name=lat]").val(latLng.lat());
+      $("input[name=lng]").val(latLng.lng());
+      $("#reset").show();
+    });
 
   // Hackish trick to avoid having a default text
   $('input[name=address]').attr('placeholder', '');
 
   $('.jellyfish_image.selected').handleJellyFishImageClick();
+
+  $("#reset").click(function(){
+    $("input[name=address]").geocomplete("resetMarker");
+    $("#reset").hide();
+    return false;
+  });
 
   $(".jellyfish_image").click(function () {
     $(this).handleJellyFishImageClick();
