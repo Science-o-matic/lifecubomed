@@ -31,7 +31,7 @@
       {{ form.date.errors }}
       {{ form.date.label_tag }}
       {{ form.date }}
-      <span class="help">{% trans "Input sighting date in correct format, or choose it from calendar." %}</span>
+      <span class="help">{% trans "Enter sighting date, or choose it from calendar." %}</span>
     </div>
 
     <div class="field inline">
@@ -74,7 +74,7 @@
       {{ form.address.errors }}
       {{ form.address.label_tag }}
       {{ form.address }}
-      <span class="help">{% trans "Enter a location, and it will be shown in a map bellow." %}</span>
+      <span class="help">{% trans "Enter a location, and it will be shown in a map below." %}</span>
     </div>
     <div id="map"></div>
     <div class="field inline required">
@@ -104,6 +104,7 @@
       {{ form.image.label_tag }}
       {{ form.image }}
     </div>
+    <span class="help">{% trans "An image related with the sighting can be uploaded." %}</span>
     <input type="hidden" name="next" value="{% page_url 'sightings_page' %}" />
     <input id="submit" type="submit" value="{% trans 'Save report' %}" />
   </form>
