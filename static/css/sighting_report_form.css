@@ -125,7 +125,15 @@
       width: 100%;
   }
 
-
   #sighting_report_form #jellyfishes {
       clear: both;
+  }
+
+  #sighting_report_form ul.errorlist {
+      list-style-type: none;
+      font-weight: bold;
+      color: #2287B5;
+      margin-top: .5ex;
+      margin-bottom: .5ex;
+      padding: 0;
   }

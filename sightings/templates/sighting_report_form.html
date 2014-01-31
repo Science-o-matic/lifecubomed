@@ -28,9 +28,9 @@
     </div>
 
     <div class="field inline {% if form.date.field.required %}required{% endif %}">
-      {{ form.date.errors }}
       {{ form.date.label_tag }}
       {{ form.date }}
+      {{ form.date.errors }}
       <span class="help">{% trans "Enter sighting date, or choose it from calendar." %}</span>
     </div>
 
@@ -67,15 +67,15 @@
         {% trans "Choose this option if specimen is none of above. You should provide a description." %}
       </span>
       <div id="other_jellyfish_description">
-        {{ form.description_extra.errors }}
         {{ form.description_extra }}
+        {{ form.description_extra.errors }}
       </div>
     </div>
 
     <div class="field {% if form.address.field.required %}required{% endif %}">
-      {{ form.address.errors }}
       {{ form.address.label_tag }}
       {{ form.address }}
+      {{ form.address.errors }}
       <span class="help">{% trans "Enter a location, and it will be shown in a map below. Latitude and longitude fileds will be filled." %}</span>
     </div>
     <div id="map"></div>
@@ -90,21 +90,21 @@
     </div>
 
     <div class="field {% if form.description.field.required %}required{% endif %}">
-      {{ form.description.errors }}
       {{ form.description.label_tag }}
       {{ form.description }}
+      {{ form.description.errors }}
       <span class="help">{% trans "Optionally, input description or comments about the sighting." %}</span>
     </div>
 
     <div class="field inline {% if form.image_name.field.required %}required{% endif %}">
-      {{ form.image_name.errors }}
       {{ form.image_name.label_tag }}
       {{ form.image_name }}
+      {{ form.image_name.errors }}
     </div>
     <div class="field inline {% if form.image.field.required %}required{% endif %}">
-      {{ form.image.errors }}
       {{ form.image.label_tag }}
       {{ form.image }}
+      {{ form.image.errors }}
     </div>
     <span class="help">{% trans "An image related with the sighting can be uploaded." %}</span>
     <input type="hidden" name="next" value="{% page_url 'sightings_page' %}" />
