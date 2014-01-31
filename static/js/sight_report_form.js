@@ -46,7 +46,7 @@ $(document).ready(function () {
       $("input[name=lat]").val(latLng.lat());
       $("input[name=lng]").val(latLng.lng());
       $("#reset").show();
-    });
+    })
 
   // Hackish trick to avoid having a default text
   $('input[name=address]').attr('placeholder', '');

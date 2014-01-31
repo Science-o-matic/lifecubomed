@@ -123,8 +123,8 @@
   #sight_report_form #map {
       height: 400px;
       width: 100%;
-      background: url('../img/gmaps-icon.png') center no-repeat;
   }
+
 
   #sight_report_form #jellyfishes {
       clear: both;
