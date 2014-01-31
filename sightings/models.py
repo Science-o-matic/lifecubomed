@@ -24,7 +24,7 @@ class Sighting(models.Model):
     image_name = models.CharField(max_length=3000, null=True, blank=True, verbose_name="Image name")
     image = models.ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
                               verbose_name="Image file")
-    address = models.CharField(max_length=5000, null=True, blank=True)
+    address = models.CharField(max_length=5000)
     lat = models.DecimalField(max_digits=22, decimal_places=20, verbose_name=_("Latitude"))
     lng = models.DecimalField(max_digits=22, decimal_places=20, verbose_name=_("Longitude"))
     jellyfish = models.ForeignKey(Jellyfish)
