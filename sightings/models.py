@@ -19,6 +19,11 @@ class Sighting(models.Model):
     updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     date = models.DateField()
     description = models.TextField(null=True, blank=True)
+    SPECIMEN_TYPES = (
+        (0, 'Known'),
+        (1, 'Other')
+    )
+    specimen_type = models.IntegerField(choices=SPECIMEN_TYPES, default=0)
     other_specimen_description = models.TextField(null=True, blank=True,
                                          verbose_name="Other jellyfish specimen description")
     image_name = models.CharField(max_length=3000, null=True, blank=True, verbose_name="Image name")

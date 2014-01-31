@@ -52,24 +52,27 @@ function initialize() {
   $('input[name=address]').attr('placeholder', '');
 
   $('.jellyfish_image').bind('handleClick',function() {
-     if ($("input[name=specimen_type]:checked").val() == "other") {
-        $("#known_specimen_type").prop("checked", true);
-        $("#other_jellyfish_description").hide();
-      }
-      $("." + $(this).attr("class")).removeClass("selected");
-      $(this).addClass("selected");
+    if ($("input[name=specimen_type]:checked").val() == 1) {
+      $("#id_known_specimen_type").prop("checked", true);
+      $("#other_specimen_description").hide();
+      $("#id_other_specimen_description").val("");
+    }
+    $("." + $(this).attr("class")).removeClass("selected");
+    $(this).addClass("selected");
 
-      id = $(this).attr("data-id");
-      $("input[name=jellyfish]").val(id);
+    id = $(this).attr("data-id");
+    $("input[name=jellyfish]").val(id);
 
-      info = $("#jellyfish_info");
-      $(this).append(info);
-      info.hide();
-      info.show();
-      info.center();
+    info = $("#jellyfish_info");
+    $(this).append(info);
+    info.hide();
+    info.show();
+    info.center();
   });
 
-  $('.jellyfish_image.selected').trigger("handleClick");
+  if ($("input[name=specimen_type]:checked").val() == 0) {
+    $('.jellyfish_image.selected').trigger("handleClick");
+  }
 }
 
 
@@ -87,14 +90,14 @@ $(document).ready(function () {
   });
 
   $("input[name=specimen_type]").click(function () {
-    if ($(this).val() == 'other') {
+    if ($(this).val() == "1") {
       $("#jellyfish_info").hide();
       $(".jellyfish_image").removeClass("selected");
       $("#jellyfishes input").val("");
-      $("#other_jellyfish_description").show();
+      $("#other_specimen_description").show();
     } else {
-      $("#other_jellyfish_description").val('');
-      $("#other_jellyfish_description").hide();
+      $("#other_specimen_description").val('');
+      $("#other_specimen_description").hide();
     }
   });
 });

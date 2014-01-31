@@ -35,9 +35,12 @@
     </div>
 
     <div class="field inline">
-      <input type="radio" id="known_specimen_type" checked="true" value="known"
-             name="specimen_type"/>
-      <label for="known_specimen_type">{% trans "Choose jellyfish specimen" %}</label>
+      <input id="id_known_specimen_type" type="radio" name="specimen_type" value="0"
+             {% if form.specimen_type.value == "0" or form.specimen_type.value == 0 %}
+             checked
+             {% endif %}
+             />
+      <label for="id_known_specimen_type">{% trans "Choose jellyfish specimen" %}</label>
       <span class="help">{% trans "Click on jellyfish to input size and quantity." %}</span>
     </div>
 
@@ -61,12 +64,17 @@
     </div>
 
     <div id="other_jellyfish" class="field inline">
-      <input type="radio" id="other_specimen_type" value="other" name="specimen_type">
-      <label for="other_specimen_type">{% trans "Other specimen" %}</label>
+      <input id="id_other_specimen_type" type="radio" name="specimen_type" value="1"
+             {% if form.specimen_type.value == "1" or form.specimen_type.value == 1 %}
+             checked
+             {% endif %}
+             />
+      <label for="id_other_specimen_type">{% trans "Other specimen" %}</label>
       <span class="help">
         {% trans "Choose this option if specimen is none of above. You should provide a description." %}
       </span>
-      <div id="other_jellyfish_description">
+      <div id="other_specimen_description"
+           {% if form.specimen_type.value == "1" %} class="active" {% endif %}>
         {{ form.other_specimen_description }}
         {{ form.other_specimen_description.errors }}
       </div>
