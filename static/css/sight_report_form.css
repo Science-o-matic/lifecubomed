@@ -8,7 +8,6 @@
   #sight_report_form label {
       display: block;
       margin-bottom: .5ex;
-      margin-top: .5ex;
   }
 
   #sight_report_form .field {
@@ -45,6 +44,7 @@
      display: block;
      width: 100%;
   }
+
 
   #sight_report_form input[type=submit] {
       clear: both;
@@ -103,10 +103,6 @@
 
   #sight_report_form #jellyfish_info label {
       display: block;
-  }
-
-  #sight_report_form #jellyfish_info:last-child label {
-      margin-top: 1ex;
   }
 
   #sight_report_form #other_jellyfish_description {
