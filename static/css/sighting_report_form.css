@@ -105,8 +105,12 @@
       display: block;
   }
 
-  #sighting_report_form #other_jellyfish_description {
+  #sighting_report_form #other_specimen_description {
       display: none;
+  }
+
+  #sighting_report_form #other_specimen_description.active {
+      display: block;
   }
 
   #sighting_report_form #location {

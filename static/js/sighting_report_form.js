@@ -32,7 +32,7 @@ jQuery.fn.handleJellyFishImageClick = function () {
   info.center();
 }
 
-$(document).ready(function () {
+function initialize() {
   $('input[name=date]').datepicker();
   $('input[name=address]')
     .geocomplete({
@@ -51,7 +51,39 @@ $(document).ready(function () {
   // Hackish trick to avoid having a default text
   $('input[name=address]').attr('placeholder', '');
 
-  $('.jellyfish_image.selected').handleJellyFishImageClick();
+  $('.jellyfish_image').bind('handleClick',function() {
+    if ($("input[name=specimen_type]:checked").val() == 1) {
+      $("#id_known_specimen_type").prop("checked", true);
+      $("#other_specimen_description").hide();
+      $("#id_other_specimen_description").val("");
+    }
+    $("." + $(this).attr("class")).removeClass("selected");
+    $(this).addClass("selected");
+
+    id = $(this).attr("data-id");
+    $("input[name=jellyfish]").val(id);
+
+    info = $("#jellyfish_info");
+    $(this).append(info);
+    info.hide();
+    info.show();
+    info.center();
+  });
+
+  if ($("input[name=specimen_type]:checked").val() == 0) {
+    $('.jellyfish_image.selected').trigger("handleClick");
+    jellyfish_id = $("input[name=jellyfish]").val();
+    if (jellyfish_id == '') {
+      $('.jellyfish_image:first').trigger("handleClick");
+    } else {
+      $('.jellyfish_image[data-id=' + jellyfish_id  + ']').trigger("handleClick");
+    }
+  }
+}
+
+
+$(document).ready(function () {
+  initialize();
 
   $("#reset").click(function(){
     $("input[name=address]").geocomplete("resetMarker");
@@ -60,17 +92,18 @@ $(document).ready(function () {
   });
 
   $(".jellyfish_image").click(function () {
-    $(this).handleJellyFishImageClick();
+    $(this).trigger("handleClick");
   });
 
   $("input[name=specimen_type]").click(function () {
-    if ($(this).val() == 'other') {
+    if ($(this).val() == "1") {
       $("#jellyfish_info").hide();
       $(".jellyfish_image").removeClass("selected");
-      $("#other_jellyfish_description").show();
+      $("#jellyfishes input").val("");
+      $("#other_specimen_description").show();
     } else {
-      $("#other_jellyfish_description").val('');
-      $("#other_jellyfish_description").hide();
+      $("#other_specimen_description").val('');
+      $("#other_specimen_description").hide();
     }
   });
 });
