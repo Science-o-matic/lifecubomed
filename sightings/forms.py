@@ -9,7 +9,7 @@ class SightingReportForm(forms.ModelForm):
     class Meta:
         model = Sighting
         fields = ['date', 'jellyfish', 'jellyfish_size', 'jellyfish_quantity',
-                  'description', 'description_extra', 'address', 'lat', 'lng',
+                  'description', 'other_specimen_description', 'address', 'lat', 'lng',
                   'image_name', 'image'
                   ]
         widgets = {

@@ -61,14 +61,14 @@
     </div>
 
     <div id="other_jellyfish" class="field inline">
-      <input type="radio" id="other_specimen_type" value="other" name="specimen_type" />
+      <input type="radio" id="other_specimen_type" value="other" name="specimen_type">
       <label for="other_specimen_type">{% trans "Other specimen" %}</label>
       <span class="help">
         {% trans "Choose this option if specimen is none of above. You should provide a description." %}
       </span>
       <div id="other_jellyfish_description">
-        {{ form.description_extra }}
-        {{ form.description_extra.errors }}
+        {{ form.other_specimen_description }}
+        {{ form.other_specimen_description.errors }}
       </div>
     </div>
 
