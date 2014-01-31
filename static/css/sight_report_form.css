@@ -1,49 +1,49 @@
-#report-sight-form { margin-top: 3ex; }
+#sight_report_form { margin-top: 3ex; }
 
-  #report-sight-form em {
+  #sight_report_form em {
       font-style: normal;
      font-weight: bold;
   }
 
-  #report-sight-form label {
+  #sight_report_form label {
       display: block;
       margin-bottom: .5ex;
       margin-top: .5ex;
   }
 
-  #report-sight-form .field {
+  #sight_report_form .field {
       clear: both;
       margin-bottom: 2ex;
       margin-top: 2ex;
   }
 
-  #report-sight-form .field.required label {
+  #sight_report_form .field.required label {
       font-weight: bold;
   }
 
-  #report-sight-form label.required {
+  #sight_report_form label.required {
       font-weight: bold;
   }
 
-  #report-sight-form .inline label {
+  #sight_report_form .inline label {
       display: inline;
   }
 
-  #report-sight-form #other_jellyfish {
+  #sight_report_form #other_jellyfish {
       display: block;
       clear: left;
   }
 
-  #report-sight-form #other_jellyfish_description {
+  #sight_report_form #other_jellyfish_description {
       margin-top: 1ex;
   }
 
-  #report-sight-form textarea {
+  #sight_report_form textarea {
      display: block;
      width: 100%;
   }
 
-  #report-sight-form input[type=submit] {
+  #sight_report_form input[type=submit] {
       clear: both;
       display: block;
       background-color: #2287B5;
@@ -53,14 +53,14 @@
       border-color: transparent;
   }
 
-  #report-sight-form span.help {
+  #sight_report_form span.help {
      clear: both;
      display: block;
      color: grey;
      margin-top: .5ex;
   }
 
-  #report-sight-form .jellyfish_image {
+  #sight_report_form .jellyfish_image {
       width: 182px;
       height: 160px;
       float: left;
@@ -72,11 +72,11 @@
       cursor: pointer;
   }
 
-  #report-sight-form .jellyfish_image:hover,  #report-sight-form .jellyfish_image.selected {
+  #sight_report_form .jellyfish_image:hover,  #sight_report_form .jellyfish_image.selected {
       border: 4px solid white;
   }
 
-  #report-sight-form .jellyfish_image .jellyfish_name {
+  #sight_report_form .jellyfish_image .jellyfish_name {
       position: relative;
       top: -28px;
       padding-top: 4px;
@@ -88,7 +88,7 @@
       width: 100%;
   }
 
-  #report-sight-form #jellyfish_info {
+  #sight_report_form #jellyfish_info {
       display: none;
       position: absolute;
       background-color: rgba(0,0,0,0.8);
@@ -97,19 +97,19 @@
       padding: .5ex;
   }
 
-  #report-sight-form #jellyfish_info label {
+  #sight_report_form #jellyfish_info label {
       display: block;
   }
 
-  #report-sight-form #jellyfish_info:last-child label {
+  #sight_report_form #jellyfish_info:last-child label {
       margin-top: 1ex;
   }
 
-  #report-sight-form #other_jellyfish_description {
+  #sight_report_form #other_jellyfish_description {
       display: none;
   }
 
-  #report-sight-form #map {
+  #sight_report_form #map {
       height: 400px;
       width: 100%;
       background: url('../img/gmaps-icon.png') center no-repeat;
