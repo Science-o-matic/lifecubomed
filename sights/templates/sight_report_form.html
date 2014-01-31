@@ -103,17 +103,16 @@
     </div>
 
     <div class="field inline {% if form.image_name.field.required %}required{% endif %}">
-        {{ form.image_name.errors }}
-        {{ form.image_name.label_tag }}
-        {{ form.image_name }}
-      </div>
-      <div class="field inline {% if form.image.field.required %}required{% endif %}">
-        {{ form.image.errors }}
-        {{ form.image.label_tag }}
-        {{ form.image }}
-      </div>
+      {{ form.image_name.errors }}
+      {{ form.image_name.label_tag }}
+      {{ form.image_name }}
+    </div>
+    <div class="field inline {% if form.image.field.required %}required{% endif %}">
+      {{ form.image.errors }}
+      {{ form.image.label_tag }}
+      {{ form.image }}
     </div>
     <input type="hidden" name="next" value="{% page_url 'sightings_page' %}" />
-    <input type="submit" value="{% trans 'Save report' %}" />
+    <input id="submit" type="submit" value="{% trans 'Save report' %}" />
   </form>
 {% endblock %}
