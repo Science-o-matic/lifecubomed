@@ -37,7 +37,7 @@ $(document).ready(function () {
   $('input[name=address]')
     .geocomplete({
       map: "#map",
-      details: "form#sight_report_form",
+      details: "form#sighting_report_form",
       markerOptions: {
         draggable: true
       },

@@ -1,7 +1,7 @@
 [
 {
     "pk": 12,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Pelagia_noctiluca_c.jpg",
         "name": "Pelagia noctiluca"
@@ -9,7 +9,7 @@
 },
 {
     "pk": 2,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/velella.jpg",
         "name": "Velella velella"
@@ -17,7 +17,7 @@
 },
 {
     "pk": 3,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Cotylorhiza_tuberculata_c.jpg",
         "name": "Cotylorhiza tuberculata"
@@ -25,7 +25,7 @@
 },
 {
     "pk": 4,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Phyllorhiza_punctata_c.jpg",
         "name": "Phyllorhiza punctata"
@@ -33,7 +33,7 @@
 },
 {
     "pk": 5,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Porpita_porpita_c.jpg",
         "name": "Porpita porpita"
@@ -41,7 +41,7 @@
 },
 {
     "pk": 6,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Aequorea_forskalea_c.jpg",
         "name": "Aecuoria forskalea"
@@ -49,7 +49,7 @@
 },
 {
     "pk": 7,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Mnemiopsis_leidyi_c.jpg",
         "name": "Mnemiopsis leidyi"
@@ -57,7 +57,7 @@
 },
 {
     "pk": 8,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Physalia_physalis_c.jpg",
         "name": "Physalia physalis"
@@ -65,7 +65,7 @@
 },
 {
     "pk": 9,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Rhizostoma_pulmo_c.jpg",
         "name": "Rhizostoma pulmo"
@@ -73,7 +73,7 @@
 },
 {
     "pk": 10,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Aurelia_aurita_c.jpg",
         "name": "Aurelia aurita"
@@ -81,7 +81,7 @@
 },
 {
     "pk": 11,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/chrysaora-hysoscella_c.jpg",
         "name": "Chrysaora hysoscella"
@@ -89,7 +89,7 @@
 },
 {
     "pk": 1,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Carybdea_marsupialis_c.jpg",
         "name": "Carybdea marsupialis"
@@ -97,7 +97,7 @@
 },
 {
     "pk": 13,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Olindias_phosphorica_c.jpg",
         "name": "Olindias phosphorica"
@@ -105,7 +105,7 @@
 },
 {
     "pk": 14,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Casseopea_sp_c.jpg",
         "name": "Casseopea sp"
@@ -113,7 +113,7 @@
 },
 {
     "pk": 15,
-    "model": "sights.jellyfish",
+    "model": "sightings.jellyfish",
     "fields": {
         "image": "jellyfishes/Untitled-1.jpg",
         "name": "Leuckartiara sp"

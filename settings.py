@@ -151,7 +151,7 @@ CMS_TEMPLATES = (
     ('page3cnews.html','Page template 3 colum news'),
     ('registration/login.html','Accounts login template'),
     ('registration/registration_form.html','Accounts registration template'),
-    ('sight_report_form.html','Sight report template'),
+    ('sighting_report_form.html','Sight report template'),
 )
 
 CMS_PLACEHOLDER_CONF = {
@@ -208,8 +208,8 @@ INSTALLED_APPS = (
     'accounts.login',
     'accounts.register',
     'registration',
-    'sights',
-    'sights.report'
+    'sightings',
+    'sightings.report'
 )
 
 # Imagestore settings
