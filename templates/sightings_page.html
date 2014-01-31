@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="{{ STATIC_URL }}css/map_page.css">
   {% endaddtoblock %}
 
+  {% placeholder base_content %}
+  <a id="report_sighitng_button" href="{% page_url 'report_sight' %}">
+    {% trans "Report sighting" %}
+  </a>
   {% placeholder map %}
   {% placeholder sigthings_list %}
 {% endblock %}
