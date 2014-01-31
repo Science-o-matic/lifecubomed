@@ -36,6 +36,7 @@ $(document).ready(function () {
   $('input[name=date]').datepicker();
   $('input[name=address]').geocomplete({
     map: "#map",
+    details: "form#sight_report_form"
   });
 
   // Hackish trick to avoid having a default text
