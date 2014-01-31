@@ -41,21 +41,23 @@
       <span class="help">{% trans "Click on jellyfish to input size and quantity." %}</span>
     </div>
 
-    {% for jellyfish in jellyfishes %}
-    <div class="jellyfish_image {% if forloop.first %} selected {% endif %}"
-         data-id="{{ jellyfish.id }}">
-      {% thumbnail jellyfish.image "180x160" crop="center" as im %}
-      <img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}">
-      <div class="jellyfish_name">{{ jellyfish.name }}</div>
-      {% endthumbnail %}
-    </div>
-    {% endfor %}
-    {{ form.jellyfish.as_hidden }}
-    <div id="jellyfish_info">
-      <label for="id_jellyfish_quantity" class="required">{% trans "Quantity" %}</label>
-      {{ form.jellyfish_quantity }}
-      <label for="id_size" class="required">{% trans "Size" %}</label>
-      {{ form.jellyfish_size }}
+    <div id="jellyfishes">
+      {% for jellyfish in jellyfishes %}
+      <div class="jellyfish_image {% if forloop.first %} selected {% endif %}"
+           data-id="{{ jellyfish.id }}">
+        {% thumbnail jellyfish.image "180x160" crop="center" as im %}
+        <img src="{{ im.url|safe }}" alt="{{ jellyfish.name }}">
+        <div class="jellyfish_name">{{ jellyfish.name }}</div>
+        {% endthumbnail %}
+      </div>
+      {% endfor %}
+      {{ form.jellyfish.as_hidden }}
+      <div id="jellyfish_info">
+        <label for="id_jellyfish_quantity" class="required">{% trans "Quantity" %}</label>
+        {{ form.jellyfish_quantity }}
+        <label for="id_size" class="required">{% trans "Size" %}</label>
+        {{ form.jellyfish_size }}
+      </div>
     </div>
 
     <div id="other_jellyfish" class="field inline">
@@ -74,7 +76,7 @@
       {{ form.address.errors }}
       {{ form.address.label_tag }}
       {{ form.address }}
-      <span class="help">{% trans "Enter a location, and it will be shown in a map below." %}</span>
+      <span class="help">{% trans "Enter a location, and it will be shown in a map below. Latitude and longitude fileds will be filled." %}</span>
     </div>
     <div id="map"></div>
     <div class="field inline required">

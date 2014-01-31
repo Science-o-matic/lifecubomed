@@ -1,4 +1,4 @@
-#sight_report_form { margin-top: 3ex; }
+#sight_report_form { margin-top: 3ex;}
 
   #sight_report_form em {
       font-style: normal;
@@ -12,7 +12,9 @@
   }
 
   #sight_report_form .field {
+      float: left;
       clear: both;
+      display: block;
       margin-bottom: 2ex;
       margin-top: 2ex;
   }
@@ -27,6 +29,7 @@
 
   #sight_report_form .inline label {
       display: inline;
+      margin-right: 1ex;
   }
 
   #sight_report_form #other_jellyfish {
@@ -51,6 +54,7 @@
       padding: 1ex;
       border-radius: 4px 4px 4px 4px;
       border-color: transparent;
+      margin-top: 2ex;
   }
 
   #sight_report_form span.help {
@@ -124,4 +128,8 @@
       height: 400px;
       width: 100%;
       background: url('../img/gmaps-icon.png') center no-repeat;
+  }
+
+  #sight_report_form #jellyfishes {
+      clear: both;
   }
