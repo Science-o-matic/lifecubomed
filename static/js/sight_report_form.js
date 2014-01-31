@@ -37,8 +37,11 @@ $(document).ready(function () {
   $('input[name=address]').geocomplete({
     map: "#map",
   });
-  $('.jellyfish_image.selected').handleJellyFishImageClick();
 
+  // Hackish trick to avoid having a default text
+  $('input[name=address]').attr('placeholder', '');
+
+  $('.jellyfish_image.selected').handleJellyFishImageClick();
 
   $(".jellyfish_image").click(function () {
     $(this).handleJellyFishImageClick();
