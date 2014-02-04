@@ -64,5 +64,10 @@ class AJAXSightingsListView(AJAXListMixin, ListView):
 
      def get_queryset(self):
          qs = super(AJAXSightingsListView, self).get_queryset()
-         qs.select_related("jellyfish", "reporter")
+         qs = qs.select_related("jellyfish", "reporter")
+
+         jellyfish_id = self.request.GET.get("jellyfish_id", None)
+         if jellyfish_id:
+             qs = qs.filter(jellyfish__id=jellyfish_id)
+
          return qs
