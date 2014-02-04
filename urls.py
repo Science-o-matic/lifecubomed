@@ -20,6 +20,7 @@ urlpatterns += patterns('',
                         url(r'^tinymce/', include('tinymce.urls')),
                         # Fallback for URLs not handled by CMS pages (i.e. logout)
                         url(r'^accounts/', include('accounts.urls')),
+                        url(r'^sightings.json', include('sightings.urls')),
 )
 
 if settings.DEBUG:

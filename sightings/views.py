@@ -1,7 +1,9 @@
 from django.views.generic.edit import FormView
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from sightings.models import Jellyfish
+from django.core import serializers
+from django import http
+from django.views.generic.list import ListView
+from sightings.models import Jellyfish, Sighting
 from sightings.forms import SightingReportForm
 
 
@@ -18,4 +20,30 @@ class SightingReportView(FormView):
         sighting = form.save(commit=False)
         sighting.reporter_id = self.request.user.id
         sighting.save()
-        return HttpResponseRedirect(form.data["next"])
+        return http.HttpResponseRedirect(form.data["next"])
+
+
+class AJAXListMixin(object):
+
+     def dispatch(self, request, *args, **kwargs):
+         if not request.is_ajax():
+             import ipdb; ipdb.set_trace()
+
+
+             raise http.Http404("This is an ajax view.")
+         return super(AJAXListMixin, self).dispatch(request, *args, **kwargs)
+
+     def get_queryset(self):
+         return (
+            super(AJAXListMixin, self)
+            .get_queryset()
+          )
+          #  .filter(ajaxy_param=self.request.GET.get('some_ajaxy_param'))
+
+
+     def get(self, request, *args, **kwargs):
+         return http.HttpResponse(serializers.serialize('json', self.get_queryset()))
+
+
+class AJAXSightingsListView(AJAXListMixin, ListView):
+     model = Sighting
