@@ -42,7 +42,13 @@ class AJAXListMixin(object):
 
 
      def get(self, request, *args, **kwargs):
-         return http.HttpResponse(serializers.serialize('json', self.get_queryset()))
+         return http.HttpResponse(
+             serializers.serialize(
+                 'json',
+                 self.get_queryset(),
+                 indent=2,
+             )
+         )
 
 
 class AJAXSightingsListView(AJAXListMixin, ListView):
