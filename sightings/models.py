@@ -48,3 +48,6 @@ class Sighting(models.Model):
         (100, '>100')
     )
     jellyfish_quantity = models.IntegerField(choices=QUANTITIES, null=True, blank=True)
+
+    class Meta:
+        ordering = ['-date']
