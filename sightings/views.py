@@ -1,3 +1,4 @@
+import math
 from django.core.serializers.json import Serializer
 from django.views.generic.edit import FormView
 from django.core.urlresolvers import reverse
@@ -40,34 +41,44 @@ class FlatSightingSerializer(Serializer):
         })
         return self._current
 
-class AJAXListMixin(object):
+ITEMS_PER_PAGE = 20
+class AJAXSightingListMixin(object):
 
      def dispatch(self, request, *args, **kwargs):
          if not request.is_ajax():
              raise http.Http404("This is an ajax view.")
-         return super(AJAXListMixin, self).dispatch(request, *args, **kwargs)
+         return super(AJAXSightingListMixin, self).dispatch(request, *args, **kwargs)
 
      def get(self, request, *args, **kwargs):
-         serializer = FlatSightingSerializer()
-         json = serializer.serialize(self.get_queryset(),
-                              indent=2,
-                              fields=('pk', 'date', 'lat', 'lng', 'reporter',
-                                      'jellyfish', 'jellyfish_quantity',
-                                      'jellyfish_size')
-                              )
-         return http.HttpResponse(json)
-
-
-
-class AJAXSightingsListView(AJAXListMixin, ListView):
-     model = Sighting
-
-     def get_queryset(self):
          qs = super(AJAXSightingsListView, self).get_queryset()
          qs = qs.select_related("jellyfish", "reporter")
 
-         jellyfish_id = self.request.GET.get("jellyfish_id", None)
+         jellyfish_id = request.GET.get("jellyfish_id", None)
          if jellyfish_id:
              qs = qs.filter(jellyfish__id=jellyfish_id)
 
-         return qs
+         total = len(qs)
+         page = int(self.request.GET.get("page", 1))
+         items_per_page = int(self.request.GET.get("items", ITEMS_PER_PAGE))
+         pages = math.ceil(total / items_per_page)
+         start = (page - 1) * items_per_page
+         end = page * items_per_page
+         qs = qs[start:end]
+         page_total = len(qs)
+
+         serializer = FlatSightingSerializer()
+         json = serializer.serialize(qs,
+                                     indent=4,
+                                     fields=('pk', 'date', 'lat', 'lng', 'reporter',
+                                             'jellyfish', 'jellyfish_quantity',
+                                             'jellyfish_size')
+                                     )
+         json = '{"audios": ' + json + ",\n"
+         json += '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}' % (
+             total, pages, page, page_total)
+         return http.HttpResponse(json)
+
+
+class AJAXSightingsListView(AJAXSightingListMixin, ListView):
+     model = Sighting
+     paginate_by = 2
