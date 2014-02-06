@@ -11,6 +11,15 @@
   <a id="report_sighitng_button" href="{% page_url 'sighting_report_page' %}">
     {% trans "Report sighting" %}
   </a>
+
+  <ul class="tabs">
+    <li><a href="#map">{% trans "Map" %}</a></li>
+    <li><a href="#list">{% trans "List" %}</a></li>
+  </ul>
+
   {% placeholder map %}
-  {% placeholder sigthings_list %}
+
+  <div id="list">
+    {% placeholder sigthings_list %}
+  </div>
 {% endblock %}
