@@ -4,7 +4,11 @@
 
 {% block page_content %}
   {% addtoblock "css" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/map_page.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/sightings_page.css">
+  {% endaddtoblock %}
+
+  {% addtoblock "js" %}
+  <script src="{{ STATIC_URL }}js/sightings_page.js"></script>
   {% endaddtoblock %}
 
   {% placeholder base_content %}
@@ -13,12 +17,13 @@
   </a>
 
   <ul class="tabs">
-    <li><a href="#map">{% trans "Map" %}</a></li>
+    <li><a href="#map_pl">{% trans "Map" %}</a></li>
     <li><a href="#list">{% trans "List" %}</a></li>
   </ul>
 
-  {% placeholder map %}
-
+  <div id="map_pl">
+    {% placeholder map %}
+  </div>
   <div id="list">
     {% placeholder sigthings_list %}
   </div>
