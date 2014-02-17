@@ -10,6 +10,6 @@ ul.tabs {
         padding: 1ex;
     }
 
-#map_pl {
+.tab_content {
     clear: both;
 }
