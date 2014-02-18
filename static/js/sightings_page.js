@@ -1,3 +1,17 @@
+function initMap() {
+  map = $('#map');
+  map.gmap().bind('init', function() {
+    $.getJSON( '/sightings.json', function(data) {
+      $.each( data.sightings, function(i, marker) {
+        map.gmap('addMarker', {
+          'position': new google.maps.LatLng(marker.lat, marker.lng),
+          'bounds': true
+        });
+      });
+    });
+  });
+}
+
 function initTabs() {
   $('ul.tabs').each(function(){
     var $active, $content, $links = $(this).find('a');
@@ -22,20 +36,6 @@ function initTabs() {
       $content.show();
 
       e.preventDefault();
-    });
-  });
-}
-
-function initMap() {
-  map = $('#map');
-  map.gmap().bind('init', function() {
-    $.getJSON( '/sightings.json', function(data) {
-      $.each( data.sightings, function(i, marker) {
-        map.gmap('addMarker', {
-          'position': new google.maps.LatLng(marker.lat, marker.lng),
-          'bounds': true
-        });
-      });
     });
   });
 }
