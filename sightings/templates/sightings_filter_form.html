@@ -15,15 +15,15 @@
 <form id="sightings_filter">
     <label for="jellyfish_type">{% trans "Jellyfish type" %}</label>
     <select id="jellyfish_type">
-      <option value="{% trans "All types" %}">{% trans "All types" %}</option>
+      <option value="ALL">{% trans "All types" %}</option>
       {% for j in jellyfishes %}
       <option value="{{ j.id }}">{% trans j.name %}</option>
       {% endfor %}
-      <option value="{% trans "Unknown type" %}">{% trans "Unknown type" %}</option>
+      <option value="UNKNOWN">{% trans "Unknown type" %}</option>
     </select>
     <label for="from_date">{% trans "From date" %}</label>
-    <input class="date" name="from_date" value=""/>
+    <input class="date" name="from_date" id="from_date" value=""/>
     <label for="to_date">{% trans "To date" %}</label>
-    <input class="date" name="to_date" value=""/>
+    <input class="date" name="to_date" id="to_date" value=""/>
     <input type="submit" value="{% trans "Apply filter"%}"/>
 </form>

@@ -1,15 +1,55 @@
-function initMap() {
-  map = $('#map');
-  map.gmap().bind('init', function() {
-    $.getJSON( '/sightings.json', function(data) {
-      $.each( data.sightings, function(i, marker) {
-        map.gmap('addMarker', {
+var Map = {
+  map_id: '#map',
+
+  init: function() {
+    var that = this;
+
+    this.map = $(this.map_id);
+
+    this.map.gmap().bind('init', function() {
+      that.render();
+    });
+  },
+
+  render: function(jellyfish_type_id, from_date, to_date) {
+    var that = this;
+
+    Api.getSightings(jellyfish_type_id, from_date, to_date, function(data) {
+      $.each(data.sightings, function(i, marker) {
+        that.map.gmap('addMarker', {
           'position': new google.maps.LatLng(marker.lat, marker.lng),
           'bounds': true
         });
       });
     });
-  });
+  }
+};
+
+
+var Api = {
+  url: '/sightings.json',
+
+  getSightings: function (jellyfish_type_id, from_date, to_date, callback) {
+    var params = {}, url = this.url;
+
+    if (jellyfish_type_id) {
+      params["jellyfish_type_id"] = jellyfish_type_id;
+    }
+    if (from_date) {
+      params["from_date"] = from_date;
+      if (to_date) {
+        params["to_date"] = to_date;
+      }
+    }
+
+    url = this.url;
+    if (!$.isEmptyObject(params)) {
+      url = this.url + "?" + $.param(params);
+    }
+
+    $.getJSON(url, callback);
+  }
+
 }
 
 function initTabs() {
@@ -40,7 +80,15 @@ function initTabs() {
   });
 }
 
+function renderSightings(jellyfish_type_id, from_date, to_date) {
+  if ($(".tabs a[href=#map]").hasClass("active")) {
+    Map.render(jellyfish_type_id, from_date, to_date);
+  } else {
+    renderListSightings(jellyfish_type_id, from_date, to_date);
+  }
+}
+
 $(document).ready(function () {
   initTabs();
-  initMap();
+  Map.init();
 });
