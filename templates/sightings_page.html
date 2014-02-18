@@ -8,6 +8,8 @@
   {% endaddtoblock %}
 
   {% addtoblock "js" %}
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+  <script src="{{ STATIC_URL }}js/vendor/jquery.ui.map.full.min.js"></script>
   <script src="{{ STATIC_URL }}js/sightings_page.js"></script>
   {% endaddtoblock %}
 

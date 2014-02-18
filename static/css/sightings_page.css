@@ -13,3 +13,8 @@ ul.tabs {
 .tab_content {
     clear: both;
 }
+
+#map {
+      height: 400px;
+      width: 100%;
+}
