@@ -13,8 +13,8 @@
 {% endaddtoblock "js" %}
 
 <form id="sightings_filter">
-    <label for="jellyfish_type">{% trans "Jellyfish type" %}</label>
-    <select id="jellyfish_type">
+    <label for="jellyfish_id">{% trans "Jellyfish type" %}</label>
+    <select id="jellyfish_id">
       <option value="ALL">{% trans "All types" %}</option>
       {% for j in jellyfishes %}
       <option value="{{ j.id }}">{% trans j.name %}</option>

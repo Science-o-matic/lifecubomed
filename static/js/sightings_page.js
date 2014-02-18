@@ -11,10 +11,12 @@ var Map = {
     });
   },
 
-  render: function(jellyfish_type_id, from_date, to_date) {
+  render: function(jellyfish_id, from_date, to_date) {
     var that = this;
 
-    Api.getSightings(jellyfish_type_id, from_date, to_date, function(data) {
+
+    this.map.gmap('clear', 'markers');
+    Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
       $.each(data.sightings, function(i, marker) {
         that.map.gmap('addMarker', {
           'position': new google.maps.LatLng(marker.lat, marker.lng),
@@ -29,11 +31,11 @@ var Map = {
 var Api = {
   url: '/sightings.json',
 
-  getSightings: function (jellyfish_type_id, from_date, to_date, callback) {
+  getSightings: function (jellyfish_id, from_date, to_date, callback) {
     var params = {}, url = this.url;
 
-    if (jellyfish_type_id) {
-      params["jellyfish_type_id"] = jellyfish_type_id;
+    if (jellyfish_id) {
+      params["jellyfish_id"] = jellyfish_id;
     }
     if (from_date) {
       params["from_date"] = from_date;
@@ -80,9 +82,9 @@ function initTabs() {
   });
 }
 
-function renderSightings(jellyfish_type_id, from_date, to_date) {
+function renderSightings(jellyfish_id, from_date, to_date) {
   if ($(".tabs a[href=#map]").hasClass("active")) {
-    Map.render(jellyfish_type_id, from_date, to_date);
+    Map.render(jellyfish_id, from_date, to_date);
   } else {
     renderListSightings(jellyfish_type_id, from_date, to_date);
   }

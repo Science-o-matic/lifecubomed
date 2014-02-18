@@ -41,6 +41,7 @@ class FlatSightingSerializer(Serializer):
         })
         return self._current
 
+
 ITEMS_PER_PAGE = 20
 class AJAXSightingListMixin(object):
 
@@ -50,13 +51,7 @@ class AJAXSightingListMixin(object):
          return super(AJAXSightingListMixin, self).dispatch(request, *args, **kwargs)
 
      def get(self, request, *args, **kwargs):
-         qs = super(AJAXSightingsListView, self).get_queryset()
-         qs = qs.select_related("jellyfish", "reporter")
-
-         jellyfish_id = request.GET.get("jellyfish_id", None)
-         if jellyfish_id:
-             qs = qs.filter(jellyfish__id=jellyfish_id)
-
+         qs = self._build_qs()
          total = len(qs)
          page = int(self.request.GET.get("page", 1))
          items_per_page = int(self.request.GET.get("items", ITEMS_PER_PAGE))
@@ -77,6 +72,29 @@ class AJAXSightingListMixin(object):
          json += '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}}' % (
              total, pages, page, page_total)
          return http.HttpResponse(json)
+
+     def _build_qs(self):
+         qs = super(AJAXSightingsListView, self).get_queryset()
+         qs = qs.select_related("jellyfish", "reporter")
+
+         jellyfish_id = self.request.GET.get("jellyfish_id", None)
+         if jellyfish_id:
+             if jellyfish_id != "ALL" and jellyfish_id != "UNKNOWN":
+                 qs = qs.filter(jellyfish__id=jellyfish_id)
+             elif jellyfish_id == "UNKNOWN":
+                 pass
+
+         from_date = self.request.GET.get("from_date", None)
+         if from_date:
+             qs = qs.filter(date__gte=from_date)
+
+         to_date = self.request.GET.get("to_date", None)
+         if to_date:
+             qs = qs.filter(jellyfish__lte=to_date)
+
+         return qs
+
+
 
 
 class AJAXSightingsListView(AJAXSightingListMixin, ListView):
