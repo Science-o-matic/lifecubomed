@@ -73,8 +73,8 @@ class AJAXSightingListMixin(object):
                                              'jellyfish', 'jellyfish_quantity',
                                              'jellyfish_size')
                                      )
-         json = '{"audios": ' + json + ",\n"
-         json += '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}' % (
+         json = '{"sightings": ' + json + ",\n"
+         json += '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}}' % (
              total, pages, page, page_total)
          return http.HttpResponse(json)
 
