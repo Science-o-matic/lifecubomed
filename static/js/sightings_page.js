@@ -44,9 +44,14 @@ var Api = {
       url = this.url + "?" + $.param(params);
     }
 
-    $.getJSON(url, callback);
+    $("#form_errors").empty();
+    $.getJSON(url, callback)
+      .fail(function(jqXHR, textStatus, errorThrown) {
+        $.each($.parseJSON(jqXHR.responseText), function (i, error) {
+          $("#form_errors").append("<p>" + error + "</p>");
+        });
+      });
   }
-
 }
 
 function initTabs() {

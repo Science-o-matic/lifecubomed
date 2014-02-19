@@ -4,6 +4,7 @@ from django.views.generic.edit import FormView
 from django.core.urlresolvers import reverse
 from django import http
 from django.views.generic.list import ListView
+from django.utils import simplejson
 from sightings.models import Jellyfish, Sighting
 from sightings.forms import SightingReportForm, SightingsFilterForm
 
@@ -51,15 +52,11 @@ class AJAXSightingListMixin(object):
          return super(AJAXSightingListMixin, self).dispatch(request, *args, **kwargs)
 
      def get(self, request, *args, **kwargs):
-         qs = self._build_qs()
-         total = len(qs)
-         page = int(self.request.GET.get("page", 1))
-         items_per_page = int(self.request.GET.get("items", ITEMS_PER_PAGE))
-         pages = math.ceil(total / items_per_page)
-         start = (page - 1) * items_per_page
-         end = page * items_per_page
-         qs = qs[start:end]
-         page_total = len(qs)
+         form = SightingsFilterForm(self.request.GET)
+         if form.is_valid():
+             qs = self._build_qs(form)
+         else:
+             return http.HttpResponseBadRequest(simplejson.dumps(form.non_field_errors()))
 
          serializer = FlatSightingSerializer()
          json = serializer.serialize(qs,
@@ -69,21 +66,25 @@ class AJAXSightingListMixin(object):
                                              'jellyfish_size')
                                      )
          json = '{"sightings": ' + json + ",\n"
-         json += '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}}' % (
-             total, pages, page, page_total)
+         json += self.render_pagination(qs)
          return http.HttpResponse(json)
 
-     def _build_qs(self):
+     def render_pagination(self, qs):
+         total = len(qs)
+         page = int(self.request.GET.get("page", 1))
+         items_per_page = int(self.request.GET.get("items", ITEMS_PER_PAGE))
+         pages = math.ceil(total / items_per_page)
+         start = (page - 1) * items_per_page
+         end = page * items_per_page
+         qs = qs[start:end]
+         page_total = len(qs)
+         return '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}}' % (
+             total, pages, page, page_total)
+
+     def _build_qs(self, form):
          qs = super(AJAXSightingsListView, self).get_queryset()
          qs = qs.select_related("jellyfish", "reporter")
-
-         form = SightingsFilterForm(self.request.GET)
-         if form.is_valid():
-             qs = self._apply_filters(qs, form)
-         else:
-             # TODO: raise exception to respond a bad request
-             pass
-         return qs
+         return self._apply_filters(qs, form)
 
      def _apply_filters(self, qs, form):
          jellyfish = form.cleaned_data["jellyfish_id"]

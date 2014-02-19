@@ -55,3 +55,9 @@ class SightingsFilterForm(forms.Form):
         choices.insert(0, JELLYFISH_CHOICES[0])
         choices.append(JELLYFISH_CHOICES[1])
         self.fields['jellyfish_id'].choices = choices
+
+    def clean(self):
+        cleaned_data = super(SightingsFilterForm, self).clean()
+        if cleaned_data["from_date"] > cleaned_data["to_date"]:
+            raise forms.ValidationError(_("Date range is wrong"))
+        return cleaned_data
