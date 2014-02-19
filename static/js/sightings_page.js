@@ -5,15 +5,10 @@ var Map = {
     var that = this;
 
     this.map = $(this.map_id);
-
-    this.map.gmap().bind('init', function() {
-      that.render();
-    });
   },
 
   render: function(jellyfish_id, from_date, to_date) {
     var that = this;
-
 
     this.map.gmap('clear', 'markers');
     Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
@@ -82,7 +77,10 @@ function initTabs() {
   });
 }
 
-function renderSightings(jellyfish_id, from_date, to_date) {
+function renderSightings() {
+  jellyfish_id = $('#id_jellyfish_id').val();
+  from_date = $('#id_from_date').val();
+  to_date = $('#id_to_date').val();
   if ($(".tabs a[href=#map]").hasClass("active")) {
     Map.render(jellyfish_id, from_date, to_date);
   } else {
@@ -93,4 +91,5 @@ function renderSightings(jellyfish_id, from_date, to_date) {
 $(document).ready(function () {
   initTabs();
   Map.init();
+  renderSightings();
 });
