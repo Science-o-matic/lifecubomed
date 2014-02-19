@@ -86,19 +86,16 @@ class AJAXSightingListMixin(object):
          return qs
 
      def _apply_filters(self, qs, form):
-         jellyfish_id = form.cleaned_data["jellyfish_id"].id
-
-         if jellyfish_id != "ALL" and jellyfish_id != "UNKNOWN":
-             qs = qs.filter(jellyfish__id=jellyfish_id)
-         elif jellyfish_id == "UNKNOWN":
+         jellyfish = form.cleaned_data["jellyfish_id"]
+         if jellyfish != "ALL" and jellyfish != "UNKNOWN":
+             qs = qs.filter(jellyfish__id=jellyfish)
+         elif jellyfish == "UNKNOWN":
              pass
 
          qs = qs.filter(date__gte=form.cleaned_data["from_date"])
          qs = qs.filter(date__lte=form.cleaned_data["to_date"])
 
          return qs
-
-
 
 
 class AJAXSightingsListView(AJAXSightingListMixin, ListView):

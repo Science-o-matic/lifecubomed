@@ -5,6 +5,7 @@ from cms.models.pluginmodel import CMSPlugin
 from sightings.models import Sighting, Jellyfish
 from sightings.forms import SightingsFilterForm
 
+
 # TODO: Drop this, as it's unneeded
 class SightingsListPlugin(CMSPluginBase):
     model = CMSPlugin
@@ -25,7 +26,7 @@ class SightingsFilterFormPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context["jellyfishes"] = Jellyfish.objects.all()
-        context['form'] = SightingsFilterForm()
+        context["form"] = SightingsFilterForm()
         return context
 
 plugin_pool.register_plugin(SightingsFilterFormPlugin)
