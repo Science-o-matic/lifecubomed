@@ -13,17 +13,6 @@
 {% endaddtoblock "js" %}
 
 <form id="sightings_filter">
-    <label for="jellyfish_id">{% trans "Jellyfish type" %}</label>
-    <select id="jellyfish_id">
-      <option value="ALL">{% trans "All types" %}</option>
-      {% for j in jellyfishes %}
-      <option value="{{ j.id }}">{% trans j.name %}</option>
-      {% endfor %}
-      <option value="UNKNOWN">{% trans "Unknown type" %}</option>
-    </select>
-    <label for="from_date">{% trans "From date" %}</label>
-    <input class="date" name="from_date" id="from_date" value=""/>
-    <label for="to_date">{% trans "To date" %}</label>
-    <input class="date" name="to_date" id="to_date" value=""/>
-    <input type="submit" value="{% trans "Apply filter"%}"/>
+  {{ form.as_p }}
+  <input type="submit" value="{% trans "Apply filter"%}"/>
 </form>

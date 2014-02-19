@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 from django import http
 from django.views.generic.list import ListView
 from sightings.models import Jellyfish, Sighting
-from sightings.forms import SightingReportForm
+from sightings.forms import SightingReportForm, SightingsFilterForm
 
 
 class SightingReportView(FormView):
@@ -77,20 +77,24 @@ class AJAXSightingListMixin(object):
          qs = super(AJAXSightingsListView, self).get_queryset()
          qs = qs.select_related("jellyfish", "reporter")
 
-         jellyfish_id = self.request.GET.get("jellyfish_id", None)
-         if jellyfish_id:
-             if jellyfish_id != "ALL" and jellyfish_id != "UNKNOWN":
-                 qs = qs.filter(jellyfish__id=jellyfish_id)
-             elif jellyfish_id == "UNKNOWN":
-                 pass
+         form = SightingsFilterForm(self.request.GET)
+         if form.is_valid():
+             qs = self._apply_filters(qs, form)
+         else:
+             # TODO: raise exception to respond a bad request
+             pass
+         return qs
 
-         from_date = self.request.GET.get("from_date", None)
-         if from_date:
-             qs = qs.filter(date__gte=from_date)
+     def _apply_filters(self, qs, form):
+         jellyfish_id = form.cleaned_data["jellyfish_id"].id
 
-         to_date = self.request.GET.get("to_date", None)
-         if to_date:
-             qs = qs.filter(jellyfish__lte=to_date)
+         if jellyfish_id != "ALL" and jellyfish_id != "UNKNOWN":
+             qs = qs.filter(jellyfish__id=jellyfish_id)
+         elif jellyfish_id == "UNKNOWN":
+             pass
+
+         qs = qs.filter(date__gte=form.cleaned_data["from_date"])
+         qs = qs.filter(date__lte=form.cleaned_data["to_date"])
 
          return qs
 

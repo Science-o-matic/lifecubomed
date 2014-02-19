@@ -21,3 +21,9 @@ class SightingReportForm(forms.ModelForm):
             'image_name': forms.TextInput(attrs={'size': 50}),
             'specimen_type': forms.RadioSelect(choices=SPECIMEN_TYPES),
         }
+
+
+class SightingsFilterForm(forms.Form):
+    jellyfish_id = forms.ModelChoiceField(queryset=Jellyfish.objects.all())
+    from_date = forms.DateField()
+    to_date = forms.DateField()
