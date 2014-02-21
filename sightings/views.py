@@ -1,3 +1,4 @@
+import os
 import math
 from django.core.serializers.json import Serializer
 from django.views.generic.edit import FormView
@@ -5,6 +6,7 @@ from django.core.urlresolvers import reverse
 from django import http
 from django.views.generic.list import ListView
 from django.utils import simplejson
+from django.conf import settings
 from sightings.models import Jellyfish, Sighting
 from sightings.forms import SightingReportForm, SightingsFilterForm
 
@@ -25,14 +27,17 @@ class SightingReportView(FormView):
         return http.HttpResponseRedirect(form.data["next"])
 
 
+THUMBNAIL_PLACEHOLDER_URL = os.path.join(settings.STATIC_URL, "img/thumb_placeholder.png")
 class FlatSightingSerializer(Serializer):
 
     def get_dump_object(self, obj):
-        image_url = obj.image.url if obj.image else ''
+        thumb_url = THUMBNAIL_PLACEHOLDER_URL
+        if obj.thumb:
+            thumb_url = obj.thumb.url
         self._current.update({
                 'id': obj._get_pk_val(),
                 'date': obj.date.isoformat(),
-                'image_url': image_url,
+                'image_url': thumb_url,
                 'jellyfish': {
                     'name': unicode(obj.jellyfish) or _("N/A"),
                     'id': obj.jellyfish_id

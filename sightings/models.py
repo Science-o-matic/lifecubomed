@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.core.files.base import ContentFile
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
 from sorl.thumbnail import ImageField
 from sorl.thumbnail import get_thumbnail
 
@@ -16,49 +18,59 @@ class Jellyfish(models.Model):
     def __unicode__(self):
         return self.name
 
-
+SPECIMEN_TYPES = (
+    (0, 'Known'),
+    (1, 'Other')
+)
+SIZES = (
+    (1, '0 - 5 cm'),
+    (5, '5 - 10 cm'),
+    (10, '10 - 15 cm'),
+    (15, '15 - 25 cm'),
+    (25, '>25 cm'),
+)
+QUANTITIES = (
+    (2, '2-5'),
+    (6, '6-10'),
+    (11, '11-99'),
+    (100, '>100')
+)
 class Sighting(models.Model):
     reporter = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     date = models.DateField()
     description = models.TextField(null=True, blank=True)
-    SPECIMEN_TYPES = (
-        (0, 'Known'),
-        (1, 'Other')
-    )
     specimen_type = models.IntegerField(choices=SPECIMEN_TYPES, default=0)
     other_specimen_description = models.TextField(null=True, blank=True,
                                          verbose_name="Other jellyfish specimen description")
     image_name = models.CharField(max_length=3000, null=True, blank=True, verbose_name="Image name")
     image = ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
                        verbose_name="Image file")
+    thumb = ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
+                       verbose_name="Thumbnail file")
     address = models.CharField(max_length=5000)
     lat = models.DecimalField(max_digits=22, decimal_places=20, verbose_name=_("Latitude"))
     lng = models.DecimalField(max_digits=23, decimal_places=20, verbose_name=_("Longitude"))
     jellyfish = models.ForeignKey(Jellyfish, null=True, blank=True)
-    SIZES = (
-        (1, '0 - 5 cm'),
-        (5, '5 - 10 cm'),
-        (10, '10 - 15 cm'),
-        (15, '15 - 25 cm'),
-        (25, '>25 cm'),
-    )
     jellyfish_size = models.IntegerField(choices=SIZES, null=True, blank=True)
-    QUANTITIES = (
-        (2, '2-5'),
-        (6, '6-10'),
-        (11, '11-99'),
-        (100, '>100')
-    )
     jellyfish_quantity = models.IntegerField(choices=QUANTITIES, null=True, blank=True)
 
     class Meta:
         ordering = ['-date']
 
     def save(self, *args, **kwargs):
-        if not self.id:
+        if not self.id and self.image:
             super(Sighting, self).save(*args, **kwargs)
-            image = get_thumbnail(self.image, "50x50", crop='center', quality=99)
-            self.image.save(image.name, ContentFile(image.read()), True)
+            thumb = get_thumbnail(self.image, "50x50", crop='center', quality=99)
+            self.thumb.save(thumb.name, ContentFile(thumb.read()), True)
         super(Sighting, self).save(*args, **kwargs)
+
+
+@receiver(pre_delete)
+def delete_sighting(sender, instance, **kwargs):
+    if sender == Sighting:
+        if instance.image:
+            instance.image.delete()
+        if instance.thumb:
+            instance.thumb.delete()

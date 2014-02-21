@@ -2,10 +2,8 @@ import datetime
 from django import forms
 from django.utils.translation import get_language, ugettext_lazy as _
 from django.utils.formats import localize_input
-from sightings.models import Sighting, Jellyfish
+from sightings.models import Sighting, Jellyfish, SPECIMEN_TYPES
 
-
-SPECIMEN_TYPES = Sighting.SPECIMEN_TYPES
 
 class SightingReportForm(forms.ModelForm):
     required_css_class = 'required'
