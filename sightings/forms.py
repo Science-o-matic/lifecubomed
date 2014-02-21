@@ -24,7 +24,7 @@ class SightingReportForm(forms.ModelForm):
         }
 
 JELLYFISH_CHOICES = (
-    ("ALL", _("All types")),
+    ("ALL", _("All jellyfish types")),
     ("UNKNOWN", _("Unknown type")),
 )
 DATEFORMATS = {'en': "%m/%d/%Y",
