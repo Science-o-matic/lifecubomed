@@ -50,7 +50,7 @@ class FlatSightingSerializer(Serializer):
         return self._current
 
 
-ITEMS_PER_PAGE = 1
+ITEMS_PER_PAGE = 20
 class AJAXSightingListMixin(object):
 
      def dispatch(self, request, *args, **kwargs):
