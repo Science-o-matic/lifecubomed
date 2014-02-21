@@ -10,8 +10,14 @@ var Map = {
   render: function(jellyfish_id, from_date, to_date) {
     var that = this;
 
-    this.map.gmap('clear', 'markers');
     Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
+      if (data.sightings.length == 0) {
+        that.map.hide();
+        showNoSightingsError();
+      } else {
+        that.map.gmap('clear', 'markers');
+        that.map.show();
+      }
       $.each(data.sightings, function(i, marker) {
         that.map.gmap('addMarker', {
           'position': new google.maps.LatLng(marker.lat, marker.lng),
@@ -23,13 +29,20 @@ var Map = {
 };
 
 var List = {
+  table_id: "#list table",
   tbody_id: "#list table tbody",
 
   render: function(jellyfish_id, from_date, to_date) {
-    var tbody = $(this.tbody_id);
+    var tbody = $(this.tbody_id), table = $(this.table_id);
     tbody.empty();
+    table.hide();
 
     Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
+      if (data.sightings.length == 0) {
+        showNoSightingsError();
+      } else {
+        table.show();
+      }
       $.each(data.sightings, function(i, sighting) {
         var row = $('<tr></tr>'), img = $('<img>');
 
@@ -109,6 +122,10 @@ function initTabs() {
       e.preventDefault();
     });
   });
+}
+
+function showNoSightingsError() {
+  $("#no_sightings").show();
 }
 
 function renderSightings() {
