@@ -1,6 +1,6 @@
 ul.tabs {
     list-style: none;
-    margin: 1ex 0 0 0;
+    margin: 3ex 0 0 0;
     padding: 0;
 }
     ul.tabs li {
@@ -12,6 +12,10 @@ ul.tabs {
 
 .tab_content {
     clear: both;
+}
+
+#sightings_filter p {
+    float: left;
 }
 
 #map {
@@ -33,4 +37,40 @@ ul.tabs {
 
 #pagination #next {
     float: right;
+}
+
+#sightings_filter {
+    margin-left: 1em;
+    float: left;
+}
+
+#sightings_filter input[type=submit] {
+      float: left;
+      background-color: #2287B5;
+      color: white;
+      padding: 1ex;
+      border-radius: 4px 4px 4px 4px;
+      border-color: transparent;
+      margin-top: .5ex;
+      margin-left: 1em;
+}
+
+#sightings_filter label {
+    margin-left: 1em;
+}
+
+
+#sightings_filter input.narrow {
+    width: 6em;
+}
+
+a#report_sighting_button {
+      display: inline;
+      background-color: #2287B5;
+      color: white;
+      padding: 1ex;
+      border-radius: 4px 4px 4px 4px;
+      border-color: transparent;
+      margin-top: 2ex;
+      text-decoration: none;
 }

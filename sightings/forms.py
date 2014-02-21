@@ -33,9 +33,16 @@ DATEFORMATS = {'en': "%m/%d/%Y",
 
 class SightingsFilterForm(forms.Form):
     jellyfish_id = forms.ChoiceField(choices=JELLYFISH_CHOICES,
-                                     label=_("Jellyfish type"))
-    from_date = forms.DateField(localize=False)
-    to_date = forms.DateField(localize=False)
+                                     label="")
+    from_date = forms.DateField(
+        localize=False,
+        label=_("From"),
+        widget=forms.TextInput(attrs={"class": "narrow"}))
+    to_date = forms.DateField(
+        localize=False,
+        label=_("To"),
+        widget=forms.TextInput(attrs={"class": "narrow"}))
+
 
     def __init__(self, *args, **kwargs):
         super(SightingsFilterForm, self).__init__(*args, **kwargs)
