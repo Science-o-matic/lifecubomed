@@ -22,3 +22,15 @@ ul.tabs {
 #no_sightings {
     display: none;
 }
+
+#pagination #prev, #pagination #next {
+    display: none;
+}
+
+#pagination #prev {
+    float: left;
+}
+
+#pagination #next {
+    float: right;
+}

@@ -10,7 +10,7 @@ var Map = {
   render: function(jellyfish_id, from_date, to_date) {
     var that = this;
 
-    Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
+    Api.getSightings(jellyfish_id, from_date, to_date, 0, function(data) {
       if (data.sightings.length == 0) {
         that.map.hide();
         showNoSightingsError();
@@ -32,16 +32,39 @@ var List = {
   table_id: "#list table",
   tbody_id: "#list table tbody",
 
-  render: function(jellyfish_id, from_date, to_date) {
-    var tbody = $(this.tbody_id), table = $(this.table_id);
+  init: function () {
+    var that = this;
+    this.prev = $("#pagination #prev");
+    this.next = $("#pagination #next");
+
+    this.next.click(function () {
+      that.render(that.jellyfish_id, that.from_date, that.to_date, that.pagination.page + 1);
+    });
+    that.prev.click(function () {
+      that.render(that.jellyfish_id, that.from_date, that.to_date, that.pagination.page - 1);
+    });
+  },
+
+  render: function(jellyfish_id, from_date, to_date, page) {
+    var that = this, tbody = $(this.tbody_id), table = $(this.table_id);
+
     tbody.empty();
     table.hide();
 
-    Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
+    if (typeof page === "undefined") {
+      page = 1;
+    }
+
+    Api.getSightings(jellyfish_id, from_date, to_date, page, function(data) {
       if (data.sightings.length == 0) {
         showNoSightingsError();
       } else {
+        that.jellyfish_id = jellyfish_id;
+        that.from_date = from_date;
+        that.to_date = to_date;
+        that.pagination = data.pagination;
         table.show();
+        that.renderPagination();
       }
       $.each(data.sightings, function(i, sighting) {
         var row = $('<tr></tr>'), img = $('<img>');
@@ -55,14 +78,27 @@ var List = {
         tbody.append(row);
       });
     });
+  },
+
+  renderPagination: function() {
+    if (this.pagination.pages > 1 && this.pagination.page < this.pagination.pages) {
+      this.next.show();
+    } else {
+      this.next.hide();
+    }
+
+    if (this.pagination.page > 1) {
+      this.prev.show();
+    } else {
+      this.prev.hide();
+    }
   }
 };
-
 
 var Api = {
   url: '/sightings.json',
 
-  getSightings: function (jellyfish_id, from_date, to_date, callback) {
+  getSightings: function (jellyfish_id, from_date, to_date, page, callback) {
     var params = {}, url = this.url;
 
     if (jellyfish_id) {
@@ -73,6 +109,9 @@ var Api = {
       if (to_date) {
         params["to_date"] = to_date;
       }
+    }
+    if (page) {
+      params["page"] = page;
     }
 
     url = this.url;
@@ -142,5 +181,6 @@ function renderSightings() {
 $(document).ready(function () {
   initTabs();
   Map.init();
+  List.init();
   renderSightings();
 });

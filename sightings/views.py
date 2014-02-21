@@ -50,7 +50,7 @@ class FlatSightingSerializer(Serializer):
         return self._current
 
 
-ITEMS_PER_PAGE = 20
+ITEMS_PER_PAGE = 1
 class AJAXSightingListMixin(object):
 
      def dispatch(self, request, *args, **kwargs):
@@ -65,6 +65,9 @@ class AJAXSightingListMixin(object):
          else:
              return http.HttpResponseBadRequest(simplejson.dumps(form.non_field_errors()))
 
+         if int(self.request.GET.get("page", 0)):
+             qs, pagination = self._paginate_qs(qs)
+
          serializer = FlatSightingSerializer()
          json = serializer.serialize(qs,
                                      indent=4,
@@ -72,11 +75,13 @@ class AJAXSightingListMixin(object):
                                              'jellyfish', 'jellyfish_quantity',
                                              'jellyfish_size')
                                      )
-         json = '{"sightings": ' + json + ",\n"
-         json += self.render_pagination(qs)
+         json = '{"sightings": ' + json
+         if int(self.request.GET.get("page", 0)):
+             json += self._render_pagination(pagination)
+         json += "}"
          return http.HttpResponse(json)
 
-     def render_pagination(self, qs):
+     def _paginate_qs(self, qs):
          total = len(qs)
          page = int(self.request.GET.get("page", 1))
          items_per_page = int(self.request.GET.get("items", ITEMS_PER_PAGE))
@@ -85,8 +90,13 @@ class AJAXSightingListMixin(object):
          end = page * items_per_page
          qs = qs[start:end]
          page_total = len(qs)
-         return '"pagination":\n{"total": %i, "pages": %i, "page": %i, "items": %i}}' % (
-             total, pages, page, page_total)
+         return (qs, {"total": total,
+                     "page": page,
+                     "pages": pages,
+                     "items": page_total})
+
+     def _render_pagination(self, pagination):
+         return ', "pagination": ' + simplejson.dumps(pagination)
 
      def _build_qs(self, form):
          qs = super(AJAXSightingsListView, self).get_queryset()
