@@ -22,11 +22,10 @@
   </div>
 
   <div id="sightings_wrapper">
-    <ul class="tabs">
-      <li><a href="#map">{% trans "Map" %}</a></li>
-      <li><a href="#list">{% trans "List" %}</a></li>
-    </ul>
-
+    <div id="tabs">
+      <a href="#map">{% trans "Map" %}</a>
+      <a href="#list">{% trans "List" %}</a>
+    </div>
     {% placeholder sightings_filter_form %}
   </div>
 
@@ -34,8 +33,7 @@
     <div id="no_sightings">
       <p>{% trans "There's no sightings yet." %}</p>
     </div>
-    <div id="map">
-    </div>
+    <div id="map"></div>
     <div id="list">
       <table>
         <thead>
