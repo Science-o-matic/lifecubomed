@@ -15,6 +15,7 @@ var Map = {
         that.map.hide();
         showNoSightingsError();
       } else {
+        hideNoSightingsError();
         that.map.gmap('clear', 'markers');
         that.map.show();
       }
@@ -63,6 +64,7 @@ var List = {
         that.from_date = from_date;
         that.to_date = to_date;
         that.pagination = data.pagination;
+        hideNoSightingsError();
         table.show();
         that.renderPagination();
       }
@@ -130,7 +132,7 @@ var Api = {
 }
 
 function initTabs() {
-  $('ul.tabs').each(function(){
+  $('#tabs').each(function(){
     var $active, $content, $links = $(this).find('a');
 
     $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
@@ -167,11 +169,16 @@ function showNoSightingsError() {
   $("#no_sightings").show();
 }
 
+function hideNoSightingsError() {
+  $("#no_sightings").hide();
+}
+
+
 function renderSightings() {
   jellyfish_id = $('#id_jellyfish_id').val();
   from_date = $('#id_from_date').val();
   to_date = $('#id_to_date').val();
-  if ($(".tabs a[href=#map]").hasClass("active")) {
+  if ($("#tabs a[href=#map]").hasClass("active")) {
     Map.render(jellyfish_id, from_date, to_date);
   } else {
     List.render(jellyfish_id, from_date, to_date);
