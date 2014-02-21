@@ -57,6 +57,7 @@
 
 #no_sightings {
     display: none;
+    padding: 2ex;
 }
 
 #pagination #prev, #pagination #next {
@@ -101,4 +102,16 @@ a#report_sighting_button {
       border-color: transparent;
       margin-top: 2ex;
       text-decoration: none;
+}
+
+#list table {
+    display: block;
+    padding: 2ex;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#list table th, td {
+    padding: 1ex;
+    border: 1px solid #CCC;
 }
