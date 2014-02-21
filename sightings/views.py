@@ -28,9 +28,11 @@ class SightingReportView(FormView):
 class FlatSightingSerializer(Serializer):
 
     def get_dump_object(self, obj):
+        image_url = obj.image.url if obj.image else ''
         self._current.update({
                 'id': obj._get_pk_val(),
                 'date': obj.date.isoformat(),
+                'image_url': image_url,
                 'jellyfish': {
                     'name': unicode(obj.jellyfish) or _("N/A"),
                     'id': obj.jellyfish_id
