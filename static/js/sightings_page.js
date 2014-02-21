@@ -22,6 +22,29 @@ var Map = {
   }
 };
 
+var List = {
+  tbody_id: "#list table tbody",
+
+  render: function(jellyfish_id, from_date, to_date) {
+    var tbody = $(this.tbody_id);
+    tbody.empty();
+
+    Api.getSightings(jellyfish_id, from_date, to_date, function(data) {
+      $.each(data.sightings, function(i, sighting) {
+        var row = $('<tr></tr>'), img = $('<img>');
+
+        img.attr("src", sighting.image_url);
+        row.append($("<td>").append(img));
+        row.append($("<td>").text(sighting.date));
+        row.append($("<td>").text(sighting.jellyfish.name));
+        row.append($("<td>").text(sighting.reporter.name));
+
+        tbody.append(row);
+      });
+    });
+  }
+};
+
 
 var Api = {
   url: '/sightings.json',
@@ -68,6 +91,8 @@ function initTabs() {
 
 
     $(this).on('click', 'a', function(e){
+      tab_was_active = $(this).hasClass("active");
+
       $active.removeClass('active');
       $content.hide();
 
@@ -76,6 +101,10 @@ function initTabs() {
 
       $active.addClass('active');
       $content.show();
+
+      if (!tab_was_active) {
+        renderSightings();
+      }
 
       e.preventDefault();
     });
@@ -89,7 +118,7 @@ function renderSightings() {
   if ($(".tabs a[href=#map]").hasClass("active")) {
     Map.render(jellyfish_id, from_date, to_date);
   } else {
-    renderListSightings(jellyfish_type_id, from_date, to_date);
+    List.render(jellyfish_id, from_date, to_date);
   }
 }
 
