@@ -2,20 +2,41 @@ ul.tabs {
     list-style: none;
     margin: 3ex 0 0 0;
     padding: 0;
+    float: left;
 }
     ul.tabs li {
         float: left;
-        border: 1px solid white;
         margin: 0;
+        margin-right: .5ex;
         padding: 1ex;
+        background-color: white;
+        border-color: transparent;
+        border-radius: 4px 4px 0 0;
+        border-bottom: 0;
     }
+
+
+#sightings_wrapper {
+    float: left;
+}
 
 .tab_content {
     clear: both;
+    display: block;
+    border-top: 0;
+    background-color: white;
+}
+
+#sightings_filter {
+    padding-top: 1ex;
+    margin-top: 3ex;
+    padding-left: 1em;
+    float: left;
 }
 
 #sightings_filter p {
     float: left;
+    margin: 0 0 0 0;
 }
 
 #map {
@@ -39,10 +60,6 @@ ul.tabs {
     float: right;
 }
 
-#sightings_filter {
-    margin-left: 1em;
-    float: left;
-}
 
 #sightings_filter input[type=submit] {
       float: left;
@@ -51,7 +68,7 @@ ul.tabs {
       padding: 1ex;
       border-radius: 4px 4px 4px 4px;
       border-color: transparent;
-      margin-top: .5ex;
+      margin-top: -1ex;
       margin-left: 1em;
 }
 

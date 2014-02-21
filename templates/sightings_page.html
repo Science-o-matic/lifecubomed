@@ -14,16 +14,21 @@
   {% endaddtoblock %}
 
   {% placeholder base_content %}
-  <a id="report_sighting_button" href="{% page_url 'sighting_report_page' %}">
-    {% trans "Report sighting" %}
-  </a>
 
-  <ul class="tabs">
-    <li><a href="#map">{% trans "Map" %}</a></li>
-    <li><a href="#list">{% trans "List" %}</a></li>
-  </ul>
+  <div id="button_wrapper">
+    <a id="report_sighting_button" href="{% page_url 'sighting_report_page' %}">
+      {% trans "Report sighting" %}
+    </a>
+  </div>
 
-  {% placeholder sightings_filter_form %}
+  <div id="sightings_wrapper">
+    <ul class="tabs">
+      <li><a href="#map">{% trans "Map" %}</a></li>
+      <li><a href="#list">{% trans "List" %}</a></li>
+    </ul>
+
+    {% placeholder sightings_filter_form %}
+  </div>
 
   <div class="tab_content">
     <div id="no_sightings">
@@ -47,6 +52,4 @@
       </div>
     </div>
   </div>
-
-
 {% endblock %}
