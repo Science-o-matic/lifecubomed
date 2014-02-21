@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.core.files.base import ContentFile
+from sorl.thumbnail import ImageField
+from sorl.thumbnail import get_thumbnail
 
 
 class Jellyfish(models.Model):
@@ -12,6 +15,7 @@ class Jellyfish(models.Model):
 
     def __unicode__(self):
         return self.name
+
 
 class Sighting(models.Model):
     reporter = models.ForeignKey(User)
@@ -27,8 +31,8 @@ class Sighting(models.Model):
     other_specimen_description = models.TextField(null=True, blank=True,
                                          verbose_name="Other jellyfish specimen description")
     image_name = models.CharField(max_length=3000, null=True, blank=True, verbose_name="Image name")
-    image = models.ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
-                              verbose_name="Image file")
+    image = ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
+                       verbose_name="Image file")
     address = models.CharField(max_length=5000)
     lat = models.DecimalField(max_digits=22, decimal_places=20, verbose_name=_("Latitude"))
     lng = models.DecimalField(max_digits=23, decimal_places=20, verbose_name=_("Longitude"))
@@ -51,3 +55,10 @@ class Sighting(models.Model):
 
     class Meta:
         ordering = ['-date']
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            super(Sighting, self).save(*args, **kwargs)
+            image = get_thumbnail(self.image, "50x50", crop='center', quality=99)
+            self.image.save(image.name, ContentFile(image.read()), True)
+        super(Sighting, self).save(*args, **kwargs)
