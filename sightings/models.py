@@ -53,8 +53,10 @@ class Sighting(models.Model):
     lat = models.DecimalField(max_digits=22, decimal_places=20, verbose_name=_("Latitude"))
     lng = models.DecimalField(max_digits=23, decimal_places=20, verbose_name=_("Longitude"))
     jellyfish = models.ForeignKey(Jellyfish, null=True, blank=True)
-    jellyfish_size = models.IntegerField(choices=SIZES, null=True, blank=True)
-    jellyfish_quantity = models.IntegerField(choices=QUANTITIES, null=True, blank=True)
+    jellyfish_size = models.IntegerField(choices=SIZES, null=True, blank=True,
+                                         default=SIZES[0][0])
+    jellyfish_quantity = models.IntegerField(choices=QUANTITIES, null=True, blank=True,
+                                             default=QUANTITIES[0][0])
 
     class Meta:
         ordering = ['-date']

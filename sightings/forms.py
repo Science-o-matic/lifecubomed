@@ -23,6 +23,7 @@ class SightingReportForm(forms.ModelForm):
             'specimen_type': forms.RadioSelect(choices=SPECIMEN_TYPES),
         }
 
+
 JELLYFISH_CHOICES = (
     ("ALL", _("All jellyfish types")),
     ("UNKNOWN", _("Unknown type")),
@@ -30,7 +31,6 @@ JELLYFISH_CHOICES = (
 DATEFORMATS = {'en': "%m/%d/%Y",
                "es": "%d/%m/%Y",
                }
-
 class SightingsFilterForm(forms.Form):
     jellyfish_id = forms.ChoiceField(choices=JELLYFISH_CHOICES,
                                      label="")
