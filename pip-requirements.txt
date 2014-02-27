@@ -20,4 +20,4 @@ pillow
 sorl-thumbnail==11.12
 git+https://github.com/hovel/imagestore.git
 hg+https://abarcia@bitbucket.org/abarcia/cmsplugin-youtube
-django-registration
+django-registration==1.0
