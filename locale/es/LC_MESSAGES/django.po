@@ -1,14 +1,14 @@
+# -*- coding: utf-8 -*-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-03 13:09+0100\n"
+"POT-Creation-Date: 2014-03-03 13:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,25 +183,29 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:81
+#: templates/base.html:51
+msgid "Report your sightings!"
+msgstr ""
+
+#: templates/base.html:53
+msgid "Login"
+msgstr ""
+
+#: templates/base.html:54
+msgid "Not registered yet!"
+msgstr ""
+
+#: templates/base.html:55 templates/registration/registration_form.html:14
+msgid "Register"
+msgstr ""
+
+#: templates/base.html:82
 msgid "Search"
 msgstr "Buscar"
 
 #: templates/base.html:100
 msgid "Follow us on"
-msgstr ""
-
-#: templates/base.html:103
-msgid "Síguenos en"
-msgstr ""
-
-#: templates/base.html:106
-msgid "Seguici su"
-msgstr ""
-
-#: templates/base.html:109
-msgid "Suivez-nous sur"
-msgstr ""
+msgstr "Síguenos en"
 
 #: templates/sightings_page.html:26
 msgid "Map"
@@ -259,14 +263,10 @@ msgstr ""
 
 #: templates/registration/login.html:14
 msgid "Log in"
-msgstr ""
+msgstr "Iniciar sesión"
 
 #: templates/registration/registration_complete.html:11
 msgid ""
 "The registration process is almost complete. You would receive an email to "
 "activate your account."
-msgstr ""
-
-#: templates/registration/registration_form.html:14
-msgid "Register"
 msgstr ""

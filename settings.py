@@ -29,7 +29,7 @@ CMS_LANGUAGES = {
     1: [
         {
             'code': 'es',
-            'name': gettext(u'Español'),
+            'name': gettext(u'Spanish'),
             'fallbacks': ['en'],
         },
         {
@@ -77,6 +77,8 @@ SITE_ID = 1
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
+
+LOCALE_PATHS = (os.path.join(PROJECT_DIR, 'locale'),)
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
