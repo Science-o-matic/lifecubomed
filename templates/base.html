@@ -78,18 +78,7 @@
      <div id="search">
        <form method="get" action="/search">
          <input type="text" name="q" value""/>
-         {% ifequal LANGUAGE_CODE  'en' %}
          <input type="submit" value="{% trans "Search" %}"/>
-         {% endifequal %}
-         {% ifequal LANGUAGE_CODE  'es' %}
-         <input type="submit" value="{% trans "Buscar" %}"/>
-         {% endifequal %}
-         {% ifequal LANGUAGE_CODE  'it' %}
-         <input type="submit" value="{% trans "Cerca" %}"/>
-         {% endifequal %}
-         {% ifequal LANGUAGE_CODE  'fr' %}
-         <input type="submit" value="{% trans "Rechercher" %}"/>
-         {% endifequal %}
        </form>
      </div>
      </br>

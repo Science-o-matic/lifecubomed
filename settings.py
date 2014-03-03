@@ -17,7 +17,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 LANGUAGES = (
-    ('es', gettext(U'Español')),
+    ('es', gettext(u'Spanish')),
     ('en', gettext('English')),
 #    ('it', gettext('Italiano')),
 #    ('fr', gettext(U'Français')),
