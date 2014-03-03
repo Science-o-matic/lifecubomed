@@ -48,10 +48,11 @@
         {% trans "Logout" %}
       </a>
     {% else %}
-      <p>¡Ingresa tus avistamientos de Medusas!</p>
-      <a href="{% page_url 'accounts_login' %}?next={% page_url 'sightings_page' %}">Inicia sesión</a>
-      <p>¿Aún no estás registrado?</p>
-      <a href="{% page_url 'accounts_register' %}">Regístrate</a>
+      <p>{% trans "Report your sightings!" %}</p>
+      <a href="{% page_url 'accounts_login' %}?next={% page_url 'sightings_page' %}">
+        {% trans "Login" %}</a>
+      <p>{% trans "Not registered yet!" %}</p>
+      <a href="{% page_url 'accounts_register' %}">{% trans "Register" %}</a>
     {% endif %}
   </div>
  <div id="wrapper">
@@ -96,18 +97,7 @@
      </div>
        </br></br>
        <div id="facebook" align="center">
-         {% ifequal LANGUAGE_CODE  'en' %}
-         <span>{% trans "Follow us on" %}:</span>
-         {% endifequal %}
-         {% ifequal LANGUAGE_CODE  'es' %}
-         <span>{% trans "Síguenos en" %}:</span>
-         {% endifequal %}
-         {% ifequal LANGUAGE_CODE  'it' %}
-         <span>{% trans "Seguici su" %}:</span>
-             {% endifequal %}
-         {% ifequal LANGUAGE_CODE  'fr' %}
-         <span>{% trans "Suivez-nous sur" %}:</span>
-         {% endifequal %}
+         <span>{% trans "Follow us on" %}</span>
          <a href="https://www.facebook.com/CubomedProject?ref=hl" target="new"><img src="{{ STATIC_URL }}img/facebook.png"/></a>
          <a href="https://twitter.com/cubomed" target="new"><img src="{{ STATIC_URL }}img/twitter.png"/></a>
        </div>
