@@ -19,8 +19,8 @@ MANAGERS = ADMINS
 LANGUAGES = (
     ('es', gettext(u'Spanish')),
     ('en', gettext('English')),
-#    ('it', gettext('Italiano')),
-#    ('fr', gettext(U'Français')),
+    ('it', gettext('Italiano')),
+    ('fr', gettext(U'Français')),
 )
 
 DEFAULT_LANGUAGE = 0
@@ -36,14 +36,16 @@ CMS_LANGUAGES = {
             'code': 'en',
             'name': gettext(u'English'),
         },
-#        {
-#            'code': 'it',
-#            'name': gettext(u'Italiano'),
-#        },
-#        {
-#            'code': 'fr',
-#            'name': gettext(U'Français'),
-#        },
+        {
+            'code': 'it',
+            'name': gettext(u'Italiano'),
+	    'public': False
+        },
+        {
+            'code': 'fr',
+            'name': gettext(U'Français'),
+	    'public': False
+        },
         ],
     "default": {
         'public': True,
