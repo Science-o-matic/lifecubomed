@@ -36,27 +36,30 @@ QUANTITIES = (
     (100, '>100')
 )
 class Sighting(models.Model):
-    reporter = models.ForeignKey(User)
+    reporter = models.ForeignKey(User, verbose_name=_("Reporter"))
     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, null=True, blank=True)
-    date = models.DateField()
-    description = models.TextField(null=True, blank=True)
-    specimen_type = models.IntegerField(choices=SPECIMEN_TYPES, default=0)
+    date = models.DateField(verbose_name=_("Date"))
+    description = models.TextField(null=True, blank=True, verbose_name=_("Description"))
+    specimen_type = models.IntegerField(choices=SPECIMEN_TYPES, default=0,
+                                        verbose_name=_("Specimen type"))
     other_specimen_description = models.TextField(null=True, blank=True,
-                                         verbose_name="Other jellyfish specimen description")
-    image_name = models.CharField(max_length=3000, null=True, blank=True, verbose_name="Image name")
+                                         verbose_name=_("Other jellyfish specimen description"))
+    image_name = models.CharField(max_length=3000, null=True, blank=True,
+                                  verbose_name=_("Image name"))
     image = ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
-                       verbose_name="Image file")
+                       verbose_name=_("Image file"))
     thumb = ImageField(upload_to="user_images", max_length=3000, null=True, blank=True,
-                       verbose_name="Thumbnail file")
-    address = models.CharField(max_length=5000)
+                       verbose_name=_("Thumbnail file"))
+    address = models.CharField(max_length=5000, verbose_name=_("Address"))
     lat = models.DecimalField(max_digits=22, decimal_places=20, verbose_name=_("Latitude"))
     lng = models.DecimalField(max_digits=23, decimal_places=20, verbose_name=_("Longitude"))
-    jellyfish = models.ForeignKey(Jellyfish, null=True, blank=True)
+    jellyfish = models.ForeignKey(Jellyfish, null=True, blank=True, verbose_name=_("Jellyfish"))
     jellyfish_size = models.IntegerField(choices=SIZES, null=True, blank=True,
-                                         default=SIZES[0][0])
+                                         default=SIZES[0][0], verbose_name=_("Size"))
     jellyfish_quantity = models.IntegerField(choices=QUANTITIES, null=True, blank=True,
-                                             default=QUANTITIES[0][0])
+                                             default=QUANTITIES[0][0],
+                                             verbose_name=_("Quantity"))
 
     class Meta:
         ordering = ['-date']

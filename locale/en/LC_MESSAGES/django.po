@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-09 12:00+0200\n"
+"POT-Creation-Date: 2014-04-09 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,12 +85,62 @@ msgstr ""
 msgid "Date range is wrong"
 msgstr ""
 
+#: sightings/models.py:39 sightings/templates/sightings_list.html:15
+#: templates/sightings_page.html:43
+msgid "Reporter"
+msgstr ""
+
+#: sightings/models.py:42 sightings/templates/sightings_list.html:13
+#: templates/sightings_page.html:41
+msgid "Date"
+msgstr ""
+
+#: sightings/models.py:43
+msgid "Description"
+msgstr ""
+
+#: sightings/models.py:45
+msgid "Specimen type"
+msgstr ""
+
+#: sightings/models.py:47
+msgid "Other jellyfish specimen description"
+msgstr ""
+
+#: sightings/models.py:49
+msgid "Image name"
+msgstr ""
+
+#: sightings/models.py:51
+msgid "Image file"
+msgstr ""
+
 #: sightings/models.py:53
-msgid "Latitude"
+msgid "Thumbnail file"
 msgstr ""
 
 #: sightings/models.py:54
+msgid "Address"
+msgstr ""
+
+#: sightings/models.py:55
+msgid "Latitude"
+msgstr ""
+
+#: sightings/models.py:56
 msgid "Longitude"
+msgstr ""
+
+#: sightings/models.py:57
+msgid "Jellyfish"
+msgstr ""
+
+#: sightings/models.py:59 sightings/templates/sighting_report_form.html:61
+msgid "Size"
+msgstr ""
+
+#: sightings/models.py:62 sightings/templates/sighting_report_form.html:59
+msgid "Quantity"
 msgstr ""
 
 #: sightings/views.py:42
@@ -118,14 +168,6 @@ msgstr ""
 msgid "Click on jellyfish to input size and quantity."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:59
-msgid "Quantity"
-msgstr ""
-
-#: sightings/templates/sighting_report_form.html:61
-msgid "Size"
-msgstr ""
-
 #: sightings/templates/sighting_report_form.html:72
 msgid "Other specimen"
 msgstr ""
@@ -139,7 +181,7 @@ msgstr ""
 #: sightings/templates/sighting_report_form.html:87
 msgid ""
 "Enter a location, and it will be shown in a map below. Latitude and "
-"longitude fileds will be filled."
+"longitude fields will be filled."
 msgstr ""
 
 #: sightings/templates/sighting_report_form.html:97
@@ -170,16 +212,8 @@ msgstr ""
 msgid "Photo"
 msgstr ""
 
-#: sightings/templates/sightings_list.html:13 templates/sightings_page.html:41
-msgid "Date"
-msgstr ""
-
 #: sightings/templates/sightings_list.html:14 templates/sightings_page.html:42
 msgid "Specimen"
-msgstr ""
-
-#: sightings/templates/sightings_list.html:15 templates/sightings_page.html:43
-msgid "Reporter"
 msgstr ""
 
 #: templates/base.html:48

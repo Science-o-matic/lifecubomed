@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-09 12:00+0200\n"
+"POT-Creation-Date: 2014-04-09 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,140 +68,179 @@ msgstr ""
 
 #: sightings/forms.py:28
 msgid "All jellyfish types"
-msgstr ""
+msgstr "Todos los tipos de medusas"
 
 #: sightings/forms.py:29
 msgid "Unknown type"
-msgstr ""
+msgstr "Tipo desconocido"
 
 #: sightings/forms.py:39
 msgid "From"
-msgstr ""
+msgstr "Desde"
 
 #: sightings/forms.py:43
 msgid "To"
-msgstr ""
+msgstr "Hasta"
 
 #: sightings/forms.py:67
 msgid "Date range is wrong"
-msgstr ""
+msgstr "Rango de fechas inválido"
+
+#: sightings/models.py:39 sightings/templates/sightings_list.html:15
+#: templates/sightings_page.html:43
+msgid "Reporter"
+msgstr "Reportado por"
+
+#: sightings/models.py:42 sightings/templates/sightings_list.html:13
+#: templates/sightings_page.html:41
+msgid "Date"
+msgstr "Fecha"
+
+#: sightings/models.py:43
+msgid "Description"
+msgstr "Descripción"
+
+#: sightings/models.py:45
+msgid "Specimen type"
+msgstr "Especimen"
+
+#: sightings/models.py:47
+msgid "Other jellyfish specimen description"
+msgstr "Descricpción de especimen"
+
+#: sightings/models.py:49
+msgid "Image name"
+msgstr "Nombre de la imagen"
+
+#: sightings/models.py:51
+msgid "Image file"
+msgstr "Fichero de imagen"
 
 #: sightings/models.py:53
-msgid "Latitude"
-msgstr ""
+msgid "Thumbnail file"
+msgstr "Fichero thumbnail"
 
 #: sightings/models.py:54
+msgid "Address"
+msgstr "Localización"
+
+#: sightings/models.py:55
+msgid "Latitude"
+msgstr "Latitud"
+
+#: sightings/models.py:56
 msgid "Longitude"
+msgstr "Longitud"
+
+#: sightings/models.py:57
+msgid "Jellyfish"
 msgstr ""
+
+#: sightings/models.py:59 sightings/templates/sighting_report_form.html:61
+msgid "Size"
+msgstr "Tamaño"
+
+#: sightings/models.py:62 sightings/templates/sighting_report_form.html:59
+msgid "Quantity"
+msgstr "Abundancia"
 
 #: sightings/views.py:42
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: sightings/report/cms_app.py:7
 msgid "Sighting Report"
-msgstr ""
+msgstr "Informe de Avistamiento"
 
 #: sightings/templates/sighting_report_form.html:21 templates/base.html:46
 #: templates/sightings_page.html:20
 msgid "Report sighting"
-msgstr ""
+msgstr "Reportar avistamiento"
 
 #: sightings/templates/sighting_report_form.html:34
 msgid "Enter sighting date, or choose it from calendar."
-msgstr ""
+msgstr "Introduce fecha del avistamiento, o indícala en el calendario"
 
 #: sightings/templates/sighting_report_form.html:43
 msgid "Choose jellyfish specimen"
-msgstr ""
+msgstr "Selecciona especimen de medusa"
 
 #: sightings/templates/sighting_report_form.html:44
 msgid "Click on jellyfish to input size and quantity."
-msgstr ""
-
-#: sightings/templates/sighting_report_form.html:59
-msgid "Quantity"
-msgstr ""
-
-#: sightings/templates/sighting_report_form.html:61
-msgid "Size"
-msgstr ""
+msgstr "Haz click en la medusa para introducir tamaño y abundancia"
 
 #: sightings/templates/sighting_report_form.html:72
 msgid "Other specimen"
-msgstr ""
+msgstr "Otro especimen"
 
 #: sightings/templates/sighting_report_form.html:74
 msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
 msgstr ""
+"Elige esta opción si el especimen no es ninguno de los los de arriba. Deberás "
+"añadir una descripción."
 
 #: sightings/templates/sighting_report_form.html:87
 msgid ""
 "Enter a location, and it will be shown in a map below. Latitude and "
-"longitude fileds will be filled."
+"longitude fields will be filled."
 msgstr ""
+"Introduce una localización, y se mostrará un mapa abajo, calculándose los "
+"campos latitud y longitud"
 
 #: sightings/templates/sighting_report_form.html:97
 msgid "Reset Marker"
-msgstr ""
+msgstr "Restablece el marcador"
 
 #: sightings/templates/sighting_report_form.html:104
 msgid "Optionally, input description or comments about the sighting."
 msgstr ""
+"Opcionalmente, introduce descripción o comentarios sobre el avistamiento"
 
 #: sightings/templates/sighting_report_form.html:117
 msgid "An image related with the sighting can be uploaded."
-msgstr ""
+msgstr "Se puede subir una imagen relacionada con el avistamiento"
 
 #: sightings/templates/sighting_report_form.html:119
 msgid "Save report"
-msgstr ""
+msgstr "Enviar avistamiento"
 
 #: sightings/templates/sightings_filter_form.html:17
 msgid "Apply filter"
-msgstr ""
+msgstr "Aplicar filtro"
 
 #: sightings/templates/sightings_list.html:9
 msgid "sightings"
-msgstr ""
+msgstr "avistamientos"
 
 #: sightings/templates/sightings_list.html:12 templates/sightings_page.html:40
 msgid "Photo"
-msgstr ""
-
-#: sightings/templates/sightings_list.html:13 templates/sightings_page.html:41
-msgid "Date"
-msgstr ""
+msgstr "Foto"
 
 #: sightings/templates/sightings_list.html:14 templates/sightings_page.html:42
 msgid "Specimen"
-msgstr ""
-
-#: sightings/templates/sightings_list.html:15 templates/sightings_page.html:43
-msgid "Reporter"
-msgstr ""
+msgstr "Especimen"
 
 #: templates/base.html:48
 msgid "Logout"
-msgstr ""
+msgstr "Cerrar sesión"
 
 #: templates/base.html:51
 msgid "Report your sightings!"
-msgstr ""
+msgstr "¡Reporta tus avistamientos!"
 
 #: templates/base.html:53
 msgid "Login"
-msgstr ""
+msgstr "Acceso"
 
 #: templates/base.html:54
 msgid "Not registered yet!"
-msgstr ""
+msgstr "¡No está registrado aún!"
 
 #: templates/base.html:55 templates/registration/registration_form.html:14
 msgid "Register"
-msgstr ""
+msgstr "Registrar"
 
 #: templates/base.html:82
 msgid "Search"
@@ -213,23 +252,24 @@ msgstr "Síguenos en"
 
 #: templates/sightings_page.html:26
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 #: templates/sightings_page.html:27
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #: templates/sightings_page.html:34
 msgid "Sorry, there's no sightings of the request type yet."
 msgstr ""
+"Lo sentimos, pero no  hay avistamientos que cumplan con el filtro aplicado."
 
 #: templates/sightings_page.html:48
 msgid "Previous page"
-msgstr ""
+msgstr "Página anterior"
 
 #: templates/sightings_page.html:49
 msgid "Next page"
-msgstr ""
+msgstr "Página siguiente"
 
 #: templates/registration/activate.html:8
 #, python-format
@@ -239,10 +279,14 @@ msgid ""
 "activate this account.\n"
 "  "
 msgstr ""
+"\n"
+"  La clave de activación \"%(activation_key)s\" es inválida y no se puede "
+"usar para activar esta cuenta.\n"
+"  "
 
 #: templates/registration/activation_complete.html:11
 msgid "Your account has been activated correctly."
-msgstr ""
+msgstr "Tu cuenta se ha activado correctamente."
 
 #: templates/registration/activation_email.txt:3
 #, python-format
@@ -257,6 +301,15 @@ msgid ""
 "Account has to be activated within %(expiration_days)s days.\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Bienvenido a %(site_name)s.\n"
+"\n"
+"Por favor haz clic aquí para activar tu cuenta: http://%(site)s/accounts/"
+"activate/%(activation_key)s/\n"
+"\n"
+"La cuenta tiene que se activada en %(expiration_days)s días.\n"
+"\n"
 
 #: templates/registration/activation_email_subject.txt:3
 #, python-format
@@ -264,6 +317,8 @@ msgid ""
 "\n"
 "Activate your account in %(site_name)s\n"
 msgstr ""
+"\n"
+"Activa tu cuenta en %(site_name)s\n"
 
 #: templates/registration/login.html:14
 msgid "Log in"
@@ -274,3 +329,5 @@ msgid ""
 "The registration process is almost complete. You would receive an email to "
 "activate your account."
 msgstr ""
+"El proceso de registro está casi completo. Deberías haber recibido un email "
+"para activar tu cuenta de usuario"
