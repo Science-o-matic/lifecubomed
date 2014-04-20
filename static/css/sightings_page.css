@@ -107,7 +107,6 @@ a#report_sighting_button {
 #list table {
     display: block;
     padding: 2ex;
-    width: 100%;
     border-collapse: collapse;
 }
 

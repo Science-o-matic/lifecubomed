@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-09 12:22+0200\n"
+"POT-Creation-Date: 2014-04-20 19:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,17 +86,15 @@ msgstr "Hasta"
 msgid "Date range is wrong"
 msgstr "Rango de fechas inválido"
 
-#: sightings/models.py:39 sightings/templates/sightings_list.html:15
-#: templates/sightings_page.html:43
+#: sightings/models.py:39 templates/sightings_page.html:44
 msgid "Reporter"
 msgstr "Reportado por"
 
-#: sightings/models.py:42 sightings/templates/sightings_list.html:13
-#: templates/sightings_page.html:41
+#: sightings/models.py:42 templates/sightings_page.html:41
 msgid "Date"
 msgstr "Fecha"
 
-#: sightings/models.py:43
+#: sightings/models.py:43 templates/sightings_page.html:43
 msgid "Description"
 msgstr "Descripción"
 
@@ -178,8 +176,8 @@ msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
 msgstr ""
-"Elige esta opción si el especimen no es ninguno de los los de arriba. Deberás "
-"añadir una descripción."
+"Elige esta opción si el especimen no es ninguno de los los de arriba. "
+"Deberás añadir una descripción."
 
 #: sightings/templates/sighting_report_form.html:87
 msgid ""
@@ -209,18 +207,6 @@ msgstr "Enviar avistamiento"
 #: sightings/templates/sightings_filter_form.html:17
 msgid "Apply filter"
 msgstr "Aplicar filtro"
-
-#: sightings/templates/sightings_list.html:9
-msgid "sightings"
-msgstr "avistamientos"
-
-#: sightings/templates/sightings_list.html:12 templates/sightings_page.html:40
-msgid "Photo"
-msgstr "Foto"
-
-#: sightings/templates/sightings_list.html:14 templates/sightings_page.html:42
-msgid "Specimen"
-msgstr "Especimen"
 
 #: templates/base.html:48
 msgid "Logout"
@@ -263,11 +249,19 @@ msgid "Sorry, there's no sightings of the request type yet."
 msgstr ""
 "Lo sentimos, pero no  hay avistamientos que cumplan con el filtro aplicado."
 
-#: templates/sightings_page.html:48
+#: templates/sightings_page.html:40
+msgid "Photo"
+msgstr "Foto"
+
+#: templates/sightings_page.html:42
+msgid "Specimen"
+msgstr "Especimen"
+
+#: templates/sightings_page.html:49
 msgid "Previous page"
 msgstr "Página anterior"
 
-#: templates/sightings_page.html:49
+#: templates/sightings_page.html:50
 msgid "Next page"
 msgstr "Página siguiente"
 
@@ -331,3 +325,6 @@ msgid ""
 msgstr ""
 "El proceso de registro está casi completo. Deberías haber recibido un email "
 "para activar tu cuenta de usuario"
+
+#~ msgid "sightings"
+#~ msgstr "avistamientos"

@@ -35,13 +35,14 @@ class FlatSightingSerializer(Serializer):
         if obj.thumb:
             thumb_url = obj.thumb.url
         self._current.update({
-                'id': obj._get_pk_val(),
+                'id': obj.id,
                 'date': obj.date.isoformat(),
                 'image_url': thumb_url,
                 'jellyfish': {
                     'name': unicode(obj.jellyfish) or _("N/A"),
                     'id': obj.jellyfish_id
                 },
+                'description': obj.description,
                 'reporter': {
                     'name': unicode(obj.reporter),
                     'id': obj.reporter.id
@@ -72,7 +73,7 @@ class AJAXSightingListMixin(object):
          json = serializer.serialize(qs,
                                      indent=4,
                                      fields=('pk', 'date', 'lat', 'lng', 'reporter',
-                                             'jellyfish', 'jellyfish_quantity',
+                                             'jellyfish', 'description', 'jellyfish_quantity',
                                              'jellyfish_size')
                                      )
          json = '{"sightings": ' + json

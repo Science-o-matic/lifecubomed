@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-09 12:22+0200\n"
+"POT-Creation-Date: 2014-04-20 19:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,17 +85,15 @@ msgstr ""
 msgid "Date range is wrong"
 msgstr ""
 
-#: sightings/models.py:39 sightings/templates/sightings_list.html:15
-#: templates/sightings_page.html:43
+#: sightings/models.py:39 templates/sightings_page.html:44
 msgid "Reporter"
 msgstr ""
 
-#: sightings/models.py:42 sightings/templates/sightings_list.html:13
-#: templates/sightings_page.html:41
+#: sightings/models.py:42 templates/sightings_page.html:41
 msgid "Date"
 msgstr ""
 
-#: sightings/models.py:43
+#: sightings/models.py:43 templates/sightings_page.html:43
 msgid "Description"
 msgstr ""
 
@@ -204,18 +202,6 @@ msgstr ""
 msgid "Apply filter"
 msgstr ""
 
-#: sightings/templates/sightings_list.html:9
-msgid "sightings"
-msgstr ""
-
-#: sightings/templates/sightings_list.html:12 templates/sightings_page.html:40
-msgid "Photo"
-msgstr ""
-
-#: sightings/templates/sightings_list.html:14 templates/sightings_page.html:42
-msgid "Specimen"
-msgstr ""
-
 #: templates/base.html:48
 msgid "Logout"
 msgstr ""
@@ -256,11 +242,19 @@ msgstr ""
 msgid "Sorry, there's no sightings of the request type yet."
 msgstr ""
 
-#: templates/sightings_page.html:48
-msgid "Previous page"
+#: templates/sightings_page.html:40
+msgid "Photo"
+msgstr ""
+
+#: templates/sightings_page.html:42
+msgid "Specimen"
 msgstr ""
 
 #: templates/sightings_page.html:49
+msgid "Previous page"
+msgstr ""
+
+#: templates/sightings_page.html:50
 msgid "Next page"
 msgstr ""
 

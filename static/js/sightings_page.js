@@ -75,6 +75,7 @@ var List = {
         row.append($("<td>").append(img));
         row.append($("<td>").text(sighting.date));
         row.append($("<td>").text(sighting.jellyfish.name));
+        row.append($("<td>").text(sighting.description));
         row.append($("<td>").text(sighting.reporter.name));
 
         tbody.append(row);
