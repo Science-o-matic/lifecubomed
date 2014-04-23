@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-20 19:52+0200\n"
+"POT-Creation-Date: 2014-04-23 11:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,7 +150,7 @@ msgstr "N/A"
 msgid "Sighting Report"
 msgstr "Informe de Avistamiento"
 
-#: sightings/templates/sighting_report_form.html:21 templates/base.html:46
+#: sightings/templates/sighting_report_form.html:21
 #: templates/sightings_page.html:20
 msgid "Report sighting"
 msgstr "Reportar avistamiento"
@@ -208,31 +208,15 @@ msgstr "Enviar avistamiento"
 msgid "Apply filter"
 msgstr "Aplicar filtro"
 
-#: templates/base.html:48
+#: templates/base.html:47
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-#: templates/base.html:51
-msgid "Report your sightings!"
-msgstr "¡Reporta tus avistamientos!"
-
-#: templates/base.html:53
-msgid "Login"
-msgstr "Acceso"
-
-#: templates/base.html:54
-msgid "Not registered yet!"
-msgstr "¡No está registrado aún!"
-
-#: templates/base.html:55 templates/registration/registration_form.html:14
-msgid "Register"
-msgstr "Registrar"
-
-#: templates/base.html:82
+#: templates/base.html:75
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/base.html:100
+#: templates/base.html:93
 msgid "Follow us on"
 msgstr "Síguenos en"
 
@@ -318,6 +302,15 @@ msgstr ""
 msgid "Log in"
 msgstr "Iniciar sesión"
 
+#: templates/registration/login.html:17
+msgid "Aren't you registered?"
+msgstr "¿No estás registrado?"
+
+#: templates/registration/login.html:17
+#: templates/registration/registration_form.html:14
+msgid "Register"
+msgstr "Regístrate"
+
 #: templates/registration/registration_complete.html:11
 msgid ""
 "The registration process is almost complete. You would receive an email to "
@@ -325,6 +318,15 @@ msgid ""
 msgstr ""
 "El proceso de registro está casi completo. Deberías haber recibido un email "
 "para activar tu cuenta de usuario"
+
+#~ msgid "Report your sightings!"
+#~ msgstr "¡Reporta tus avistamientos!"
+
+#~ msgid "Login"
+#~ msgstr "Acceso"
+
+#~ msgid "Not registered yet!"
+#~ msgstr "¡No está registrado aún!"
 
 #~ msgid "sightings"
 #~ msgstr "avistamientos"

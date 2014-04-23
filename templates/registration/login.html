@@ -1,6 +1,6 @@
 {% extends "page.html" %}
 
-{% load i18n sekizai_tags %}
+{% load i18n sekizai_tags cms_tags %}
 
 {% addtoblock "css" %}
   <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
@@ -11,7 +11,9 @@
   <form method="post" action="" id="login-form">
     {% csrf_token %}
     {{ form.as_p }}
-      <input type="submit" value="{% trans 'Log in' %}" />
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
+    <input type="submit" value="{% trans 'Log in' %}" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+  <p>{% trans "Aren't you registered?" %} <a href="{% page_url 'accounts_register' %}">{% trans "Register" %}</a></p>
+
 {% endblock %}

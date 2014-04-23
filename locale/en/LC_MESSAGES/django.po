@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-20 19:52+0200\n"
+"POT-Creation-Date: 2014-04-23 11:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Sighting Report"
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:21 templates/base.html:46
+#: sightings/templates/sighting_report_form.html:21
 #: templates/sightings_page.html:20
 msgid "Report sighting"
 msgstr ""
@@ -202,31 +202,15 @@ msgstr ""
 msgid "Apply filter"
 msgstr ""
 
-#: templates/base.html:48
+#: templates/base.html:47
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:51
-msgid "Report your sightings!"
-msgstr ""
-
-#: templates/base.html:53
-msgid "Login"
-msgstr ""
-
-#: templates/base.html:54
-msgid "Not registered yet!"
-msgstr ""
-
-#: templates/base.html:55 templates/registration/registration_form.html:14
-msgid "Register"
-msgstr ""
-
-#: templates/base.html:82
+#: templates/base.html:75
 msgid "Search"
 msgstr "Search"
 
-#: templates/base.html:100
+#: templates/base.html:93
 msgid "Follow us on"
 msgstr ""
 
@@ -294,6 +278,15 @@ msgstr ""
 
 #: templates/registration/login.html:14
 msgid "Log in"
+msgstr ""
+
+#: templates/registration/login.html:17
+msgid "Aren't you registered?"
+msgstr ""
+
+#: templates/registration/login.html:17
+#: templates/registration/registration_form.html:14
+msgid "Register"
 msgstr ""
 
 #: templates/registration/registration_complete.html:11
