@@ -286,7 +286,7 @@ msgstr ""
 "Por favor haz clic aquí para activar tu cuenta: http://%(site)s/accounts/"
 "activate/%(activation_key)s/\n"
 "\n"
-"La cuenta tiene que se activada en %(expiration_days)s días.\n"
+"Activa tu cuenta antes de %(expiration_days)s días, o expirará.\n"
 "\n"
 
 #: templates/registration/activation_email_subject.txt:3
