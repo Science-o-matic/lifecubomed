@@ -39,12 +39,11 @@ CMS_LANGUAGES = {
         {
             'code': 'it',
             'name': gettext(u'Italiano'),
-	    'public': False
+            'public': False
         },
         {
             'code': 'fr',
             'name': gettext(U'Français'),
-	    'public': False
         },
         ],
     "default": {
