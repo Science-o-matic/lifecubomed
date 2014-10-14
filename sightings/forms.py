@@ -28,10 +28,10 @@ JELLYFISH_CHOICES = (
     ("ALL", _("All jellyfish types")),
     ("UNKNOWN", _("Unknown type")),
 )
-DATEFORMATS = {'en': "%m/%d/%Y",
-               "es": "%d/%m/%Y",
-               }
+DEFAULT_DATE_FORMAT = "%d/%m/%Y"
+DATEFORMATS = {'en': "%m/%d/%Y"}
 SIGHTINGS_LIMIT = 10
+
 class SightingsFilterForm(forms.Form):
     jellyfish_id = forms.ChoiceField(choices=JELLYFISH_CHOICES,
                                      label="")
@@ -53,12 +53,16 @@ class SightingsFilterForm(forms.Form):
         from_date = last_sightings.values_list("date", flat=True)[:SIGHTINGS_LIMIT][0]
 
         # This is a trick, since I couldn't overwrite date formats using
-        # settings.FORMAT_MODULE_PATH. DateField's widget render the date
-        # was ignoring the overwrite using Django 1.5
+        # settings.FORMAT_MODULE_PATH. DateField's widget was ignoring the overwrite
+        # (using Django 1.5)
         l = get_language()
+        try:
+            date_format = DATEFORMATS[l]
+        except KeyError:
+            date_format = DEFAULT_DATE_FORMAT
+        self.fields["from_date"].initial = from_date.strftime(date_format)
         today = datetime.date.today()
-        self.fields["from_date"].initial = from_date.strftime(DATEFORMATS[l])
-        self.fields["to_date"].initial = today.strftime(DATEFORMATS[l])
+        self.fields["to_date"].initial = today.strftime(date_format)
 
         choices = list(Jellyfish.objects.all().values_list("id", "name"))
         choices.insert(0, JELLYFISH_CHOICES[0])
