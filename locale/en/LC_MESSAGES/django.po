@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-23 11:36+0200\n"
+"POT-Creation-Date: 2014-10-31 16:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,15 +33,15 @@ msgstr ""
 msgid "Français"
 msgstr ""
 
-#: settings.py:164
+#: settings.py:163
 msgid "Picture"
 msgstr ""
 
-#: settings.py:168
+#: settings.py:167
 msgid "Text and Link"
 msgstr ""
 
-#: settings.py:172
+#: settings.py:171
 msgid "New #2 Text"
 msgstr ""
 
@@ -73,15 +73,15 @@ msgstr ""
 msgid "Unknown type"
 msgstr ""
 
-#: sightings/forms.py:39
+#: sightings/forms.py:40
 msgid "From"
 msgstr ""
 
-#: sightings/forms.py:43
+#: sightings/forms.py:44
 msgid "To"
 msgstr ""
 
-#: sightings/forms.py:67
+#: sightings/forms.py:75
 msgid "Date range is wrong"
 msgstr ""
 
