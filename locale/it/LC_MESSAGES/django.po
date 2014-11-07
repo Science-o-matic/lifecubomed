@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-31 16:15+0100\n"
+"POT-Creation-Date: 2014-11-07 16:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,13 +175,17 @@ msgstr "Altra specie"
 msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
-msgstr "Scegli questa opzione se la specie non è nessuna di quelle indicate sopra. dovrai aggiungere una descrizione."
+msgstr ""
+"Scegli questa opzione se la specie non è nessuna di quelle indicate sopra. "
+"dovrai aggiungere una descrizione."
 
 #: sightings/templates/sighting_report_form.html:87
 msgid ""
-"Enter a location, and it will be shown in a map below. Latitude and "
-"longitude fields will be filled."
-msgstr "Introduci una posizione, apparirá una mappa nella parte sottostante, calcolando latitudine e longitudine."
+"Enter a location, and it will be shown in a map below. Location's latitude "
+"and longitude will be shown too."
+msgstr ""
+"Introduci una posizione, apparirá una mappa nella parte sottostante, "
+"calcolando latitudine e longitudine."
 
 #: sightings/templates/sighting_report_form.html:97
 msgid "Reset Marker"
@@ -225,7 +229,9 @@ msgstr "Lista"
 
 #: templates/sightings_page.html:34
 msgid "Sorry, there's no sightings of the request type yet."
-msgstr "Ci dispiace pero non ci sono avvistamenti che corrispondono al filtro applicato"
+msgstr ""
+"Ci dispiace pero non ci sono avvistamenti che corrispondono al filtro "
+"applicato"
 
 #: templates/sightings_page.html:40
 msgid "Photo"
@@ -244,9 +250,15 @@ msgid "Next page"
 msgstr "Pagina succesiva"
 
 #: templates/registration/activate.html:8
-#, python-format
-msgid "The activation key \"%(activation_key)s\" is invalid and cannot be used to activate this account."
-msgstr "Chiave %(activation_key)s non è valida e non si puo usare per accedere all’account"
+#, fuzzy, python-format
+msgid ""
+"\n"
+"  The activation key \"%(activation_key)s\" is invalid and cannot be used to "
+"activate this account.\n"
+"  "
+msgstr ""
+"Chiave %(activation_key)s non è valida e non si puo usare per accedere "
+"all’account"
 
 #: templates/registration/activation_complete.html:11
 msgid "Your account has been activated correctly."
@@ -275,8 +287,10 @@ msgstr ""
 "\n"
 
 #: templates/registration/activation_email_subject.txt:3
-#, python-format
-msgid "Activate your account in %(site_name)s\n"
+#, fuzzy, python-format
+msgid ""
+"\n"
+"Activate your account in %(site_name)s\n"
 msgstr "Accedi al tuo account in %(site_name)s\n"
 
 #: templates/registration/login.html:14
@@ -296,4 +310,6 @@ msgstr "Registrati"
 msgid ""
 "The registration process is almost complete. You would receive an email to "
 "activate your account."
-msgstr "La registrazione è in corso. riceverai un email che ti permetterá accedere al tuo account."
+msgstr ""
+"La registrazione è in corso. riceverai un email che ti permetterá accedere "
+"al tuo account."
