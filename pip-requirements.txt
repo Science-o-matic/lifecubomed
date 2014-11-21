@@ -18,6 +18,6 @@ cmsplugin-flickr-slideshow==0.1
 django-tinymce==1.5.1
 pillow
 sorl-thumbnail==11.12
-git+https://github.com/hovel/imagestore.git
+imagestore==2.7.7
 hg+https://abarcia@bitbucket.org/abarcia/cmsplugin-youtube
 django-registration==1.0
