@@ -17,10 +17,10 @@ ADMINS = (
 MANAGERS = ADMINS
 
 LANGUAGES = (
-    ('es', gettext(u'Spanish')),
+    ('es', gettext('Spanish')),
     ('en', gettext('English')),
     ('it', gettext('Italiano')),
-    ('fr', gettext(U'Français')),
+    ('fr', gettext(u'Français')),
 )
 
 DEFAULT_LANGUAGE = 0
@@ -29,7 +29,7 @@ CMS_LANGUAGES = {
     1: [
         {
             'code': 'es',
-            'name': gettext(u'Spanish'),
+            'name': gettext('Spanish'),
             'fallbacks': ['en'],
         },
         {
@@ -43,7 +43,7 @@ CMS_LANGUAGES = {
         },
         {
             'code': 'fr',
-            'name': gettext(U'Français'),
+            'name': gettext(u'Français'),
         },
         ],
     "default": {
