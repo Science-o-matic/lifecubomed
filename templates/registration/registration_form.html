@@ -2,16 +2,32 @@
 
 {% load i18n sekizai_tags %}
 
-{% addtoblock "css" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
-{% endaddtoblock %}
 
 {% block page_content %}
+
+  {% addtoblock "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/forms.css">
+  {% endaddtoblock %}
+
   <form method="post" action="" id="register-form">
     {% csrf_token %}
-    {{ form.as_p }}
-      <input type="submit" value="{% trans 'Register' %}" />
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
+
+    <div id="form_errors">
+      {{ form.non_field_errors }}
+    </div>
+
+    {% for field in form %}
+    <div class="field {% if field.field.required %}required{% endif %}">
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.errors }}
+        {% if field.name == "username" %}
+          <span class="help">{% trans "Username cannot contain spaces." %}</span>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <input type="submit" value="{% trans 'Register' %}" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
 {% endblock %}
