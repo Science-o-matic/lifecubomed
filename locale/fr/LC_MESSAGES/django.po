@@ -319,5 +319,5 @@ msgstr ""
 "activer votre compte."
 
 #: templates/registration/registration_form.html:25
-msgid "Username cannot contain spacegs."
+msgid "Username cannot contain spaces."
 msgstr "Nom d'utilisateur ne peut pas contenir d'espaces."
