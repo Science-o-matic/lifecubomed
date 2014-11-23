@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 12:56+0100\n"
+"POT-Creation-Date: 2014-11-23 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,13 +175,17 @@ msgstr "Autre spécimen"
 msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
-msgstr "Choisir cette option si le spécimen identifié n’est aucun des spécimens ci-dessus, puis ajouter une description"
+msgstr ""
+"Choisir cette option si le spécimen identifié n’est aucun des spécimens ci-"
+"dessus, puis ajouter une description"
 
 #: sightings/templates/sighting_report_form.html:87
 msgid ""
 "Enter a location, and it will be shown in a map below. Location's latitude "
 "and longitude will be shown too."
-msgstr "Introduire une localisation pour que celle-ci se montre sur la carte ci-dessous, en calculant la latitude et la longitude."
+msgstr ""
+"Introduire une localisation pour que celle-ci se montre sur la carte ci-"
+"dessous, en calculant la latitude et la longitude."
 
 #: sightings/templates/sighting_report_form.html:97
 msgid "Reset Marker"
@@ -189,7 +193,9 @@ msgstr "Rétablir le marqueur"
 
 #: sightings/templates/sighting_report_form.html:104
 msgid "Optionally, input description or comments about the sighting."
-msgstr "Optionnellement, introduire des éléments descriptifs ou autres commentaires sur l’observation"
+msgstr ""
+"Optionnellement, introduire des éléments descriptifs ou autres commentaires "
+"sur l’observation"
 
 #: sightings/templates/sighting_report_form.html:117
 msgid "An image related with the sighting can be uploaded."
@@ -225,7 +231,8 @@ msgstr "Liste"
 
 #: templates/sightings_page.html:34
 msgid "Sorry, there's no sightings of the request type yet."
-msgstr "Nous sommes désolés mais aucune observation ne correspond au filtre choisi."
+msgstr ""
+"Nous sommes désolés mais aucune observation ne correspond au filtre choisi."
 
 #: templates/sightings_page.html:40
 msgid "Photo"
@@ -244,9 +251,16 @@ msgid "Next page"
 msgstr "Page suivante"
 
 #: templates/registration/activate.html:8
-#, python-format
-msgid "\nThe activation key \"%(activation_key)s\" is invalid and cannot be used to activate this account.\n"
-msgstr "\nLa clé d’activation \"%(activation_key)s\" est incorrecte et ne peut être utilisé pour activer ce compte.\n"
+#, fuzzy, python-format
+msgid ""
+"\n"
+"  The activation key \"%(activation_key)s\" is invalid and cannot be used to "
+"activate this account.\n"
+"  "
+msgstr ""
+"\n"
+"La clé d’activation \"%(activation_key)s\" est incorrecte et ne peut être "
+"utilisé pour activer ce compte.\n"
 
 #: templates/registration/activation_complete.html:11
 msgid "Your account has been activated correctly."
@@ -264,14 +278,24 @@ msgid ""
 "\n"
 "Account has to be activated within %(expiration_days)s days.\n"
 "\n"
-msgstr "\n\nBienvenu sur %(site_name)s. \nVeuillez cliquer ici afin d’activer votre compte: http://%(site)s/accounts/activate/%(activation_key)s/\n . \nActivez votre compte dans les %(expiration_days)s  prochains jours ou il sera expiré.\n"
+msgstr ""
+"\n"
+"\n"
+"Bienvenu sur %(site_name)s. \n"
+"Veuillez cliquer ici afin d’activer votre compte: http://%(site)s/accounts/"
+"activate/%(activation_key)s/\n"
+" . \n"
+"Activez votre compte dans les %(expiration_days)s  prochains jours ou il "
+"sera expiré.\n"
 
 #: templates/registration/activation_email_subject.txt:3
 #, python-format
 msgid ""
 "\n"
 "Activate your account in %(site_name)s\n"
-msgstr "\nActiver votre compte sur %(site_name)s\n"
+msgstr ""
+"\n"
+"Activer votre compte sur %(site_name)s\n"
 
 #: templates/registration/login.html:14
 msgid "Log in"
@@ -282,7 +306,7 @@ msgid "Aren't you registered?"
 msgstr "Vous n’êtes pas inscrits?"
 
 #: templates/registration/login.html:17
-#: templates/registration/registration_form.html:14
+#: templates/registration/registration_form.html:30
 msgid "Register"
 msgstr "Inscrivez-vous"
 
@@ -290,4 +314,10 @@ msgstr "Inscrivez-vous"
 msgid ""
 "The registration process is almost complete. You would receive an email to "
 "activate your account."
-msgstr "Le procès d’inscription est fini. Vous devriez avoir reçu un email pour activer votre compte."
+msgstr ""
+"Le procès d’inscription est fini. Vous devriez avoir reçu un email pour "
+"activer votre compte."
+
+#: templates/registration/registration_form.html:25
+msgid "Username cannot contain spacegs."
+msgstr "Nom d'utilisateur ne peut pas contenir d'espaces."

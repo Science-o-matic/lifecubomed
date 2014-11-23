@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 12:56+0100\n"
+"POT-Creation-Date: 2014-11-23 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -285,7 +285,7 @@ msgid "Aren't you registered?"
 msgstr ""
 
 #: templates/registration/login.html:17
-#: templates/registration/registration_form.html:14
+#: templates/registration/registration_form.html:30
 msgid "Register"
 msgstr ""
 
@@ -293,4 +293,8 @@ msgstr ""
 msgid ""
 "The registration process is almost complete. You would receive an email to "
 "activate your account."
+msgstr ""
+
+#: templates/registration/registration_form.html:25
+msgid "Username cannot contain spacegs."
 msgstr ""
