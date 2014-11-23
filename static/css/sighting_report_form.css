@@ -1,30 +1,4 @@
-#sighting_report_form { margin-top: 3ex;}
-
-  #sighting_report_form em {
-      font-style: normal;
-     font-weight: bold;
-  }
-
-  #sighting_report_form label {
-      display: block;
-      margin-bottom: .5ex;
-  }
-
-  #sighting_report_form .field {
-      float: left;
-      clear: both;
-      display: block;
-      margin-bottom: 2ex;
-      margin-top: 2ex;
-  }
-
-  #sighting_report_form .field.required label {
-      font-weight: bold;
-  }
-
-  #sighting_report_form label.required {
-      font-weight: bold;
-  }
+#sighting_report_form { }
 
   #sighting_report_form .inline label {
       display: inline;
@@ -43,25 +17,6 @@
   #sighting_report_form textarea {
      display: block;
      width: 100%;
-  }
-
-
-  #sighting_report_form input[type=submit] {
-      clear: both;
-      display: block;
-      background-color: #2287B5;
-      color: white;
-      padding: 1ex;
-      border-radius: 4px 4px 4px 4px;
-      border-color: transparent;
-      margin-top: 2ex;
-  }
-
-  #sighting_report_form span.help {
-     clear: both;
-     display: block;
-     color: grey;
-     margin-top: .5ex;
   }
 
   #sighting_report_form .jellyfish_image {
@@ -131,13 +86,4 @@
 
   #sighting_report_form #jellyfishes {
       clear: both;
-  }
-
-  #sighting_report_form ul.errorlist {
-      list-style-type: none;
-      font-weight: bold;
-      color: #2287B5;
-      margin-top: .5ex;
-      margin-bottom: .5ex;
-      padding: 0;
   }
