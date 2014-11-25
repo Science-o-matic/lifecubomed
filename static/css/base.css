@@ -7,14 +7,14 @@ body {
 }
 
 #page {
-  width: 1500px;
+  width: 95%;
   margin: 5px auto 0 auto;
 }
 
 #left {
    float: left;
-   width:250px;
-   padding: 12px;
+   width: 15%;
+   padding: 1%;
    padding-top: .5ex;
 }
 
@@ -25,15 +25,15 @@ body {
 
 #center {
      float:left;
-     width: 900px;
-     padding: 12px;
+     width: 59%;
+     padding: 1%;
      padding-top: .5ex;
 }
 
 #right {
-     float: right;
-     width: 250px;
-     padding: 12px;
+     float: left;
+     width: 15%;
+     padding: 1%;
      padding-top: .5ex;
 }
 
