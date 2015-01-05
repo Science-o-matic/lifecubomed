@@ -6,19 +6,16 @@
   <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/gallery.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/three_columns.css">
+  <style>
+    span.plugin_picture { margin: 4ex 0 0 4ex; display: block; }
+  </style>
   {% endaddtoblock %}
 
   {% block page_content %}
   <div id="page_content">
     {% placeholder base_content %}
-  </div>
-  <div id="left_columna">
     {% placeholder left_content %}
-  </div>
-  <div id="middle_columna">
     {% placeholder middle_content %}
-        </div>
-  <div id="right_columna">
     {% placeholder right_content %}
   </div>
   {% endblock %}
