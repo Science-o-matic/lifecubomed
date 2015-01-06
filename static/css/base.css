@@ -100,6 +100,7 @@ body {
     float: right;
 }
 
+
 img {
 border:1px solid transparent;
 -webkit-border-radius: 10px;
@@ -137,7 +138,6 @@ p.plugin_file {
 
     #sting_protocol p.plugin_file a {
         color: white;
-        text-decoration: underline;
     }
 
       #sting_protocol p.plugin_file a span.filetitle {
@@ -157,6 +157,10 @@ p.plugin_file {
        height: 243px;
        width: 233px;
      }
+   #life a {
+       color: #CCCCCD;
+       text-decoration: underline;
+   }
 
 #noticias .plugin_picture img {
        height: 281px;
