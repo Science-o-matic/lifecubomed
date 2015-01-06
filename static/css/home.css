@@ -36,6 +36,7 @@
 
    #news .plugin_picture {
       float: left;
+      margin-bottom: 2ex;
       margin-right: 2em;
       margin-left: 20px;
   }
