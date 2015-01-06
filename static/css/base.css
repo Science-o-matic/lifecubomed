@@ -111,8 +111,9 @@ border-radius: 10px;
   clear: both;
 }
 
-span.filetitle {
-    font-size: small;
+
+p.plugin_file {
+    text-align: left;
 }
 
 #sting_protocol {
@@ -127,6 +128,7 @@ span.filetitle {
    height: 78px;
    width: 80px;
    float: left;
+   margin-right: 1.5ex;
   }
 
   #sting_protocol p.plugin_file {
@@ -139,7 +141,6 @@ span.filetitle {
 
       #sting_protocol p.plugin_file a span.filetitle {
         color: white;
-        font-weight: bold;
       }
 
     .filesize {
