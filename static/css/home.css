@@ -19,39 +19,33 @@
     }
 
 
-  #news {
-    float: none;
-  }
-
- #news_tools {
+ #credits {
     overflow: hidden;
-    paddng-right: 280px;
-    alignment-adjust: central;
  }
 
-   #news .new {
+   #credits .logos {
        margin-bottom: 4ex;
        float:left;
    }
 
-   #news .plugin_picture {
+   #credits .plugin_picture {
       float: left;
       margin-bottom: 2ex;
       margin-right: 2em;
       margin-left: 20px;
   }
-     #news .plugin_picture img {
+     #credits .plugin_picture img {
        height: 71px;
        width: 169px;
      }
 
-   #news .new_text {
+   #credis .title {
       width: 100%;
       float: left;
    }
 
 
-   #news .embedded-page.row {
+   #credits .embedded-page.row {
      margin-bottom: 4ex;
      float: left;
      clear: both;
