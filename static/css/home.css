@@ -29,14 +29,15 @@
    }
 
    #credits .plugin_picture {
+       display: block;
       margin-bottom: 2ex;
       margin-right: 2em;
       margin-left: 20px;
   }
 
-   #credis .title {
+   #credits .title {
       width: 100%;
-      float: left;
+      clear: both;
    }
 
 
