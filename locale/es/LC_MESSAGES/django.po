@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-16 21:18+0100\n"
+"POT-Creation-Date: 2015-01-16 23:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,11 +86,13 @@ msgstr "Hasta"
 msgid "Date range is wrong"
 msgstr "Rango de fechas inválido"
 
-#: sightings/models.py:39 templates/sightings_page.html:44
+#: sightings/models.py:39 sightings/views.py:135
+#: templates/sightings_page.html:44
 msgid "Reporter"
 msgstr "Reportado por"
 
-#: sightings/models.py:42 templates/sightings_page.html:41
+#: sightings/models.py:42 sightings/views.py:132
+#: templates/sightings_page.html:41
 msgid "Date"
 msgstr "Fecha"
 
@@ -142,9 +144,17 @@ msgstr "Tamaño"
 msgid "Quantity"
 msgstr "Abundancia"
 
-#: sightings/views.py:42
+#: sightings/views.py:44
 msgid "N/A"
 msgstr "N/A"
+
+#: sightings/views.py:133 templates/sightings_page.html:42
+msgid "Specimen"
+msgstr "Especimen"
+
+#: sightings/views.py:134 templates/sightings_page.html:43
+msgid "Location"
+msgstr "Localización"
 
 #: sightings/report/cms_app.py:7
 msgid "Sighting Report"
@@ -233,14 +243,6 @@ msgstr ""
 msgid "Photo"
 msgstr "Foto"
 
-#: templates/sightings_page.html:42
-msgid "Specimen"
-msgstr "Especimen"
-
-#: templates/sightings_page.html:43
-msgid "Location"
-msgstr "Localización"
-
 #: templates/sightings_page.html:49
 msgid "Previous page"
 msgstr "Página anterior"
@@ -248,6 +250,14 @@ msgstr "Página anterior"
 #: templates/sightings_page.html:50
 msgid "Next page"
 msgstr "Página siguiente"
+
+#: templates/sightings_page.html:56
+msgid "Download XLS"
+msgstr "Descargar XLS"
+
+#: templates/sightings_page.html:57
+msgid "Download all sightings in Excel file (XLS)"
+msgstr "Descargar todos los avistamientos (XLS)"
 
 #: templates/registration/activate.html:8
 #, python-format
