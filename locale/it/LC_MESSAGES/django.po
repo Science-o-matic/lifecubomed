@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-23 18:35+0100\n"
+"POT-Creation-Date: 2015-01-16 21:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr "Avvistato da"
 msgid "Date"
 msgstr "Data"
 
-#: sightings/models.py:43 templates/sightings_page.html:43
+#: sightings/models.py:43
 msgid "Description"
 msgstr "Descrizione"
 
@@ -134,11 +134,11 @@ msgstr "Longitudine"
 msgid "Jellyfish"
 msgstr "Medusa"
 
-#: sightings/models.py:59 sightings/templates/sighting_report_form.html:61
+#: sightings/models.py:59 sightings/templates/sighting_report_form.html:62
 msgid "Size"
 msgstr "Dimensione"
 
-#: sightings/models.py:62 sightings/templates/sighting_report_form.html:59
+#: sightings/models.py:62 sightings/templates/sighting_report_form.html:60
 msgid "Quantity"
 msgstr "Abbondance"
 
@@ -150,28 +150,28 @@ msgstr ""
 msgid "Sighting Report"
 msgstr "Relazione sull’avvistamento"
 
-#: sightings/templates/sighting_report_form.html:21
+#: sightings/templates/sighting_report_form.html:22
 #: templates/sightings_page.html:20
 msgid "Report sighting"
 msgstr "Report avvistamento"
 
-#: sightings/templates/sighting_report_form.html:34
+#: sightings/templates/sighting_report_form.html:35
 msgid "Enter sighting date, or choose it from calendar."
 msgstr "Introduci la data di avvistamento o in indicala nel calendario"
 
-#: sightings/templates/sighting_report_form.html:43
+#: sightings/templates/sighting_report_form.html:44
 msgid "Choose jellyfish specimen"
 msgstr "Seleziona la specie di medusa"
 
-#: sightings/templates/sighting_report_form.html:44
+#: sightings/templates/sighting_report_form.html:45
 msgid "Click on jellyfish to input size and quantity."
 msgstr "Clicca sulla medusa per introdurre dimensione e abbondanza"
 
-#: sightings/templates/sighting_report_form.html:72
+#: sightings/templates/sighting_report_form.html:73
 msgid "Other specimen"
 msgstr "Altra specie"
 
-#: sightings/templates/sighting_report_form.html:74
+#: sightings/templates/sighting_report_form.html:75
 msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
@@ -179,7 +179,7 @@ msgstr ""
 "Scegli questa opzione se la specie non è nessuna di quelle indicate sopra. "
 "dovrai aggiungere una descrizione."
 
-#: sightings/templates/sighting_report_form.html:87
+#: sightings/templates/sighting_report_form.html:88
 msgid ""
 "Enter a location, and it will be shown in a map below. Location's latitude "
 "and longitude will be shown too."
@@ -187,19 +187,19 @@ msgstr ""
 "Introduci una posizione, apparirá una mappa nella parte sottostante, "
 "calcolando latitudine e longitudine."
 
-#: sightings/templates/sighting_report_form.html:97
+#: sightings/templates/sighting_report_form.html:98
 msgid "Reset Marker"
 msgstr "Marca nuovamente la posizione"
 
-#: sightings/templates/sighting_report_form.html:104
+#: sightings/templates/sighting_report_form.html:105
 msgid "Optionally, input description or comments about the sighting."
 msgstr "Oppure, introduci la descrizione o un commento sull’avvistamento"
 
-#: sightings/templates/sighting_report_form.html:117
+#: sightings/templates/sighting_report_form.html:118
 msgid "An image related with the sighting can be uploaded."
 msgstr "Si puo aggiungere un’immagine relazionata con l’avvistamento"
 
-#: sightings/templates/sighting_report_form.html:119
+#: sightings/templates/sighting_report_form.html:120
 msgid "Save report"
 msgstr "Inviare avvistamento"
 
@@ -211,11 +211,7 @@ msgstr "Applicare filtro"
 msgid "Logout"
 msgstr "Esci"
 
-#: templates/base.html:75
-msgid "Search"
-msgstr "Cerca"
-
-#: templates/base.html:93
+#: templates/base.html:87
 msgid "Follow us on"
 msgstr "Seguici su"
 
@@ -240,6 +236,10 @@ msgstr "Foto"
 #: templates/sightings_page.html:42
 msgid "Specimen"
 msgstr "Specie"
+
+#: templates/sightings_page.html:43
+msgid "Location"
+msgstr "Posizione"
 
 #: templates/sightings_page.html:49
 msgid "Previous page"
@@ -317,3 +317,6 @@ msgstr ""
 #: templates/registration/registration_form.html:25
 msgid "Username cannot contain spaces."
 msgstr "Nome utente non può contenere spazi."
+
+#~ msgid "Search"
+#~ msgstr "Cerca"

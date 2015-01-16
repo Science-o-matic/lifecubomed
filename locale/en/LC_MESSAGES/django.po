@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-23 18:35+0100\n"
+"POT-Creation-Date: 2015-01-16 21:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: sightings/models.py:43 templates/sightings_page.html:43
+#: sightings/models.py:43
 msgid "Description"
 msgstr ""
 
@@ -133,11 +133,11 @@ msgstr ""
 msgid "Jellyfish"
 msgstr ""
 
-#: sightings/models.py:59 sightings/templates/sighting_report_form.html:61
+#: sightings/models.py:59 sightings/templates/sighting_report_form.html:62
 msgid "Size"
 msgstr ""
 
-#: sightings/models.py:62 sightings/templates/sighting_report_form.html:59
+#: sightings/models.py:62 sightings/templates/sighting_report_form.html:60
 msgid "Quantity"
 msgstr ""
 
@@ -149,52 +149,52 @@ msgstr ""
 msgid "Sighting Report"
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:21
+#: sightings/templates/sighting_report_form.html:22
 #: templates/sightings_page.html:20
 msgid "Report sighting"
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:34
+#: sightings/templates/sighting_report_form.html:35
 msgid "Enter sighting date, or choose it from calendar."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:43
+#: sightings/templates/sighting_report_form.html:44
 msgid "Choose jellyfish specimen"
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:44
+#: sightings/templates/sighting_report_form.html:45
 msgid "Click on jellyfish to input size and quantity."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:72
+#: sightings/templates/sighting_report_form.html:73
 msgid "Other specimen"
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:74
+#: sightings/templates/sighting_report_form.html:75
 msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:87
+#: sightings/templates/sighting_report_form.html:88
 msgid ""
 "Enter a location, and it will be shown in a map below. Location's latitude "
 "and longitude will be shown too."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:97
+#: sightings/templates/sighting_report_form.html:98
 msgid "Reset Marker"
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:104
+#: sightings/templates/sighting_report_form.html:105
 msgid "Optionally, input description or comments about the sighting."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:117
+#: sightings/templates/sighting_report_form.html:118
 msgid "An image related with the sighting can be uploaded."
 msgstr ""
 
-#: sightings/templates/sighting_report_form.html:119
+#: sightings/templates/sighting_report_form.html:120
 msgid "Save report"
 msgstr ""
 
@@ -206,11 +206,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:75
-msgid "Search"
-msgstr "Search"
-
-#: templates/base.html:93
+#: templates/base.html:87
 msgid "Follow us on"
 msgstr ""
 
@@ -232,6 +228,10 @@ msgstr ""
 
 #: templates/sightings_page.html:42
 msgid "Specimen"
+msgstr ""
+
+#: templates/sightings_page.html:43
+msgid "Location"
 msgstr ""
 
 #: templates/sightings_page.html:49
@@ -298,3 +298,6 @@ msgstr ""
 #: templates/registration/registration_form.html:25
 msgid "Username cannot contain spaces."
 msgstr ""
+
+#~ msgid "Search"
+#~ msgstr "Search"
