@@ -8,8 +8,9 @@ from django.contrib.auth.views import login, logout
 admin.autodiscover()
 
 urlpatterns = i18n_patterns('',
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('cms.urls')),
+                            url(r'^admin/', include(admin.site.urls)),
+                            url(r'^sightings', include('sightings.urls')),
+                            url(r'^', include('cms.urls')),
 )
 
 
@@ -20,7 +21,7 @@ urlpatterns += patterns('',
                         url(r'^tinymce/', include('tinymce.urls')),
                         # Fallback for URLs not handled by CMS pages (i.e. logout)
                         url(r'^accounts/', include('accounts.urls')),
-                        url(r'^sightings.json', include('sightings.urls')),
+
 )
 
 if settings.DEBUG:

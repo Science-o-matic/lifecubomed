@@ -1,6 +1,6 @@
 {% extends "page.html" %}
 
-{% load i18n cms_tags sekizai_tags %}
+{% load i18n static cms_tags sekizai_tags %}
 
 {% block page_content %}
   {% addtoblock "css" %}
@@ -51,4 +51,10 @@
       </div>
     </div>
   </div>
+
+  <a id="download_xls" href="{% url 'sightings.export_xls' %}">
+    <img src="{% static 'img/xls.png' %}" title="{% trans "Download XLS" %}"  alt="{% trans "Download XLS" %}"/>
+    <span>{% trans "Download all sightings in Excel file (XLS)" %}</span>
+  </a>
+
 {% endblock %}

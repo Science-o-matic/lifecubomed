@@ -1,5 +1,6 @@
 import os
 import math
+import xlwt
 from django.core.serializers.json import Serializer
 from django.views.generic.edit import FormView
 from django.core.urlresolvers import reverse
@@ -7,6 +8,7 @@ from django import http
 from django.views.generic.list import ListView
 from django.utils import simplejson
 from django.conf import settings
+from django.utils.translation import ugettext_lazy as _
 from sightings.models import Jellyfish, Sighting
 from sightings.forms import SightingReportForm, SightingsFilterForm
 
@@ -117,3 +119,40 @@ class AJAXSightingListMixin(object):
 class AJAXSightingsListView(AJAXSightingListMixin, ListView):
      model = Sighting
      paginate_by = 2
+
+
+def export_xls(request):
+    response = http.HttpResponse(mimetype='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename=cubomed_jellyfish_report.xls'
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet("Cubomed jellyfish report")
+
+    row_num = 0
+    columns = [
+        (unicode(_("Date")), 4000),
+        (unicode(_("Specimen")), 6000),
+        (unicode(_("Location")), 8000),
+        (unicode(_("Reporter")), 8000),
+    ]
+    font_style = xlwt.XFStyle()
+
+    for col_num in xrange(len(columns)):
+        ws.write(row_num, col_num, columns[col_num][0], font_style)
+        ws.col(col_num).width = columns[col_num][1]
+
+    font_style = xlwt.XFStyle()
+    font_style.alignment.wrap = 1
+
+    for obj in Sighting.objects.all():
+        row_num += 1
+        row = [
+            obj.date.strftime("%d/%m/%Y"),
+            unicode(obj.jellyfish),
+            obj.address,
+            unicode(obj.reporter)
+        ]
+        for col_num in xrange(len(row)):
+            ws.write(row_num, col_num, row[col_num], font_style)
+
+    wb.save(response)
+    return response

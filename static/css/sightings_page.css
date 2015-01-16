@@ -45,6 +45,7 @@
     float: left;
 }
 
+
 #sightings_filter p {
     float: left;
     margin: 0 0 0 0;
@@ -73,7 +74,7 @@
 }
 
 
-#sightings_filter input[type=submit] {
+#sightings_filter input[type=submit], a#download_xls {
       float: left;
       background-color: #2287B5;
       color: white;
@@ -82,6 +83,23 @@
       border-color: transparent;
       margin-top: -1ex;
       margin-left: 1em;
+      text-decoration: none;
+}
+
+a#download_xls {
+    margin-top: 2ex;
+    margin-left: 0;
+}
+
+a#download_xls img {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+
+#download_xls a span {
+    float: left;
+    color: white;
 }
 
 #sightings_filter label {
