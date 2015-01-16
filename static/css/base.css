@@ -137,6 +137,7 @@ border-radius: 10px;
 
   #sting_protocol p.plugin_file {
     margin: 0;
+    font-size: 120%;
   }
 
     #sting_protocol p.plugin_file a {
