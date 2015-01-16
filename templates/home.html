@@ -1,61 +1,69 @@
 {% extends "base.html" %}
 {% load cms_tags menu_tags sekizai_tags i18n %}
 
+{% block avista %}
+  {% placeholder "avista"  %}
+{% endblock %}
+
 {% block sting_protocol %}
   {% placeholder "sting_protocol"  %}
 {% endblock %}
 
+{% block contact %}
+  {% placeholder "contact"  %}
+{% endblock %}
+
+
 {% block base_content %}
-{% addtoblock "css" %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/home.css">
-{% endaddtoblock %}
+  {% addtoblock "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css">
+  {% endaddtoblock %}
 
-<div id="project_description" align="center">
-        {% placeholder "project_description" %}
-        {% placeholder "project_description-2" %}
-</div>
+    <div id="project_description" align="center">
+      {% placeholder "project_description" %}
+      {% placeholder "project_description-2" %}
+    </div>
 
-<div id="credits">
-    <div class="title">
-      {% placeholder "credits-title-1" %}
-      <p></p>
+    <div id="credits">
+      <div class="title">
+        {% placeholder "credits-title-1" %}
+        <p></p>
+      </div>
+      <div class="logos">
+        {% placeholder "logos-1" %}
+      </div>
+      <div class="title">
+        {% placeholder "credits-title-2" %}
+        <p></p>
+      </div>
+      <div class="logos">
+        {% placeholder "logos-2" %}
+      </div>
     </div>
-    <div class="logos">
-      {% placeholder "logos-1" %}
-    </div>
-    <div class="title">
-      {% placeholder "credits-title-2" %}
-      <p></p>
-    </div>
-    <div class="logos">
-      {% placeholder "logos-2" %}
-    </div>
-  </div>
 
-<div id="news">
-  <div class="new">
-    {% placeholder "new-image-1" %}
-    <div class="new_text">
-      {% placeholder "new-text-1" %}
+    <div id="news">
+      <div class="new">
+        {% placeholder "new-image-1" %}
+        <div class="new_text">
+          {% placeholder "new-text-1" %}
+        </div>
+      </div>
+      <div class="new">
+        {% placeholder "new-image-2" %}
+        <div class="new_text">
+          {% placeholder "new-text-2" %}
+        </div>
+      </div>
+      <div class="new">
+        {% placeholder "new-image-3" %}
+        <div class="new_text">
+          {% placeholder "new-text-3" %}
+        </div>
+      </div>
+      <div id="more_news">
+        <p>
+          {% placeholder "more_news" %}
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="new">
-    {% placeholder "new-image-2" %}
-    <div class="new_text">
-      {% placeholder "new-text-2" %}
-    </div>
-  </div>
-  <div class="new">
-    {% placeholder "new-image-3" %}
-    <div class="new_text">
-      {% placeholder "new-text-3" %}
-    </div>
-  </div>
-  <div id="more_news">
-    <p>
-      {% placeholder "more_news" %}
-    </p>
-  </div>
-</div>
-
 {% endblock %}

@@ -69,16 +69,20 @@
      {% block base_content %}{% endblock %}
    </div>
    <div id="right">
-     <div id="avista" align="center">
-       {% placeholder "avista" inherit %}
+     <div id="avista">
+       {% block avista %}
+         {% show_placeholder "avista" "home" %}
+       {% endblock %}
      </div>
-     <div id="sting_protocol" align="center">
+     <div id="sting_protocol">
        {% block sting_protocol %}
          {% show_placeholder "sting_protocol" "home" %}
        {% endblock %}
      </div>
-     <div id="life" align="center">
-       {% placeholder "contact" inherit %}
+     <div id="contact">
+       {% block contact %}
+         {% show_placeholder "contact" "home" %}
+       {% endblock %}
      </div>
        </br></br>
        <div id="social">

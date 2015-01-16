@@ -157,11 +157,17 @@ border-radius: 10px;
        width: 250px;
 }
 
-#life .plugin_picture img {
+#life a {
+       color: #CCCCCD;
+       text-decoration: underline;
+}
+
+
+#contact .plugin_picture img {
        height: 243px;
        width: 233px;
      }
-   #life a {
+   #contact a {
        color: #CCCCCD;
        text-decoration: underline;
    }
