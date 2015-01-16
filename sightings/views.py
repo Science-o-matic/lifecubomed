@@ -73,7 +73,7 @@ class AJAXSightingListMixin(object):
          json = serializer.serialize(qs,
                                      indent=4,
                                      fields=('pk', 'date', 'lat', 'lng', 'reporter',
-                                             'jellyfish', 'description', 'jellyfish_quantity',
+                                             'jellyfish', 'address', 'jellyfish_quantity',
                                              'jellyfish_size')
                                      )
          json = '{"sightings": ' + json

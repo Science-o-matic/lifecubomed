@@ -69,13 +69,15 @@ var List = {
         that.renderPagination();
       }
       $.each(data.sightings, function(i, sighting) {
-        var row = $('<tr></tr>'), img = $('<img>');
+        var row = $('<tr></tr>'), img = $('<img>'),
+        location=sighting.address + " (" + parseFloat(sighting.lat).toFixed(2) + ", " + parseFloat(sighting.lng).toFixed(2) + ")";
+
 
         img.attr("src", sighting.image_url);
         row.append($("<td>").append(img));
         row.append($("<td>").text(sighting.date));
         row.append($("<td>").text(sighting.jellyfish.name));
-        row.append($("<td>").text(sighting.description));
+        row.append($("<td>").text(location));
         row.append($("<td>").text(sighting.reporter.name));
 
         tbody.append(row);

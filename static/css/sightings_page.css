@@ -114,3 +114,15 @@ a#report_sighting_button {
     padding: 1ex;
     border: 1px solid #CCC;
 }
+
+#list #pagination {
+    height: 6ex;
+}
+
+#list #pagination div {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    margin-left: 1em;
+    margin-right: 1em;
+}
