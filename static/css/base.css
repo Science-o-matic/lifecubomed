@@ -113,6 +113,9 @@ border-radius: 10px;
 }
 
 
+#social img {
+    border: 0;
+}
 
 #sting_protocol {
   padding: 1em;
