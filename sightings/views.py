@@ -78,7 +78,7 @@ class AJAXSightingListMixin(object):
                                      )
          json = '{"sightings": ' + json
          if int(self.request.GET.get("page", 0)):
-             json += self._render_pagination(pagination)
+             json += ', "pagination": ' + simplejson.dumps(pagination)
          json += "}"
          return http.HttpResponse(json)
 
@@ -95,9 +95,6 @@ class AJAXSightingListMixin(object):
                      "page": page,
                      "pages": pages,
                      "items": page_total})
-
-     def _render_pagination(self, pagination):
-         return ', "pagination": ' + simplejson.dumps(pagination)
 
      def _build_qs(self, form):
          qs = super(AJAXSightingsListView, self).get_queryset()
