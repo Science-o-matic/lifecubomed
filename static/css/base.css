@@ -125,6 +125,7 @@ p.plugin_file {
   color: #CCCCCC;
   alignment-adjust: central;
   background-color: #2287B5;
+  width: 100%;
 }
 
   #sting_protocol .plugin_picture img {
