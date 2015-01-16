@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 {% load cms_tags menu_tags sekizai_tags i18n %}
 
+{% block sting_protocol %}
+  {% placeholder "sting_protocol"  %}
+{% endblock %}
+
 {% block base_content %}
 {% addtoblock "css" %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css">
 {% endaddtoblock %}
-
-{% addtoblock "sting_protocol" %}
-    {% placeholder "sting_protocol" %}
-{% endaddtoblock %}
-
 
 <div id="project_description" align="center">
         {% placeholder "project_description" %}
