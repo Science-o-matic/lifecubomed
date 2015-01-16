@@ -80,7 +80,9 @@
        {% placeholder "avista" inherit %}
      </div>
      <div id="sting_protocol" align="center">
-       {% show_placeholder "sting_protocol" "home" %}
+       {% placeholder "sting_protocol" or %}
+         {% show_placeholder "sting_protocol" "home" %}
+       {% endplaceholder %}
      </div>
      <div id="life" align="center">
        {% placeholder "contact" inherit %}
