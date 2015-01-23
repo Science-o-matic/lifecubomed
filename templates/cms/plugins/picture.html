@@ -1,0 +1,14 @@
+{% load thumbnail %}
+
+<span class="plugin_picture align-left">
+{% if link %}<a href="{{ link }}">{% endif %}
+{% if "new-image-" in placeholder %}
+{% thumbnail picture.image "200x150" crop="center" as im %}
+  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
+  {% if picture.alt %} alt="{{ picture.alt }}"{% endif %} />
+{% endthumbnail %}
+{% else %}
+   <img src="{{ MEDIA_URL }}{{ picture.image }}"{% if picture.alt %} alt="{{ picture.alt }}"{% endif %} />
+{% endif %}
+{% if link %}</a>{% endif %}
+</span>
