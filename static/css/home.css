@@ -29,10 +29,10 @@
    }
 
    #credits .plugin_picture {
-       display: block;
-      margin-bottom: 2ex;
-      margin-right: 2em;
-      margin-left: 20px;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 2em;
+      margin-top: 2ex;
   }
 
    #credits .title {
