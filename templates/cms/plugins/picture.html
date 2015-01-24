@@ -2,7 +2,7 @@
 
 <span class="plugin_picture align-left">
 {% if link %}<a href="{{ link }}">{% endif %}
-{% if "new-image-" in placeholder %}
+{% if "new image" in placeholder %}
 {% thumbnail picture.image "200x150" crop="center" as im %}
   <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
   {% if picture.alt %} alt="{{ picture.alt }}"{% endif %} />
