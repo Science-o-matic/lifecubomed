@@ -19,9 +19,49 @@
     }
 
 
- #credits {
+#news { }
+
+#news .new {
+    margin-bottom: 6ex;
+}
+
+#news .plugin_picture {
+   display: inline-block;
+   vertical-align: top;
+   width: 29%;
+}
+
+#news .new_text {
+    display: inline-block;
+    width: 70%;
+}
+
+#news .new_text p {
+    margin: 0;
+}
+
+#news .plugin_link a {
+    color: white;
+}
+
+#more_news {
+    margin-bottom: 6ex;
+    float: right;
+}
+
+#more_news p {
+    margin: 0;
+}
+
+#more_news .plugin_link a {
+    color: white;
+}
+
+#credits {
+    clear: both;
+    margin-top: 6ex;
     overflow: hidden;
- }
+}
 
    #credits .logos {
        margin-bottom: 4ex;
