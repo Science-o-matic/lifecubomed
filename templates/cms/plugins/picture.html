@@ -3,10 +3,21 @@
 <span class="plugin_picture align-left">
 {% if link %}<a href="{{ link }}">{% endif %}
 {% if "new image" in placeholder %}
-{% thumbnail picture.image "200x150" crop="center" as im %}
-  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
-  {% if picture.alt %} alt="{{ picture.alt }}"{% endif %} />
-{% endthumbnail %}
+
+{% if picture.image|is_portrait %}
+    <div class="portrait">
+    {% thumbnail picture.image "200" crop="10px 10px" format="PNG" as im %}
+        <img src="{{ im.url }}">
+    {% endthumbnail %}
+    </div>
+{% else %}
+    <div class="landscape">
+    {% thumbnail picture.image "200" crop="bottom" format="PNG" as im %}
+        <img src="{{ im.url }}">
+    {% endthumbnail %}
+    </div>
+{% endif %}
+
 {% else %}
    <img src="{{ MEDIA_URL }}{{ picture.image }}"{% if picture.alt %} alt="{{ picture.alt }}"{% endif %} />
 {% endif %}
