@@ -3,13 +3,19 @@
 
 {% block base_content %}
   {% addtoblock "css" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/new.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/gallery.css">
   {% endaddtoblock %}
 
-  <div id="page_content">
+  <div id="page_content" class="new">
   {% block page_content %}
-    {% placeholder base_content %}
+   <h1>{{ request.current_page.get_title }}</h1>
+   <div id="new_image">
+     {% placeholder "new's picture" %}
+   </div>
+   <div id="new_text">
+    {% placeholder "new's text" %}
+    </div>
   {% endblock %}
   </div>
 {% endblock %}
