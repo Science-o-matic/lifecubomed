@@ -37,6 +37,8 @@ QUANTITIES = (
 )
 class Sighting(models.Model):
     reporter = models.ForeignKey(User, verbose_name=_("Reporter"))
+    reported_by = models.CharField(max_length=3000, null=True, blank=True,
+                                  verbose_name=_("Reported by"))
     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     date = models.DateField(verbose_name=_("Date"))

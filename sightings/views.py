@@ -75,8 +75,8 @@ class AJAXSightingListMixin(object):
          json = serializer.serialize(qs,
                                      indent=4,
                                      fields=('pk', 'date', 'lat', 'lng', 'reporter',
-                                             'jellyfish', 'address', 'jellyfish_quantity',
-                                             'jellyfish_size')
+                                             'reported_by','jellyfish', 'address',
+                                             'jellyfish_quantity', 'jellyfish_size')
                                      )
          json = '{"sightings": ' + json
          if int(self.request.GET.get("page", 0)):

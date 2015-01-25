@@ -12,7 +12,7 @@ class SightingReportForm(forms.ModelForm):
         model = Sighting
         fields = ['date', 'jellyfish', 'jellyfish_size', 'jellyfish_quantity',
                   'description', 'specimen_type', 'other_specimen_description',
-                  'address', 'lat', 'lng',
+                  'address', 'reported_by', 'lat', 'lng',
                   'image_name', 'image'
                   ]
         widgets = {

@@ -35,6 +35,13 @@
       <span class="help">{% trans "Enter sighting date, or choose it from calendar." %}</span>
     </div>
 
+    <div class="field inline {% if form.date.field.required %}required{% endif %}">
+      {{ form.reported_by.label_tag }}
+      {{ form.reported_by }}
+      {{ form.reported_by.errors }}
+      <span class="help">{% trans "Enter the name of the person that reported this" %}</span>
+    </div>
+
     <div class="field inline">
       <input id="id_known_specimen_type" type="radio" name="specimen_type" value="0"
              {% if form.specimen_type.value == "0" or form.specimen_type.value == 0 %}
