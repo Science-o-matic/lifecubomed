@@ -25,7 +25,7 @@ class SightingReportForm(forms.ModelForm):
 
 
 JELLYFISH_CHOICES = (
-    ("ALL", _("All jellyfish types")),
+    ("ALL", _("All jellyfishes")),
     ("UNKNOWN", _("Unknown type")),
 )
 DEFAULT_DATE_FORMAT = "%d/%m/%Y"
