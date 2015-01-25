@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-25 19:05+0100\n"
+"POT-Creation-Date: 2015-01-25 19:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,10 @@ msgstr ""
 msgid "Français"
 msgstr ""
 
+#: settings.py:144
+msgid "Home Template"
+msgstr "Plantilla de Página Principal"
+
 #: settings.py:145
 msgid "Page Template"
 msgstr "Plantilla de Página"
@@ -43,8 +47,8 @@ msgid "New Template"
 msgstr "Plantilla de Noticia"
 
 #: settings.py:147
-msgid "News Template"
-msgstr "Plantilllas de Noticias Cubomed"
+msgid "Cubomed News Template"
+msgstr "Plantilla de Noticias Cubomed"
 
 #: settings.py:148
 msgid "Contact Template"
@@ -69,6 +73,7 @@ msgstr "Plantilla de 3 columnas especial"
 #: settings.py:153
 msgid "Page template 3 colum news"
 msgstr "Plantilla de 3 columnas (noticias)"
+
 #: settings.py:154
 #, fuzzy
 msgid "Sightings Page Template"

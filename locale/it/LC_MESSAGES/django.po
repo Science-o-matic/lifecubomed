@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-25 19:05+0100\n"
+"POT-Creation-Date: 2015-01-25 19:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,7 @@ msgid "New Template"
 msgstr ""
 
 #: settings.py:147
-msgid "News Template"
+msgid "Cubomed News Template"
 msgstr ""
 
 #: settings.py:148
@@ -72,6 +72,19 @@ msgstr ""
 
 #: settings.py:153
 msgid "Page template 3 colum news"
+msgstr ""
+
+#: settings.py:154
+#, fuzzy
+msgid "Sightings Page Template"
+msgstr "Relazione sull’avvistamento"
+
+#: settings.py:155
+msgid "Accounts login template"
+msgstr ""
+
+#: settings.py:156
+msgid "Accounts registration template"
 msgstr ""
 
 #: settings.py:157

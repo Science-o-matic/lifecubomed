@@ -144,7 +144,7 @@ CMS_TEMPLATES = (
     ('home.html', gettext('Home Template')),
     ('page.html', gettext('Page Template')),
     ('new.html', gettext('New Template')),
-    ('news.html', gettext('News Template')),
+    ('news.html', gettext('Cubomed News Template')),
     ('contact.html', gettext('Contact Template')),
     ('page2c.html', gettext('Page Template 2 colum')),
     ('page2.html', gettext('Page Template special')),
