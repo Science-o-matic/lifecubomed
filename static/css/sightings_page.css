@@ -41,7 +41,6 @@
 #sightings_filter {
     padding-top: 1ex;
     margin-top: 2ex;
-    padding-left: 1em;
     float: left;
 }
 
@@ -82,7 +81,7 @@
       border-radius: 4px 4px 4px 4px;
       border-color: transparent;
       margin-top: -1ex;
-      margin-left: 1em;
+      margin-left: .5ex;
       text-decoration: none;
 }
 
@@ -103,7 +102,7 @@ a#download_xls img {
 }
 
 #sightings_filter label {
-    margin-left: 1em;
+    margin-left: 1ex;
 }
 
 
