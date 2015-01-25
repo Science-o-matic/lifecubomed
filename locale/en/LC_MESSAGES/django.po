@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-16 21:18+0100\n"
+"POT-Creation-Date: 2015-01-25 19:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,76 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:20 settings.py:32
+#: settings.py:19 settings.py:31
 msgid "Spanish"
 msgstr ""
 
-#: settings.py:21 settings.py:37
+#: settings.py:20 settings.py:36
 msgid "English"
 msgstr ""
 
-#: settings.py:22 settings.py:41
+#: settings.py:21 settings.py:40
 msgid "Italiano"
 msgstr ""
 
-#: settings.py:23 settings.py:46
+#: settings.py:22 settings.py:45
 msgid "Français"
+msgstr ""
+
+#: settings.py:144
+msgid "Home Template"
+msgstr ""
+
+#: settings.py:145
+msgid "Page Template"
+msgstr ""
+
+#: settings.py:146
+msgid "New Template"
+msgstr ""
+
+#: settings.py:147
+msgid "News Template"
+msgstr ""
+
+#: settings.py:148
+msgid "Contact Template"
+msgstr ""
+
+#: settings.py:149
+msgid "Page Template 2 colum"
+msgstr ""
+
+#: settings.py:150
+msgid "Page Template special"
+msgstr ""
+
+#: settings.py:151
+msgid "Page template 3 colum"
+msgstr ""
+
+#: settings.py:152
+msgid "Page template 3 colum esp"
+msgstr ""
+
+#: settings.py:153
+msgid "Page template 3 colum news"
+msgstr ""
+
+#: settings.py:154
+msgid "Sightings Page Template"
+msgstr ""
+
+#: settings.py:155
+msgid "Accounts login template"
+msgstr ""
+
+#: settings.py:156
+msgid "Accounts registration template"
+msgstr ""
+
+#: settings.py:157
+msgid "Sight report template"
 msgstr ""
 
 #: settings.py:163
@@ -85,11 +141,13 @@ msgstr ""
 msgid "Date range is wrong"
 msgstr ""
 
-#: sightings/models.py:39 templates/sightings_page.html:44
+#: sightings/models.py:39 sightings/views.py:135
+#: templates/sightings_page.html:44
 msgid "Reporter"
 msgstr ""
 
-#: sightings/models.py:42 templates/sightings_page.html:41
+#: sightings/models.py:42 sightings/views.py:132
+#: templates/sightings_page.html:41
 msgid "Date"
 msgstr ""
 
@@ -141,8 +199,16 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: sightings/views.py:42
+#: sightings/views.py:44
 msgid "N/A"
+msgstr ""
+
+#: sightings/views.py:133 templates/sightings_page.html:42
+msgid "Specimen"
+msgstr ""
+
+#: sightings/views.py:134 templates/sightings_page.html:43
+msgid "Location"
 msgstr ""
 
 #: sightings/report/cms_app.py:7
@@ -226,20 +292,20 @@ msgstr ""
 msgid "Photo"
 msgstr ""
 
-#: templates/sightings_page.html:42
-msgid "Specimen"
-msgstr ""
-
-#: templates/sightings_page.html:43
-msgid "Location"
-msgstr ""
-
 #: templates/sightings_page.html:49
 msgid "Previous page"
 msgstr ""
 
 #: templates/sightings_page.html:50
 msgid "Next page"
+msgstr ""
+
+#: templates/sightings_page.html:56
+msgid "Download XLS"
+msgstr ""
+
+#: templates/sightings_page.html:57
+msgid "Download all sightings in Excel file (XLS)"
 msgstr ""
 
 #: templates/registration/activate.html:8

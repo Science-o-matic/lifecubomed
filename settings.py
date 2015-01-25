@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-
 gettext = lambda s: s
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -142,19 +141,20 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 CMS_TEMPLATES = (
-    ('home.html', 'Home Template'),
-    ('page.html', 'Page Template'),
-    ('sightings_page.html', 'Sightings Page Template'),
-    ('new.html', 'Single News Template'),
-    ('contact.html', 'Contact Template'),
-    ('page2c.html', 'Page Template 2 colum'),
-    ('page2.html', 'Page Template special'),
-    ('page3c.html','Page template 3 colum'),
-    ('page3cb.html','Page template 3 colum esp'),
-    ('page3cnews.html','Page template 3 colum news'),
-    ('registration/login.html','Accounts login template'),
-    ('registration/registration_form.html','Accounts registration template'),
-    ('sighting_report_form.html','Sight report template'),
+    ('home.html', gettext('Home Template')),
+    ('page.html', gettext('Page Template')),
+    ('new.html', gettext('New Template')),
+    ('news.html', gettext('News Template')),
+    ('contact.html', gettext('Contact Template')),
+    ('page2c.html', gettext('Page Template 2 colum')),
+    ('page2.html', gettext('Page Template special')),
+    ('page3c.html', gettext('Page template 3 colum')),
+    ('page3cb.html', gettext('Page template 3 colum esp')),
+    ('page3cnews.html', gettext('Page template 3 colum news')),
+    ('sightings_page.html', gettext( 'Sightings Page Template')),
+    ('registration/login.html', gettext('Accounts login template')),
+    ('registration/registration_form.html', gettext('Accounts registration template')),
+    ('sighting_report_form.html', gettext('Sight report template')),
 )
 
 CMS_PLACEHOLDER_CONF = {

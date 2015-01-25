@@ -1,75 +1,15 @@
-{{% extends "base.html" %}
+{% extends "base.html" %}
 {% load cms_tags menu_tags sekizai_tags %}
-{% block base_content %}
 
-    {% addtoblock "css" %}
-      <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css">
-      <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
-      <link rel="stylesheet" href="{{ STATIC_URL }}css/gallery.css">
-    {% endaddtoblock %}
-    <div id"wrapper">    
- 	<div id="header_image" align="center">
-      {% placeholder "header_image" %}
-    </div>
-    <div id="left">
-    <div id="dynamic_menu">
-        <ul id="nav">
-          {% show_menu 0 100 0 100 %}
-        </ul>
-      </div>
-   </div>
-   <div id="center" align="center"> 
-   <div id="noticias" align="center">
-   	{% placeholder 2013" %}
-    {% placeholder "contact_picture" %}
-    </br>
-    </br>
-    {% placeholder 2012"" %}
-    {% placeholder "contact_picture 2012" %}
-    </br>
-    </br>
-    {% placeholder 2011" %}
-    {% placeholder "contact_picture 2011" %}
-    </br>
-    </br>
-    </div>
-   </div>
-    <div id="right">
-     <div id="avista" align="center">
-        </br>
-        </br>
-        {% placeholder "avista" %}	
-     </div>
-      <div id="life" align="center">
-        	 </br>
-             </br>         
-         {% placeholder "contact" %}
-     </div> 
-    </div>	
- </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div id="news_image">
-      {% placeholder news_image %}
-    </div>
-    <div id="news_content">
-      {% placeholder news_content %}
-    </div>
+{% block base_content %}
+  {% addtoblock "css" %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/gallery.css">
+  {% endaddtoblock %}
+
+  <div id="page_content">
+  {% block page_content %}
+    {% placeholder base_content %}
+  {% endblock %}
+  </div>
 {% endblock %}
