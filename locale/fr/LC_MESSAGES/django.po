@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-25 21:04+0100\n"
+"POT-Creation-Date: 2015-02-06 20:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,93 +124,98 @@ msgstr ""
 msgid "Sigthings filter form"
 msgstr ""
 
-#: sightings/forms.py:28
+#: sightings/forms.py:36
 msgid "All jellyfishes"
 msgstr "Tous les méduses"
 
-#: sightings/forms.py:29
+#: sightings/forms.py:37
 msgid "Unknown type"
 msgstr "Type inconnu"
 
-#: sightings/forms.py:40
+#: sightings/forms.py:48
 msgid "From"
 msgstr "Depuis"
 
-#: sightings/forms.py:44
+#: sightings/forms.py:52
 msgid "To"
 msgstr "Jusqu’a"
 
-#: sightings/forms.py:75
+#: sightings/forms.py:76
 msgid "Date range is wrong"
 msgstr "Plage de dates incorrecte"
 
-#: sightings/models.py:39 sightings/views.py:135
+#: sightings/models.py:41 sightings/views.py:150
 #: templates/sightings_page.html:44
 msgid "Reporter"
 msgstr "Rapporté par"
 
-#: sightings/models.py:42 sightings/views.py:132
+#: sightings/models.py:43
+#, fuzzy
+msgid "Reported by"
+msgstr "Rapporté par"
+
+#: sightings/models.py:46 sightings/views.py:147
 #: templates/sightings_page.html:41
 msgid "Date"
 msgstr "Date"
 
-#: sightings/models.py:43
+#: sightings/models.py:47
 msgid "Description"
 msgstr "Description"
 
-#: sightings/models.py:45
+#: sightings/models.py:49
 msgid "Specimen type"
 msgstr "Spécimen"
 
-#: sightings/models.py:47
+#: sightings/models.py:51
 msgid "Other jellyfish specimen description"
 msgstr "Description du spécimen"
 
-#: sightings/models.py:49
+#: sightings/models.py:53
 msgid "Image name"
 msgstr "Nom de l’image"
 
-#: sightings/models.py:51
+#: sightings/models.py:55
 msgid "Image file"
 msgstr "Fichier d’image"
 
-#: sightings/models.py:53
+#: sightings/models.py:57
 msgid "Thumbnail file"
 msgstr ""
 
-#: sightings/models.py:54
+#: sightings/models.py:58
 msgid "Address"
 msgstr "Emplacement"
 
-#: sightings/models.py:55
+#: sightings/models.py:59
 msgid "Latitude"
 msgstr "Latitude"
 
-#: sightings/models.py:56
+#: sightings/models.py:60
 msgid "Longitude"
 msgstr "Longitude"
 
-#: sightings/models.py:57
+#: sightings/models.py:61
 msgid "Jellyfish"
 msgstr "Méduse"
 
-#: sightings/models.py:59 sightings/templates/sighting_report_form.html:62
+#: sightings/models.py:63 sightings/templates/sighting_report_form.html:77
 msgid "Size"
 msgstr "Taille"
 
-#: sightings/models.py:62 sightings/templates/sighting_report_form.html:60
+#: sightings/models.py:66 sightings/templates/sighting_report_form.html:75
 msgid "Quantity"
 msgstr "Abondance"
 
-#: sightings/views.py:44
+#: sightings/views.py:57
 msgid "N/A"
 msgstr "Non disponible"
 
-#: sightings/views.py:133 templates/sightings_page.html:42
+#: sightings/views.py:148 templates/sightings_page.html:42
 msgid "Specimen"
 msgstr "Specimen"
 
-#: sightings/views.py:134 templates/sightings_page.html:43
+#: sightings/views.py:149 templates/sightings_page.html:43
 msgid "Location"
 msgstr "Emplacement"
 
@@ -218,28 +223,36 @@ msgstr "Emplacement"
 msgid "Sighting Report"
 msgstr "Dossier d’observation"
 
-#: sightings/templates/sighting_report_form.html:22
+#: sightings/templates/sighting_report_form.html:24
+msgid "Edit sighting"
+msgstr "Éditer une observation"
+
+#: sightings/templates/sighting_report_form.html:26
 #: templates/sightings_page.html:20
 msgid "Report sighting"
 msgstr "Rapporter une observation"
 
-#: sightings/templates/sighting_report_form.html:35
+#: sightings/templates/sighting_report_form.html:43
 msgid "Enter sighting date, or choose it from calendar."
 msgstr "Introduire la date de l’observation ou  l’indiquer dans le calendrier"
 
-#: sightings/templates/sighting_report_form.html:44
+#: sightings/templates/sighting_report_form.html:50
+msgid "Enter the name of the person that reported this"
+msgstr ""
+
+#: sightings/templates/sighting_report_form.html:59
 msgid "Choose jellyfish specimen"
 msgstr "Sélectionner le spécimen de méduse"
 
-#: sightings/templates/sighting_report_form.html:45
+#: sightings/templates/sighting_report_form.html:60
 msgid "Click on jellyfish to input size and quantity."
 msgstr "Cliquer sur la méduse pour introduire la taille et l’abondance"
 
-#: sightings/templates/sighting_report_form.html:73
+#: sightings/templates/sighting_report_form.html:88
 msgid "Other specimen"
 msgstr "Autre spécimen"
 
-#: sightings/templates/sighting_report_form.html:75
+#: sightings/templates/sighting_report_form.html:90
 msgid ""
 "Choose this option if specimen is none of above. You should provide a "
 "description."
@@ -247,7 +260,7 @@ msgstr ""
 "Choisir cette option si le spécimen identifié n’est aucun des spécimens ci-"
 "dessus, puis ajouter une description"
 
-#: sightings/templates/sighting_report_form.html:88
+#: sightings/templates/sighting_report_form.html:103
 msgid ""
 "Enter a location, and it will be shown in a map below. Location's latitude "
 "and longitude will be shown too."
@@ -255,21 +268,21 @@ msgstr ""
 "Introduire une localisation pour que celle-ci se montre sur la carte ci-"
 "dessous, en calculant la latitude et la longitude."
 
-#: sightings/templates/sighting_report_form.html:98
+#: sightings/templates/sighting_report_form.html:113
 msgid "Reset Marker"
 msgstr "Rétablir le marqueur"
 
-#: sightings/templates/sighting_report_form.html:105
+#: sightings/templates/sighting_report_form.html:120
 msgid "Optionally, input description or comments about the sighting."
 msgstr ""
 "Optionnellement, introduire des éléments descriptifs ou autres commentaires "
 "sur l’observation"
 
-#: sightings/templates/sighting_report_form.html:118
+#: sightings/templates/sighting_report_form.html:133
 msgid "An image related with the sighting can be uploaded."
 msgstr "Télécharger une image en relation à l’observation"
 
-#: sightings/templates/sighting_report_form.html:120
+#: sightings/templates/sighting_report_form.html:135
 msgid "Save report"
 msgstr "Envoyer l’observation"
 
@@ -302,19 +315,19 @@ msgstr ""
 msgid "Photo"
 msgstr "Photo"
 
-#: templates/sightings_page.html:49
+#: templates/sightings_page.html:50
 msgid "Previous page"
 msgstr "Page précédente"
 
-#: templates/sightings_page.html:50
+#: templates/sightings_page.html:51
 msgid "Next page"
 msgstr "Page suivante"
 
-#: templates/sightings_page.html:56
+#: templates/sightings_page.html:57
 msgid "Download XLS"
 msgstr ""
 
-#: templates/sightings_page.html:57
+#: templates/sightings_page.html:58
 msgid "Download all sightings in Excel file (XLS)"
 msgstr ""
 
