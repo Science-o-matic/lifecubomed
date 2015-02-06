@@ -23,6 +23,12 @@ class SightingReportForm(forms.ModelForm):
             'specimen_type': forms.RadioSelect(choices=SPECIMEN_TYPES),
         }
 
+    def __init__(self, *args, **kwargs):
+        super(SightingReportForm, self).__init__(*args, **kwargs)
+        date_format = get_date_format()
+        self.fields["date"].widget = forms.widgets.DateInput(format=date_format)
+
+
 
 JELLYFISH_CHOICES = (
     ("ALL", _("All jellyfishes")),
@@ -52,14 +58,7 @@ class SightingsFilterForm(forms.Form):
         last_sightings = Sighting.objects.only("date").order_by("date")
         from_date = last_sightings.values_list("date", flat=True)[:SIGHTINGS_LIMIT][0]
 
-        # This is a trick, since I couldn't overwrite date formats using
-        # settings.FORMAT_MODULE_PATH. DateField's widget was ignoring the overwrite
-        # (using Django 1.5)
-        l = get_language()
-        try:
-            date_format = DATEFORMATS[l]
-        except KeyError:
-            date_format = DEFAULT_DATE_FORMAT
+        date_format = get_date_format()
         self.fields["from_date"].initial = from_date.strftime(date_format)
         today = datetime.date.today()
         self.fields["to_date"].initial = today.strftime(date_format)
@@ -74,3 +73,13 @@ class SightingsFilterForm(forms.Form):
         if cleaned_data["from_date"] > cleaned_data["to_date"]:
             raise forms.ValidationError(_("Date range is wrong"))
         return cleaned_data
+
+
+def get_date_format():
+    # This is a trick, since I couldn't overwrite date formats using
+    # settings.FORMAT_MODULE_PATH. DateField's widget was ignoring the overwrite
+    # (using Django 1.5)
+    try:
+        return DATEFORMATS[get_language()]
+    except KeyError:
+        return DEFAULT_DATE_FORMAT
