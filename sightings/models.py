@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
@@ -17,6 +18,7 @@ class Jellyfish(models.Model):
 
     def __unicode__(self):
         return self.name
+
 
 SPECIMEN_TYPES = (
     (0, 'Known'),
@@ -72,6 +74,10 @@ class Sighting(models.Model):
             thumb = get_thumbnail(self.image, "50x50", crop='center', quality=99)
             self.thumb.save(thumb.name, ContentFile(thumb.read()), True)
         super(Sighting, self).save(*args, **kwargs)
+
+    def edit_url(self, *args, **kwargs):
+        url = reverse("sightings.report_sighting") + "?edit_id=" + str(self.id)
+        return url
 
 
 @receiver(pre_delete)
