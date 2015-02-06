@@ -2,6 +2,7 @@ import os
 import math
 import xlwt
 from datetime import datetime
+from sorl.thumbnail import get_thumbnail
 from django.core.serializers.json import Serializer
 from django.views.generic.edit import FormView
 from django.core.urlresolvers import reverse
@@ -33,6 +34,11 @@ class SightingReportView(FormView):
         sighting.id = form.cleaned_data["id"]
         sighting.reporter_id = self.request.user.id
         sighting.save()
+        if sighting.image:
+            sighting.thumb = get_thumbnail(
+                sighting.image,
+                '52x52', crop='center', quality=99).url
+            sighting.save()
         return http.HttpResponseRedirect(form.data["next"])
 
 
