@@ -55,6 +55,10 @@ function initialize() {
       address.trigger("geocode");
   }
 
+  if ($("#id_other_specimen_type").prop("checked")) {
+    $("#other_specimen_description").show();
+  }
+
   // Hackish trick to avoid having a default text
   $('input[name=address]').attr('placeholder', '');
 
