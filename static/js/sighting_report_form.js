@@ -33,9 +33,11 @@ jQuery.fn.handleJellyFishImageClick = function () {
 }
 
 function initialize() {
+  var address =  $('input[name=address]');
+
   $('input[name=date]').datepicker();
 
-  $('input[name=address]')
+  address
     .geocomplete({
       map: "#map",
       details: "form#sighting_report_form",
@@ -48,6 +50,10 @@ function initialize() {
       $("input[name=lng]").val(latLng.lng());
       $("#reset").show();
     })
+
+  if (address.val()) {
+      address.trigger("geocode");
+  }
 
   // Hackish trick to avoid having a default text
   $('input[name=address]').attr('placeholder', '');
