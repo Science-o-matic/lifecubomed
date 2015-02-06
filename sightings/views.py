@@ -30,6 +30,7 @@ class SightingReportView(FormView):
 
     def form_valid(self, form):
         sighting = form.save(commit=False)
+        sighting.id = form.cleaned_data["id"]
         sighting.reporter_id = self.request.user.id
         sighting.save()
         return http.HttpResponseRedirect(form.data["next"])

@@ -8,9 +8,11 @@ from sightings.models import Sighting, Jellyfish, SPECIMEN_TYPES
 class SightingReportForm(forms.ModelForm):
     required_css_class = 'required'
 
+    id = forms.IntegerField(widget=forms.HiddenInput, required=False)
+
     class Meta:
         model = Sighting
-        fields = ['date', 'jellyfish', 'jellyfish_size', 'jellyfish_quantity',
+        fields = ['id', 'date', 'jellyfish', 'jellyfish_size', 'jellyfish_quantity',
                   'description', 'specimen_type', 'other_specimen_description',
                   'address', 'reported_by', 'lat', 'lng',
                   'image_name', 'image'

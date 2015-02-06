@@ -19,8 +19,13 @@
     <script src="{{ STATIC_URL }}js/vendor/jquery.geocomplete.min.js"></script>
    {% endaddtoblock %}
 
-  <h2>{% trans "Report sighting" %}</h2>
-
+  <h2>
+    {% if sighting_id %}
+      {% trans "Edit sighting" %}
+    {% else %}
+       {% trans "Report sighting" %}
+    {% endif %}
+  </h2>
   <form method="post" action="" id="sighting_report_form" enctype="multipart/form-data">
     {% csrf_token %}
 
@@ -28,7 +33,7 @@
       {{ form.non_field_errors }}
     </div>
 
-    <input id="id_id" value="{{ sighting_id }}" hidden>
+    <input id="id_id" name="id" value="{{ sighting_id }}" type="hidden" />
 
     <div class="field inline {% if form.date.field.required %}required{% endif %}">
       {{ form.date.label_tag }}

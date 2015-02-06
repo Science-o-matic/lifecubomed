@@ -40,7 +40,7 @@ function initialize() {
   address
     .geocomplete({
       map: "#map",
-      details: "form#sighting_report_form",
+      details: "form#sighting_report_form #location",
       markerOptions: {
         draggable: true
       },
@@ -52,7 +52,7 @@ function initialize() {
     })
 
   if (address.val()) {
-      address.trigger("geocode");
+    address.trigger("geocode");
   }
 
   if ($("#id_other_specimen_type").prop("checked")) {
