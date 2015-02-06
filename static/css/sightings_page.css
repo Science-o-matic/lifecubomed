@@ -132,6 +132,16 @@ a#report_sighting_button {
     border: 1px solid #CCC;
 }
 
+#list table td#edit_col img {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+#list table td#edit_col a.enabled img {
+    opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
 #list #pagination {
     height: 6ex;
 }

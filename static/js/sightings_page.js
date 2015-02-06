@@ -69,19 +69,29 @@ var List = {
         that.renderPagination();
       }
       $.each(data.sightings, function(i, sighting) {
-        var row = $('<tr></tr>'), img = $('<img>'),
+        var row = $('<tr></tr>'), picture = $('<img>'), edit_icon,
         location=sighting.address + " (" + parseFloat(sighting.lat).toFixed(2) + ", " + parseFloat(sighting.lng).toFixed(2) + ")";
         reported_by = sighting.reporter.name;
         if (typeof sighting.reported_by !== "undefined" && sighting.reported_by) {
           reported_by = sighting.reported_by.trim();
         }
 
-        img.attr("src", sighting.image_url);
-        row.append($("<td>").append(img));
+        picture.attr("src", sighting.image_url);
+
+        edit_icon = $('<img src="/static/img/edit_icon.png"/>');
+        if (sighting.editable) {
+          edit_link = $('<a href="' + sighting.edit_url + '"></a>');
+          edit_link.html(edit_icon);
+          edit_icon = edit_link;
+          edit_icon.addClass("enabled");
+        }
+
+        row.append($("<td>").append(picture));
         row.append($("<td>").text(sighting.date));
         row.append($("<td>").text(sighting.jellyfish.name));
         row.append($("<td>").text(location));
         row.append($("<td>").text(reported_by));
+        row.append($("<td id='edit_col'>").append(edit_icon));
 
         tbody.append(row);
       });

@@ -1,6 +1,7 @@
 import os
 import math
 import xlwt
+from datetime import datetime
 from django.core.serializers.json import Serializer
 from django.views.generic.edit import FormView
 from django.core.urlresolvers import reverse
@@ -32,14 +33,20 @@ class SightingReportView(FormView):
 THUMBNAIL_PLACEHOLDER_URL = os.path.join(settings.STATIC_URL, "img/thumb_placeholder.png")
 class FlatSightingSerializer(Serializer):
 
+    def __init__(self, current_user):
+        super(FlatSightingSerializer, self).__init__()
+        self.current_user = current_user
+
     def get_dump_object(self, obj):
         thumb_url = THUMBNAIL_PLACEHOLDER_URL
         if obj.thumb:
             thumb_url = obj.thumb.url
         self._current.update({
                 'id': obj.id,
-                'date': obj.date.isoformat(),
+                'date': datetime.strftime(obj.date, "%d/%m/%Y"),
                 'image_url': thumb_url,
+                'edit_url': obj.edit_url(),
+                'editable': obj.reporter == self.current_user,
                 'jellyfish': {
                     'name': unicode(obj.jellyfish) or _("N/A"),
                     'id': obj.jellyfish_id
@@ -71,12 +78,14 @@ class AJAXSightingListMixin(object):
          if int(self.request.GET.get("page", 0)):
              qs, pagination = self._paginate_qs(qs)
 
-         serializer = FlatSightingSerializer()
+         serializer = FlatSightingSerializer(request.user)
          json = serializer.serialize(qs,
                                      indent=4,
                                      fields=('pk', 'date', 'lat', 'lng', 'reporter',
                                              'reported_by','jellyfish', 'address',
-                                             'jellyfish_quantity', 'jellyfish_size')
+                                             'jellyfish_quantity', 'jellyfish_size',
+                                             'reporter',
+                                             )
                                      )
          json = '{"sightings": ' + json
          if int(self.request.GET.get("page", 0)):
