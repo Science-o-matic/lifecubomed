@@ -363,4 +363,4 @@ msgstr ""
 
 #: templates/registration/registration_form.html:25
 msgid "Username cannot contain spaces."
-msgstr ""
+msgstr "No puede contener espacios."
