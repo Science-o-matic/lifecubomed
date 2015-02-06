@@ -23,6 +23,7 @@ class SightingReportView(FormView):
         edit_id = self.request.GET.get("edit_id", 0)
         if edit_id:
             form = self.form_class(instance=Sighting.objects.get(pk=edit_id))
+            context["sighting_id"] = int(edit_id)
             context['form'] = form
         context['jellyfishes'] = Jellyfish.objects.all()
         return context

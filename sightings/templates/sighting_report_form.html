@@ -28,6 +28,8 @@
       {{ form.non_field_errors }}
     </div>
 
+    <input id="id_id" value="{{ sighting_id }}" hidden>
+
     <div class="field inline {% if form.date.field.required %}required{% endif %}">
       {{ form.date.label_tag }}
       {{ form.date }}
