@@ -2,12 +2,12 @@
 
 {% load i18n sekizai_tags cms_tags %}
 
-{% addtoblock "css" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/page.css">
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
-{% endaddtoblock %}
-
 {% block page_content %}
+ {% addtoblock "css" %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/forms.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/login.css">
+ {% endaddtoblock %}
+
   <form method="post" action="" id="login-form">
     {% csrf_token %}
     {{ form.as_p }}
