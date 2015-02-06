@@ -11,6 +11,10 @@ body {
   margin: 5px auto 0 auto;
 }
 
+#center a {
+    color: white;
+}
+
 #left {
    float: left;
    width: 15%;
