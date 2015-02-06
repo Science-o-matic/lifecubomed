@@ -37,9 +37,12 @@ class SightingReportView(FormView):
         sighting.reporter_id = self.request.user.id
         sighting.save()
         if sighting.image:
-            sighting.thumb = get_thumbnail(
+            thumbnail_url = get_thumbnail(
                 sighting.image,
                 '52x52', crop='center', quality=99).url
+            thumbnail_url = thumbnail_url.replace(settings.MEDIA_ROOT, "")
+            thumbnail_url = thumbnail_url.rstrip("/")[1:]
+            sighting.thumb = thumbnail_url
             sighting.save()
         return http.HttpResponseRedirect(form.data["next"])
 
