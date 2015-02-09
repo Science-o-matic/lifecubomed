@@ -38,7 +38,8 @@
 
 #news .new_text {
     display: inline-block;
-    width: 70%;
+    width: 65%;
+    margin-left: 2ex;
 }
 
 #news .new_text p {
