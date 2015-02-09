@@ -25,6 +25,11 @@
     margin-bottom: 6ex;
 }
 
+#news .new h3 {
+    margin-top: 0;
+}
+
+
 #news .plugin_picture {
    display: inline-block;
    vertical-align: top;
