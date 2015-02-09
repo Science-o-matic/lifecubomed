@@ -20,13 +20,13 @@
 {% elif "new's picture" in placeholder %}
  {% if picture.image|is_portrait %}
     <div class="portrait">
-    {% thumbnail picture.image "400" crop="10px 10px" format="PNG" as im %}
+    {% thumbnail picture.image "300" crop="10px 10px" format="PNG" as im %}
         <img src="{{ im.url }}">
     {% endthumbnail %}
     </div>
  {% else %}
     <div class="landscape">
-    {% thumbnail picture.image "400" crop="bottom" format="PNG" as im %}
+    {% thumbnail picture.image "300" crop="bottom" format="PNG" as im %}
         <img src="{{ im.url }}">
     {% endthumbnail %}
     </div>
